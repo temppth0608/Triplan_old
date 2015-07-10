@@ -332,6 +332,7 @@
                     <navigationItem key="navigationItem" id="cXV-Qb-3tO"/>
                     <connections>
                         <outlet property="myNavBar" destination="JJZ-QT-Mip" id="FCV-y1-6UI"/>
+                        <outlet property="myNavItem" destination="zQT-tH-3kT" id="3Q7-G7-gam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwu-n9-gyd" userLabel="First Responder" sceneMemberID="firstResponder"/>

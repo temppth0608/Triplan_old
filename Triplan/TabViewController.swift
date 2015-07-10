@@ -34,11 +34,6 @@ class TabViewController: UITabBarController , UITabBarControllerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
-        var travelVC = self.viewControllers![1] as! TravelViewController
-        travelVC.stamp = self.selectedStamp
-    }
-    
 
     /*
     // MARK: - Navigation

@@ -10,6 +10,7 @@ import UIKit
 
 class TravelViewController: UIViewController {
     
+    @IBOutlet weak var myNavItem: UINavigationItem!
     @IBOutlet weak var myNavBar: UINavigationBar!
     var stamp : Stamp!
 
@@ -18,6 +19,7 @@ class TravelViewController: UIViewController {
 
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
+        myNavItem.title = stamp.title
     }
 
     override func didReceiveMemoryWarning() {
