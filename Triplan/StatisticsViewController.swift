@@ -19,6 +19,8 @@ class StatisticsViewController: UIViewController {
 
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
+        
+        print("kim")
         // Do any additional setup after loading the view.
     }
 
