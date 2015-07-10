@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E80E8A801B4F91870016B5B3 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E8A7F1B4F91870016B5B3 /* Information.swift */; };
+		E8822CEE1AFDD31A00617F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822CED1AFDD31A00617F50 /* AppDelegate.swift */; };
+		E8822CF31AFDD31A00617F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8822CF11AFDD31A00617F50 /* Main.storyboard */; };
+		E8822CF51AFDD31A00617F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8822CF41AFDD31A00617F50 /* Images.xcassets */; };
+		E8822CF81AFDD31A00617F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8822CF61AFDD31A00617F50 /* LaunchScreen.xib */; };
+		E8822D041AFDD31B00617F50 /* TriplanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D031AFDD31B00617F50 /* TriplanTests.swift */; };
+		E8822D491AFDF60300617F50 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D481AFDF60300617F50 /* MainViewController.swift */; };
+		E8822D4B1AFDF6D500617F50 /* SlidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */; };
+		E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */; };
+		E8AA64C61B48F72800EDF573 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64C51B48F72800EDF573 /* TravelViewController.swift */; };
+		E8AA64CC1B4A450C00EDF573 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */; };
+		E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */; };
+		E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */; };
+		E8D76C301AFE4F9B00BB52FA /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */; };
+		E8D76C3E1AFE550E00BB52FA /* navi_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C3D1AFE550E00BB52FA /* navi_back@2x.png */; };
+		E8D76C401AFE578300BB52FA /* navi_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C3F1AFE578300BB52FA /* navi_menu@2x.png */; };
+		E8D76C541AFE5A9B00BB52FA /* tab_first_off2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C4F1AFE5A9B00BB52FA /* tab_first_off2@2x.png */; };
+		E8D76C551AFE5A9B00BB52FA /* tab_first_on2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C501AFE5A9B00BB52FA /* tab_first_on2@2x.png */; };
+		E8D76C561AFE5A9B00BB52FA /* tab_second_on2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C511AFE5A9B00BB52FA /* tab_second_on2@2x.png */; };
+		E8D76C571AFE5A9B00BB52FA /* tab_third_off2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C521AFE5A9B00BB52FA /* tab_third_off2@2x.png */; };
+		E8D76C581AFE5A9B00BB52FA /* tab_third_on2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C531AFE5A9B00BB52FA /* tab_third_on2@2x.png */; };
+		E8D76C5A1AFE5ACE00BB52FA /* tab_second_off3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C591AFE5ACE00BB52FA /* tab_second_off3@2x.png */; };
+		E8D76C5C1AFE5CE700BB52FA /* firstpage.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C5B1AFE5CE700BB52FA /* firstpage.png */; };
+		E8D76C5E1AFE600D00BB52FA /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */; };
+		E8D76C601AFE663200BB52FA /* main_stamp_off.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C5F1AFE663200BB52FA /* main_stamp_off.png */; };
+		E8D76C621AFE663B00BB52FA /* main_stamp_add.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C611AFE663B00BB52FA /* main_stamp_add.png */; };
+		E8D76C661AFE80FC00BB52FA /* panel_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C651AFE80FC00BB52FA /* panel_image.jpg */; };
+		E8D76C681AFE83B700BB52FA /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C671AFE83B700BB52FA /* AddCell.swift */; };
+		E8D76C6A1AFE899100BB52FA /* panel_logo_hehe.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C691AFE899100BB52FA /* panel_logo_hehe.jpeg */; };
+		E8D76C6C1AFE8BEF00BB52FA /* navi_back-04.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C6B1AFE8BEF00BB52FA /* navi_back-04.png */; };
+		E8D76C6E1AFE8FA900BB52FA /* AddStampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */; };
+		E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */; };
+		E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8822CFE1AFDD31B00617F50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8822CE01AFDD31A00617F50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8822CE71AFDD31A00617F50;
+			remoteInfo = Triplan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E80E8A7F1B4F91870016B5B3 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		E8822CE81AFDD31A00617F50 /* Triplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triplan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8822CEC1AFDD31A00617F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8822CED1AFDD31A00617F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8822CF21AFDD31A00617F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8822CF41AFDD31A00617F50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E8822CF71AFDD31A00617F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E8822CFD1AFDD31B00617F50 /* TriplanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriplanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8822D021AFDD31B00617F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8822D031AFDD31B00617F50 /* TriplanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriplanTests.swift; sourceTree = "<group>"; };
+		E8822D481AFDF60300617F50 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePanelViewController.swift; sourceTree = "<group>"; };
+		E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePanelCell.swift; sourceTree = "<group>"; };
+		E8AA64C51B48F72800EDF573 /* TravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
+		E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyViewController.swift; sourceTree = "<group>"; };
+		E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
+		E8D76C3D1AFE550E00BB52FA /* navi_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_back@2x.png"; sourceTree = "<group>"; };
+		E8D76C3F1AFE578300BB52FA /* navi_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_menu@2x.png"; sourceTree = "<group>"; };
+		E8D76C4F1AFE5A9B00BB52FA /* tab_first_off2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_first_off2@2x.png"; sourceTree = "<group>"; };
+		E8D76C501AFE5A9B00BB52FA /* tab_first_on2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_first_on2@2x.png"; sourceTree = "<group>"; };
+		E8D76C511AFE5A9B00BB52FA /* tab_second_on2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_second_on2@2x.png"; sourceTree = "<group>"; };
+		E8D76C521AFE5A9B00BB52FA /* tab_third_off2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_third_off2@2x.png"; sourceTree = "<group>"; };
+		E8D76C531AFE5A9B00BB52FA /* tab_third_on2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_third_on2@2x.png"; sourceTree = "<group>"; };
+		E8D76C591AFE5ACE00BB52FA /* tab_second_off3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_second_off3@2x.png"; sourceTree = "<group>"; };
+		E8D76C5B1AFE5CE700BB52FA /* firstpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstpage.png; sourceTree = "<group>"; };
+		E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		E8D76C5F1AFE663200BB52FA /* main_stamp_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_stamp_off.png; sourceTree = "<group>"; };
+		E8D76C611AFE663B00BB52FA /* main_stamp_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_stamp_add.png; sourceTree = "<group>"; };
+		E8D76C651AFE80FC00BB52FA /* panel_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panel_image.jpg; sourceTree = "<group>"; };
+		E8D76C671AFE83B700BB52FA /* AddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
+		E8D76C691AFE899100BB52FA /* panel_logo_hehe.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panel_logo_hehe.jpeg; sourceTree = "<group>"; };
+		E8D76C6B1AFE8BEF00BB52FA /* navi_back-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_back-04.png"; sourceTree = "<group>"; };
+		E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStampViewController.swift; sourceTree = "<group>"; };
+		E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addtrip_logo.png; sourceTree = "<group>"; };
+		E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionOperator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8822CE51AFDD31A00617F50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8822CFA1AFDD31B00617F50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8822CDF1AFDD31A00617F50 = {
+			isa = PBXGroup;
+			children = (
+				E8822CEA1AFDD31A00617F50 /* Triplan */,
+				E8822D001AFDD31B00617F50 /* TriplanTests */,
+				E8822CE91AFDD31A00617F50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8822CE91AFDD31A00617F50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8822CE81AFDD31A00617F50 /* Triplan.app */,
+				E8822CFD1AFDD31B00617F50 /* TriplanTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8822CEA1AFDD31A00617F50 /* Triplan */ = {
+			isa = PBXGroup;
+			children = (
+				E8822CED1AFDD31A00617F50 /* AppDelegate.swift */,
+				E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */,
+				E8822D481AFDF60300617F50 /* MainViewController.swift */,
+				E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */,
+				E8D76C671AFE83B700BB52FA /* AddCell.swift */,
+				E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */,
+				E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */,
+				E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */,
+				E8AA64C51B48F72800EDF573 /* TravelViewController.swift */,
+				E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */,
+				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
+				E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */,
+				E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */,
+				E80E8A7F1B4F91870016B5B3 /* Information.swift */,
+				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
+				E8822CF41AFDD31A00617F50 /* Images.xcassets */,
+				E8822CF61AFDD31A00617F50 /* LaunchScreen.xib */,
+				E8DAD1A11AFE0B5D0085EBC2 /* Library */,
+				E8822D3B1AFDE52600617F50 /* image */,
+				E8822CEB1AFDD31A00617F50 /* Supporting Files */,
+			);
+			path = Triplan;
+			sourceTree = "<group>";
+		};
+		E8822CEB1AFDD31A00617F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8822CEC1AFDD31A00617F50 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8822D001AFDD31B00617F50 /* TriplanTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8822D031AFDD31B00617F50 /* TriplanTests.swift */,
+				E8822D011AFDD31B00617F50 /* Supporting Files */,
+			);
+			path = TriplanTests;
+			sourceTree = "<group>";
+		};
+		E8822D011AFDD31B00617F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8822D021AFDD31B00617F50 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8822D3B1AFDE52600617F50 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */,
+				E8D76C6B1AFE8BEF00BB52FA /* navi_back-04.png */,
+				E8D76C691AFE899100BB52FA /* panel_logo_hehe.jpeg */,
+				E8D76C651AFE80FC00BB52FA /* panel_image.jpg */,
+				E8D76C5B1AFE5CE700BB52FA /* firstpage.png */,
+				E8D76C611AFE663B00BB52FA /* main_stamp_add.png */,
+				E8D76C5F1AFE663200BB52FA /* main_stamp_off.png */,
+				E8D76C591AFE5ACE00BB52FA /* tab_second_off3@2x.png */,
+				E8D76C4F1AFE5A9B00BB52FA /* tab_first_off2@2x.png */,
+				E8D76C501AFE5A9B00BB52FA /* tab_first_on2@2x.png */,
+				E8D76C511AFE5A9B00BB52FA /* tab_second_on2@2x.png */,
+				E8D76C521AFE5A9B00BB52FA /* tab_third_off2@2x.png */,
+				E8D76C531AFE5A9B00BB52FA /* tab_third_on2@2x.png */,
+				E8D76C3F1AFE578300BB52FA /* navi_menu@2x.png */,
+				E8D76C3D1AFE550E00BB52FA /* navi_back@2x.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		E8DAD1A11AFE0B5D0085EBC2 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8822CE71AFDD31A00617F50 /* Triplan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8822D071AFDD31B00617F50 /* Build configuration list for PBXNativeTarget "Triplan" */;
+			buildPhases = (
+				E8822CE41AFDD31A00617F50 /* Sources */,
+				E8822CE51AFDD31A00617F50 /* Frameworks */,
+				E8822CE61AFDD31A00617F50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Triplan;
+			productName = Triplan;
+			productReference = E8822CE81AFDD31A00617F50 /* Triplan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8822CFC1AFDD31B00617F50 /* TriplanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8822D0A1AFDD31B00617F50 /* Build configuration list for PBXNativeTarget "TriplanTests" */;
+			buildPhases = (
+				E8822CF91AFDD31B00617F50 /* Sources */,
+				E8822CFA1AFDD31B00617F50 /* Frameworks */,
+				E8822CFB1AFDD31B00617F50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8822CFF1AFDD31B00617F50 /* PBXTargetDependency */,
+			);
+			name = TriplanTests;
+			productName = TriplanTests;
+			productReference = E8822CFD1AFDD31B00617F50 /* TriplanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8822CE01AFDD31A00617F50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "태현";
+				TargetAttributes = {
+					E8822CE71AFDD31A00617F50 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					E8822CFC1AFDD31B00617F50 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = E8822CE71AFDD31A00617F50;
+					};
+				};
+			};
+			buildConfigurationList = E8822CE31AFDD31A00617F50 /* Build configuration list for PBXProject "Triplan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8822CDF1AFDD31A00617F50;
+			productRefGroup = E8822CE91AFDD31A00617F50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8822CE71AFDD31A00617F50 /* Triplan */,
+				E8822CFC1AFDD31B00617F50 /* TriplanTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8822CE61AFDD31A00617F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D76C561AFE5A9B00BB52FA /* tab_second_on2@2x.png in Resources */,
+				E8D76C6A1AFE899100BB52FA /* panel_logo_hehe.jpeg in Resources */,
+				E8D76C5C1AFE5CE700BB52FA /* firstpage.png in Resources */,
+				E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */,
+				E8D76C661AFE80FC00BB52FA /* panel_image.jpg in Resources */,
+				E8D76C621AFE663B00BB52FA /* main_stamp_add.png in Resources */,
+				E8822CF31AFDD31A00617F50 /* Main.storyboard in Resources */,
+				E8D76C5A1AFE5ACE00BB52FA /* tab_second_off3@2x.png in Resources */,
+				E8822CF81AFDD31A00617F50 /* LaunchScreen.xib in Resources */,
+				E8D76C6C1AFE8BEF00BB52FA /* navi_back-04.png in Resources */,
+				E8D76C401AFE578300BB52FA /* navi_menu@2x.png in Resources */,
+				E8822CF51AFDD31A00617F50 /* Images.xcassets in Resources */,
+				E8D76C551AFE5A9B00BB52FA /* tab_first_on2@2x.png in Resources */,
+				E8D76C601AFE663200BB52FA /* main_stamp_off.png in Resources */,
+				E8D76C541AFE5A9B00BB52FA /* tab_first_off2@2x.png in Resources */,
+				E8D76C581AFE5A9B00BB52FA /* tab_third_on2@2x.png in Resources */,
+				E8D76C571AFE5A9B00BB52FA /* tab_third_off2@2x.png in Resources */,
+				E8D76C3E1AFE550E00BB52FA /* navi_back@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8822CFB1AFDD31B00617F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8822CE41AFDD31A00617F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */,
+				E8D76C5E1AFE600D00BB52FA /* TabViewController.swift in Sources */,
+				E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */,
+				E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */,
+				E8D76C301AFE4F9B00BB52FA /* Stamp.swift in Sources */,
+				E8D76C6E1AFE8FA900BB52FA /* AddStampViewController.swift in Sources */,
+				E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */,
+				E8AA64C61B48F72800EDF573 /* TravelViewController.swift in Sources */,
+				E80E8A801B4F91870016B5B3 /* Information.swift in Sources */,
+				E8822CEE1AFDD31A00617F50 /* AppDelegate.swift in Sources */,
+				E8D76C681AFE83B700BB52FA /* AddCell.swift in Sources */,
+				E8822D4B1AFDF6D500617F50 /* SlidePanelViewController.swift in Sources */,
+				E8822D491AFDF60300617F50 /* MainViewController.swift in Sources */,
+				E8AA64CC1B4A450C00EDF573 /* StatisticsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8822CF91AFDD31B00617F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8822D041AFDD31B00617F50 /* TriplanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8822CFF1AFDD31B00617F50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8822CE71AFDD31A00617F50 /* Triplan */;
+			targetProxy = E8822CFE1AFDD31B00617F50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8822CF11AFDD31A00617F50 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8822CF21AFDD31A00617F50 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8822CF61AFDD31A00617F50 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8822CF71AFDD31A00617F50 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8822D051AFDD31B00617F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8822D061AFDD31B00617F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8822D081AFDD31B00617F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Triplan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E8822D091AFDD31B00617F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Triplan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E8822D0B1AFDD31B00617F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TriplanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Triplan.app/Triplan";
+			};
+			name = Debug;
+		};
+		E8822D0C1AFDD31B00617F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TriplanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Triplan.app/Triplan";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8822CE31AFDD31A00617F50 /* Build configuration list for PBXProject "Triplan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8822D051AFDD31B00617F50 /* Debug */,
+				E8822D061AFDD31B00617F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8822D071AFDD31B00617F50 /* Build configuration list for PBXNativeTarget "Triplan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8822D081AFDD31B00617F50 /* Debug */,
+				E8822D091AFDD31B00617F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8822D0A1AFDD31B00617F50 /* Build configuration list for PBXNativeTarget "TriplanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8822D0B1AFDD31B00617F50 /* Debug */,
+				E8822D0C1AFDD31B00617F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8822CE01AFDD31A00617F50 /* Project object */;
+}
