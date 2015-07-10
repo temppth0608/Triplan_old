@@ -20,6 +20,7 @@ class TravelViewController: UIViewController {
         myNavBar.shadowImage = UIImage()
         
         print("aaaaa")
+        let a : Int?
     }
 
     override func didReceiveMemoryWarning() {
