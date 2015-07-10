@@ -14,9 +14,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var myNavBar: UINavigationBar!
     
     var transitionOperator : TransitionOperator = TransitionOperator();
-    var stamps : [Stamp] = [Stamp(title: "부산 여행", startDate: "111", endDate: "111"),
-                            Stamp(title: "전주 여행", startDate: "111", endDate: "111"),
-                            Stamp(title: "인천 여행", startDate: "111", endDate: "111")]
+    var stamps : [Stamp] = [Stamp(title: "부산 여행", startDate: "2015-07-10", endDate:                                  "2015-07-20"),
+                            Stamp(title: "전주 여행", startDate: "2015-07-10", endDate: "2015-07-20"),
+                            Stamp(title: "인천 여행", startDate: "2015-07-10", endDate: "2015-07-20")]
     var lastIndex : Int = 0;
     
     override func viewDidLoad() {
@@ -66,9 +66,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let toViewController = segue.destinationViewController as! UIViewController
-        self.modalPresentationStyle = UIModalPresentationStyle.Custom
-        toViewController.transitioningDelegate = self.transitionOperator
+        if segue.identifier == "presentNav" {
+            let toViewController = segue.destinationViewController as! UIViewController
+            self.modalPresentationStyle = UIModalPresentationStyle.Custom
+            toViewController.transitioningDelegate = self.transitionOperator
+        } else if segue.identifier == "selectStamp" {
+            let tabVC = segue.destinationViewController as! TabViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.myCollectionView?.indexPathForCell(cell)!
+            
+            tabVC.selectedStamp = self.stamps[indexPath!.row]
+        }
     }
     
     @IBAction func cancelToMainVC(segue : UIStoryboardSegue) {

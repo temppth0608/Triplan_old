@@ -11,12 +11,15 @@ import UIKit
 class TravelViewController: UIViewController {
     
     @IBOutlet weak var myNavBar: UINavigationBar!
+    var stamp : Stamp!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
+        
+        print("aaaaa")
     }
 
     override func didReceiveMemoryWarning() {
