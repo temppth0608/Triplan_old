@@ -132,13 +132,13 @@
 			isa = PBXGroup;
 			children = (
 				E8822CED1AFDD31A00617F50 /* AppDelegate.swift */,
-				E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */,
 				E8822D481AFDF60300617F50 /* MainViewController.swift */,
 				E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */,
 				E8D76C671AFE83B700BB52FA /* AddCell.swift */,
 				E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */,
 				E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */,
 				E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */,
+				E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */,
 				E8AA64C51B48F72800EDF573 /* TravelViewController.swift */,
 				E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */,
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,

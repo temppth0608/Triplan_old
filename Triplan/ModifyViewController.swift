@@ -11,6 +11,8 @@ import UIKit
 class ModifyViewController: UIViewController {
 
     @IBOutlet weak var myNavBar: UINavigationBar!
+    var stamp : Stamp!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
