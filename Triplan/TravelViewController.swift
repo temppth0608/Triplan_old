@@ -18,9 +18,6 @@ class TravelViewController: UIViewController {
 
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
-        
-        print("aaaaa")
-        let a : Int?
     }
 
     override func didReceiveMemoryWarning() {

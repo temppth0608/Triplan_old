@@ -178,7 +178,7 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
         startDate = cell?.detailTextLabel?.text
         endDate = cell?.detailTextLabel?.text
         
-        println(dataArray)
+
         return cell!
     }
     
@@ -332,6 +332,5 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
         
         startDate = cell?.detailTextLabel?.text
         endDate = cell?.detailTextLabel?.text
-        println(dataArray)
     }
 }
