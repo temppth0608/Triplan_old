@@ -40,6 +40,7 @@
 		E8D76C6E1AFE8FA900BB52FA /* AddStampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */; };
 		E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */; };
 		E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */; };
+		E8FADE421B51FC26007CD38E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FADE411B51FC26007CD38E /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStampViewController.swift; sourceTree = "<group>"; };
 		E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addtrip_logo.png; sourceTree = "<group>"; };
 		E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionOperator.swift; sourceTree = "<group>"; };
+		E8FADE411B51FC26007CD38E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
 				E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */,
 				E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */,
+				E8FADE411B51FC26007CD38E /* Date.swift */,
 				E80E8A7F1B4F91870016B5B3 /* Information.swift */,
 				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
 				E8822CF41AFDD31A00617F50 /* Images.xcassets */,
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */,
+				E8FADE421B51FC26007CD38E /* Date.swift in Sources */,
 				E8D76C5E1AFE600D00BB52FA /* TabViewController.swift in Sources */,
 				E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */,
 				E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */,

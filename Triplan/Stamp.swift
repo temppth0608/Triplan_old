@@ -10,17 +10,17 @@ import UIKit
 
 class Stamp {
     var title : String
-    var startDate : String!
-    var endDate : String!
-    var infos : [Information]?
+    var startDate : NSDate!
+    var endDate : NSDate!
+    var dates : [Date]?
     
     init() {
         title = ""
-        startDate = ""
-        endDate = ""
+        startDate = nil
+        endDate = nil
     }
     
-    init(title : String, startDate : String, endDate : String) {
+    init(title : String, startDate : NSDate, endDate : NSDate) {
         self.title = title
         self.startDate = startDate
         self.endDate = endDate

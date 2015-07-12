@@ -112,16 +112,7 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="7Ob-GU-Bhc">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gHB-eP-WOi">
-                                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="수정">
-                                                    <color key="titleColor" red="0.73725490199999999" green="0.73333333329999995" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="7Ob-GU-Bhc"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -251,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="1499" y="-243"/>
         </scene>
-        <!--수정-->
+        <!--설정-->
         <scene sceneID="mEL-L0-SZ0">
             <objects>
                 <viewController id="TLW-wc-tuP" customClass="ModifyViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,7 +275,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="수정" image="tab_third_off2.png" id="fDW-7H-MK4"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="tab_third_off2.png" id="fDW-7H-MK4"/>
                     <navigationItem key="navigationItem" id="apE-kP-R8i"/>
                     <connections>
                         <outlet property="myNavBar" destination="LW0-B2-TtQ" id="YEr-SK-LMw"/>
@@ -422,7 +413,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SEL-OS-MDW">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rap-mp-IZW">
@@ -445,6 +436,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="457857259.37967998">
                                                         <!--2015-07-06 06:34:19 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="dateAction:" destination="8Jm-9T-aSW" eventType="valueChanged" id="zUU-ER-SMR"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -458,7 +452,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IKc-s8-SJH">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

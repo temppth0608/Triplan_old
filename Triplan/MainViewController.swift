@@ -14,9 +14,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var myNavBar: UINavigationBar!
     
     var transitionOperator : TransitionOperator = TransitionOperator();
-    var stamps : [Stamp] = [Stamp(title: "부산 여행", startDate: "2015-07-10", endDate:                                  "2015-07-20"),
-                            Stamp(title: "전주 여행", startDate: "2015-07-10", endDate: "2015-07-20"),
-                            Stamp(title: "인천 여행", startDate: "2015-07-10", endDate: "2015-07-20")]
+    var stamps : [Stamp] = [Stamp(title: "부산 여행", startDate: NSDate(), endDate:                                  NSDate()),
+                            Stamp(title: "전주 여행", startDate: NSDate(), endDate: NSDate()),
+                            Stamp(title: "인천 여행", startDate: NSDate(), endDate: NSDate())]
     var lastIndex : Int = 0;
     
     override func viewDidLoad() {

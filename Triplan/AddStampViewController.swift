@@ -36,8 +36,8 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
     var datePickerIndexPath : NSIndexPath?
     var pickerCellRowHeight : CGFloat = 120
     let date = NSDate()
-    var startDate : String?
-    var endDate : String?
+    var startDate : NSDate?
+    var endDate : NSDate?
     
     override func viewDidLoad() {
         
@@ -57,6 +57,8 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
         dateFormatter.timeStyle = .NoStyle
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "localeChanged", name: NSCurrentLocaleDidChangeNotification, object: nil)
+        startDate = dataArray[0][kDateKey] as? NSDate
+        endDate = dataArray[1][kDateKey] as? NSDate
     }
     
     func localeChanged(notif : NSNotification) {
@@ -175,9 +177,8 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
             cell?.textLabel?.text = itemData[kTitleKey] as? String
         }
         
-        startDate = cell?.detailTextLabel?.text
-        endDate = cell?.detailTextLabel?.text
-        
+        startDate = dataArray[0][kDateKey] as? NSDate
+        endDate = dataArray[1][kDateKey] as? NSDate
 
         return cell!
     }
@@ -293,6 +294,7 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -330,7 +332,7 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
         // update the cell's date string
         cell?.detailTextLabel?.text = dateFormatter.stringFromDate(targetedDatePicker.date)
         
-        startDate = cell?.detailTextLabel?.text
-        endDate = cell?.detailTextLabel?.text
+        startDate = dataArray[0][kDateKey]! as? NSDate
+        endDate = dataArray[1][kDateKey]! as? NSDate
     }
 }
