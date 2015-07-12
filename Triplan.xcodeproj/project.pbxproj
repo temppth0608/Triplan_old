@@ -41,6 +41,7 @@
 		E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */; };
 		E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */; };
 		E8FADE421B51FC26007CD38E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FADE411B51FC26007CD38E /* Date.swift */; };
+		E8FADE501B524C96007CD38E /* StampList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8FADE4F1B524C96007CD38E /* StampList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addtrip_logo.png; sourceTree = "<group>"; };
 		E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionOperator.swift; sourceTree = "<group>"; };
 		E8FADE411B51FC26007CD38E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E8FADE4F1B524C96007CD38E /* StampList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StampList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
 				E8822CF41AFDD31A00617F50 /* Images.xcassets */,
 				E8822CF61AFDD31A00617F50 /* LaunchScreen.xib */,
+				E8FADE4F1B524C96007CD38E /* StampList.plist */,
 				E8DAD1A11AFE0B5D0085EBC2 /* Library */,
 				E8822D3B1AFDE52600617F50 /* image */,
 				E8822CEB1AFDD31A00617F50 /* Supporting Files */,
@@ -309,6 +312,7 @@
 				E8D76C541AFE5A9B00BB52FA /* tab_first_off2@2x.png in Resources */,
 				E8D76C581AFE5A9B00BB52FA /* tab_third_on2@2x.png in Resources */,
 				E8D76C571AFE5A9B00BB52FA /* tab_third_off2@2x.png in Resources */,
+				E8FADE501B524C96007CD38E /* StampList.plist in Resources */,
 				E8D76C3E1AFE550E00BB52FA /* navi_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

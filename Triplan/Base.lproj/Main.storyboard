@@ -117,7 +117,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y0N-Ca-JaJ">
-                                <rect key="frame" x="16" y="90" width="288" height="411"/>
+                                <rect key="frame" x="16" y="90" width="288" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fOp-e3-vQ7">
                                     <size key="itemSize" width="128" height="141"/>
@@ -133,10 +133,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-OI-bne">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-OI-bne">
                                                     <rect key="frame" x="2" y="17" width="125" height="108"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-eD-evY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-eD-evY">
                                                     <rect key="frame" x="15" y="79" width="99" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.15294117647058825" green="0.1803921568627451" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -145,6 +145,15 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="TRN-OI-bne" firstAttribute="centerX" secondItem="WBK-eD-evY" secondAttribute="centerX" id="4Jb-VJ-eZX"/>
+                                            <constraint firstItem="TRN-OI-bne" firstAttribute="leading" secondItem="Zox-3l-X2s" secondAttribute="leadingMargin" constant="-6" id="4kx-io-hGC"/>
+                                            <constraint firstItem="WBK-eD-evY" firstAttribute="top" secondItem="Zox-3l-X2s" secondAttribute="topMargin" constant="71" id="4mp-jI-Oak"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="TRN-OI-bne" secondAttribute="bottom" constant="8" id="6jc-vo-TDa"/>
+                                            <constraint firstItem="WBK-eD-evY" firstAttribute="leading" secondItem="Zox-3l-X2s" secondAttribute="leadingMargin" constant="7" id="6rx-qS-qb7"/>
+                                            <constraint firstItem="TRN-OI-bne" firstAttribute="centerX" secondItem="Zox-3l-X2s" secondAttribute="centerX" id="HVu-4V-akM"/>
+                                            <constraint firstItem="TRN-OI-bne" firstAttribute="top" secondItem="Zox-3l-X2s" secondAttribute="topMargin" constant="9" id="iwd-Rl-v6x"/>
+                                        </constraints>
                                         <size key="customSize" width="128" height="141"/>
                                         <connections>
                                             <outlet property="mainImageView" destination="TRN-OI-bne" id="bf6-KR-XP1"/>
@@ -159,12 +168,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cB1-Nc-Ycc">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cB1-Nc-Ycc">
                                                     <rect key="frame" x="2" y="17" width="125" height="108"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="cB1-Nc-Ycc" firstAttribute="centerX" secondItem="hR9-bg-heo" secondAttribute="centerX" id="FUS-As-Mh0"/>
+                                            <constraint firstItem="cB1-Nc-Ycc" firstAttribute="top" secondItem="hR9-bg-heo" secondAttribute="topMargin" constant="9" id="WFf-Od-gw7"/>
+                                            <constraint firstItem="cB1-Nc-Ycc" firstAttribute="leading" secondItem="hR9-bg-heo" secondAttribute="leadingMargin" constant="-6" id="Z5Z-Mw-ZiR"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="cB1-Nc-Ycc" secondAttribute="bottom" constant="8" id="ZkM-Dv-mhF"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="addImageView" destination="cB1-Nc-Ycc" id="f8E-b6-Hzh"/>
                                             <segue destination="8Jm-9T-aSW" kind="modal" identifier="addTrip" animates="NO" id="XgR-bo-b61"/>
@@ -179,13 +194,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="leading" secondItem="hyd-mm-Itl" secondAttribute="leadingMargin" id="014-QR-jRq"/>
-                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="trailing" secondItem="hyd-mm-Itl" secondAttribute="trailingMargin" id="9oa-dg-wUI"/>
-                            <constraint firstItem="bmd-t8-wmU" firstAttribute="top" secondItem="Y0N-Ca-JaJ" secondAttribute="bottom" constant="67" id="GaE-EI-Fx6"/>
+                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="top" secondItem="kRP-cD-7MA" secondAttribute="bottom" constant="26" id="2zc-jC-Z0U"/>
+                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="trailing" secondItem="hyd-mm-Itl" secondAttribute="trailingMargin" id="LSx-sl-sCJ"/>
+                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="leading" secondItem="hyd-mm-Itl" secondAttribute="leadingMargin" id="Noj-vj-512"/>
                             <constraint firstItem="kRP-cD-7MA" firstAttribute="top" secondItem="bpl-t9-xUu" secondAttribute="bottom" id="RhF-bX-vcg"/>
-                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="top" secondItem="kRP-cD-7MA" secondAttribute="bottom" constant="26" id="b3C-Ct-3we"/>
+                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="centerX" secondItem="kRP-cD-7MA" secondAttribute="centerX" id="e7T-dP-rxp"/>
                             <constraint firstItem="kRP-cD-7MA" firstAttribute="leading" secondItem="hyd-mm-Itl" secondAttribute="leading" id="gff-X0-4Qk"/>
-                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="centerX" secondItem="kRP-cD-7MA" secondAttribute="centerX" id="nWV-bV-l2V"/>
+                            <constraint firstItem="Y0N-Ca-JaJ" firstAttribute="bottom" secondItem="bmd-t8-wmU" secondAttribute="top" id="qQJ-EF-iEg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="여행" image="tab_first_off2.png" id="Sd3-6C-bgy"/>

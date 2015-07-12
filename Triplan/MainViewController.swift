@@ -14,20 +14,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var myNavBar: UINavigationBar!
     
     var transitionOperator : TransitionOperator = TransitionOperator();
-    var stamps : [Stamp] = [Stamp(title: "부산 여행", startDate: NSDate(), endDate:                                  NSDate()),
-                            Stamp(title: "전주 여행", startDate: NSDate(), endDate: NSDate()),
-                            Stamp(title: "인천 여행", startDate: NSDate(), endDate: NSDate())]
+    
+    var stamps : [Stamp] = []
     var lastIndex : Int = 0;
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        readPlistFile()
         lastIndex = stamps.endIndex
         
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
     }
-
+    
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
@@ -89,8 +89,62 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         var addStampVC = segue.sourceViewController as! AddStampViewController
         
         stamps.append(addStampVC.stamp!)
+        writePlistFile()
         self.navigationController?.popViewControllerAnimated(true)
         lastIndex++
         myCollectionView.reloadData()
+    }
+    
+    func readPlistFile() {
+        
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        var path = paths.stringByAppendingPathComponent("StampList.plist")
+        
+        var stampArr : NSArray!
+        stampArr = NSArray(contentsOfFile: path)
+        
+        if stampArr == nil {
+            println("stampArr is nil")
+        } else {
+            for index in 0 ..< stampArr.count {
+                var stampDic = stampArr[index] as! NSDictionary
+                var tmpStamp = Stamp(title: stampDic["Title"] as! String,
+                    startDate: stampDic["StartDate"] as! NSDate,
+                    endDate: stampDic["EndDate"] as! NSDate)
+                self.stamps.append(tmpStamp)
+            }
+        }
+    }
+
+    func writePlistFile() {
+        
+        var stampArr = NSMutableArray()
+        
+        for index in 0 ..< stamps.count {
+            var item : Stamp = stamps[index]
+            
+            var title : String = item.title
+            var startDate : NSDate = item.startDate
+            var endDate : NSDate = item.endDate
+            
+            var dic : NSDictionary = [
+                "Title" : title,
+                "StartDate" : startDate,
+                "EndDate" : endDate,
+            ]
+            
+            stampArr.insertObject(dic, atIndex: 0)
+            
+            var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]as! String
+            var path = paths.stringByAppendingPathComponent("StampList.plist")
+            var fileManager = NSFileManager.defaultManager()
+            if (!(fileManager.fileExistsAtPath(path)))
+            {
+                var bundle : NSString = NSBundle.mainBundle().pathForResource("StampList", ofType: "plist")!
+                fileManager.copyItemAtPath(bundle as String, toPath: path, error:nil)
+            }
+            
+            stampArr.writeToFile(path, atomically: true)
+        }
     }
 }

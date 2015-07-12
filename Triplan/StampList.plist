@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string></string>
+	<key>StartDate</key>
+	<date>2015-07-12T07:27:03Z</date>
+	<key>EndDate</key>
+	<date>2015-07-12T07:27:05Z</date>
+	<key>Dates</key>
+	<array>
+		<dict>
+			<key>Categoty</key>
+			<string></string>
+			<key>LocationTitle</key>
+			<string></string>
+			<key>Budget</key>
+			<string></string>
+			<key>Memo</key>
+			<string></string>
+			<key>Altitutde</key>
+			<string></string>
+			<key>Latitude</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>
