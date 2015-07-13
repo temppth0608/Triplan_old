@@ -99,6 +99,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         var path = paths.stringByAppendingPathComponent("StampList.plist")
+        print(path)
         
         var stampArr : NSArray!
         stampArr = NSArray(contentsOfFile: path)

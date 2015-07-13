@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E80E8A801B4F91870016B5B3 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E8A7F1B4F91870016B5B3 /* Information.swift */; };
+		E871EEB01B539E39001698DA /* DailyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAD1B539E39001698DA /* DailyCalendarView.m */; };
+		E871EEB11B539E39001698DA /* DayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAF1B539E39001698DA /* DayTitleLabel.m */; };
+		E871EEB51B539E5F001698DA /* CLWeeklyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEB41B539E5F001698DA /* CLWeeklyCalendarView.m */; };
+		E871EEBE1B539E68001698DA /* NSDate+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEB71B539E68001698DA /* NSDate+CL.m */; };
+		E871EEBF1B539E68001698DA /* NSDictionary+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEB91B539E68001698DA /* NSDictionary+CL.m */; };
+		E871EEC01B539E68001698DA /* UIColor+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEBB1B539E68001698DA /* UIColor+CL.m */; };
+		E871EEC11B539E68001698DA /* UIImage+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEBD1B539E68001698DA /* UIImage+CL.m */; };
 		E8822CEE1AFDD31A00617F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822CED1AFDD31A00617F50 /* AppDelegate.swift */; };
 		E8822CF31AFDD31A00617F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8822CF11AFDD31A00617F50 /* Main.storyboard */; };
 		E8822CF51AFDD31A00617F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8822CF41AFDD31A00617F50 /* Images.xcassets */; };
@@ -56,6 +63,21 @@
 
 /* Begin PBXFileReference section */
 		E80E8A7F1B4F91870016B5B3 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Triplan-Bridging-Header.h"; sourceTree = "<group>"; };
+		E871EEAC1B539E39001698DA /* DailyCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCalendarView.h; sourceTree = "<group>"; };
+		E871EEAD1B539E39001698DA /* DailyCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCalendarView.m; sourceTree = "<group>"; };
+		E871EEAE1B539E39001698DA /* DayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTitleLabel.h; sourceTree = "<group>"; };
+		E871EEAF1B539E39001698DA /* DayTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTitleLabel.m; sourceTree = "<group>"; };
+		E871EEB31B539E5F001698DA /* CLWeeklyCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLWeeklyCalendarView.h; sourceTree = "<group>"; };
+		E871EEB41B539E5F001698DA /* CLWeeklyCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLWeeklyCalendarView.m; sourceTree = "<group>"; };
+		E871EEB61B539E68001698DA /* NSDate+CL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CL.h"; sourceTree = "<group>"; };
+		E871EEB71B539E68001698DA /* NSDate+CL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CL.m"; sourceTree = "<group>"; };
+		E871EEB81B539E68001698DA /* NSDictionary+CL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CL.h"; sourceTree = "<group>"; };
+		E871EEB91B539E68001698DA /* NSDictionary+CL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CL.m"; sourceTree = "<group>"; };
+		E871EEBA1B539E68001698DA /* UIColor+CL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CL.h"; sourceTree = "<group>"; };
+		E871EEBB1B539E68001698DA /* UIColor+CL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CL.m"; sourceTree = "<group>"; };
+		E871EEBC1B539E68001698DA /* UIImage+CL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CL.h"; sourceTree = "<group>"; };
+		E871EEBD1B539E68001698DA /* UIImage+CL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CL.m"; sourceTree = "<group>"; };
 		E8822CE81AFDD31A00617F50 /* Triplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triplan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8822CEC1AFDD31A00617F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8822CED1AFDD31A00617F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +136,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E871EEA91B539E02001698DA /* CLWeeklyCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				E871EEB21B539E4A001698DA /* Misc */,
+				E871EEAA1B539E1B001698DA /* CLWeeklyCalendarViewSourceCode */,
+			);
+			name = CLWeeklyCalendarView;
+			sourceTree = "<group>";
+		};
+		E871EEAA1B539E1B001698DA /* CLWeeklyCalendarViewSourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				E871EEAC1B539E39001698DA /* DailyCalendarView.h */,
+				E871EEAD1B539E39001698DA /* DailyCalendarView.m */,
+				E871EEAE1B539E39001698DA /* DayTitleLabel.h */,
+				E871EEAF1B539E39001698DA /* DayTitleLabel.m */,
+				E871EEB31B539E5F001698DA /* CLWeeklyCalendarView.h */,
+				E871EEB41B539E5F001698DA /* CLWeeklyCalendarView.m */,
+				E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */,
+			);
+			name = CLWeeklyCalendarViewSourceCode;
+			sourceTree = "<group>";
+		};
+		E871EEB21B539E4A001698DA /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				E871EEB61B539E68001698DA /* NSDate+CL.h */,
+				E871EEB71B539E68001698DA /* NSDate+CL.m */,
+				E871EEB81B539E68001698DA /* NSDictionary+CL.h */,
+				E871EEB91B539E68001698DA /* NSDictionary+CL.m */,
+				E871EEBA1B539E68001698DA /* UIColor+CL.h */,
+				E871EEBB1B539E68001698DA /* UIColor+CL.m */,
+				E871EEBC1B539E68001698DA /* UIImage+CL.h */,
+				E871EEBD1B539E68001698DA /* UIImage+CL.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
 		E8822CDF1AFDD31A00617F50 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +195,7 @@
 		E8822CEA1AFDD31A00617F50 /* Triplan */ = {
 			isa = PBXGroup;
 			children = (
+				E871EEA91B539E02001698DA /* CLWeeklyCalendarView */,
 				E8822CED1AFDD31A00617F50 /* AppDelegate.swift */,
 				E8822D481AFDF60300617F50 /* MainViewController.swift */,
 				E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */,
@@ -331,12 +392,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E871EEBE1B539E68001698DA /* NSDate+CL.m in Sources */,
 				E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */,
 				E8FADE421B51FC26007CD38E /* Date.swift in Sources */,
 				E8D76C5E1AFE600D00BB52FA /* TabViewController.swift in Sources */,
 				E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */,
+				E871EEBF1B539E68001698DA /* NSDictionary+CL.m in Sources */,
 				E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */,
+				E871EEB11B539E39001698DA /* DayTitleLabel.m in Sources */,
 				E8D76C301AFE4F9B00BB52FA /* Stamp.swift in Sources */,
+				E871EEC01B539E68001698DA /* UIColor+CL.m in Sources */,
+				E871EEB01B539E39001698DA /* DailyCalendarView.m in Sources */,
 				E8D76C6E1AFE8FA900BB52FA /* AddStampViewController.swift in Sources */,
 				E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */,
 				E8AA64C61B48F72800EDF573 /* TravelViewController.swift in Sources */,
@@ -344,7 +410,9 @@
 				E8822CEE1AFDD31A00617F50 /* AppDelegate.swift in Sources */,
 				E8D76C681AFE83B700BB52FA /* AddCell.swift in Sources */,
 				E8822D4B1AFDF6D500617F50 /* SlidePanelViewController.swift in Sources */,
+				E871EEC11B539E68001698DA /* UIImage+CL.m in Sources */,
 				E8822D491AFDF60300617F50 /* MainViewController.swift in Sources */,
+				E871EEB51B539E5F001698DA /* CLWeeklyCalendarView.m in Sources */,
 				E8AA64CC1B4A450C00EDF573 /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,10 +536,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Triplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ParkTaeHyun/Desktop/Triplan/Triplan/Triplan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -479,10 +550,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Triplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ParkTaeHyun/Desktop/Triplan/Triplan/Triplan-Bridging-Header.h";
 			};
 			name = Release;
 		};

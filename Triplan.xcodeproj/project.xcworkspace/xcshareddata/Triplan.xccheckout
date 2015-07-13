@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>5F02FD3A-5867-48B1-8052-855E58F1B7B9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Triplan</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>65237EB3A689E2D8BBFA8BFE685CD5575D184AA2</key>
 		<string>https://github.com/ppth0608/Triplan.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Triplan.xcodeproj</string>
+	<string>Triplan.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>65237EB3A689E2D8BBFA8BFE685CD5575D184AA2</key>
