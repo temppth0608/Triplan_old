@@ -16,9 +16,9 @@
 #import "UIImage+CL.h"
 
 #define WEEKLY_VIEW_COUNT 7
-#define DAY_TITLE_VIEW_HEIGHT 20.f
+#define DAY_TITLE_VIEW_HEIGHT 10.f
 #define DAY_TITLE_FONT_SIZE 11.f
-#define DATE_TITLE_MARGIN_TOP 22.f
+#define DATE_TITLE_MARGIN_TOP 8.f
 
 #define DATE_VIEW_MARGIN 3.f
 #define DATE_VIEW_HEIGHT 28.f
@@ -43,8 +43,8 @@ NSString *const CLCalendarBackgroundImageColor = @"CLCalendarBackgroundImageColo
 
 //Default Values
 static NSInteger const CLCalendarWeekStartDayDefault = 1;
-static NSInteger const CLCalendarDayTitleTextColorDefault = 0xC2E8FF;
-static NSString* const CLCalendarSelectedDatePrintFormatDefault = @"EEE, d MMM yyyy";
+static NSInteger const CLCalendarDayTitleTextColorDefault = 0x000000;
+static NSString* const CLCalendarSelectedDatePrintFormatDefault = @"yy년 MM월";
 static float const CLCalendarSelectedDatePrintFontSizeDefault = 13.f;
 
 
@@ -107,7 +107,7 @@ static float const CLCalendarSelectedDatePrintFontSizeDefault = 13.f;
     
     self.selectedDatePrintFontSize = attributes[CLCalendarSelectedDatePrintFontSize]? [attributes[CLCalendarSelectedDatePrintFontSize] floatValue] : CLCalendarSelectedDatePrintFontSizeDefault;
     
-    NSLog(@"%@  %f", attributes[CLCalendarBackgroundImageColor],  self.selectedDatePrintFontSize);
+//    NSLog(@"%@  %f", attributes[CLCalendarBackgroundImageColor],  self.selectedDatePrintFontSize);
     self.backgroundImageColor = attributes[CLCalendarBackgroundImageColor];
     
     [self setNeedsDisplay];

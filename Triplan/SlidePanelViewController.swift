@@ -49,10 +49,10 @@ class SlidePanelViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        dismissViewControllerAnimated(true, completion: nil)
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         

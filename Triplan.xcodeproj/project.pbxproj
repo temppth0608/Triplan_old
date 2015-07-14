@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E80E8A801B4F91870016B5B3 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E8A7F1B4F91870016B5B3 /* Information.swift */; };
+		E81571ED1B5411CF008B7D30 /* Detailpage_etc.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571E81B5411CF008B7D30 /* Detailpage_etc.png */; };
+		E81571EE1B5411CF008B7D30 /* Detailpage_food.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571E91B5411CF008B7D30 /* Detailpage_food.png */; };
+		E81571EF1B5411CF008B7D30 /* Detailpage_hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571EA1B5411CF008B7D30 /* Detailpage_hotel.png */; };
+		E81571F01B5411CF008B7D30 /* Detailpage_landmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571EB1B5411CF008B7D30 /* Detailpage_landmark.png */; };
+		E81571F11B5411CF008B7D30 /* Detailpage_trip.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571EC1B5411CF008B7D30 /* Detailpage_trip.png */; };
+		E81571F81B541208008B7D30 /* addpaln_ect.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571F21B541207008B7D30 /* addpaln_ect.png */; };
+		E81571F91B541208008B7D30 /* addpaln_food.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571F31B541207008B7D30 /* addpaln_food.png */; };
+		E81571FA1B541208008B7D30 /* addpaln_hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571F41B541207008B7D30 /* addpaln_hotel.png */; };
+		E81571FB1B541208008B7D30 /* addpaln_landmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571F51B541207008B7D30 /* addpaln_landmark.png */; };
+		E81571FC1B541208008B7D30 /* addpaln_location.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571F61B541207008B7D30 /* addpaln_location.png */; };
+		E81571FD1B541208008B7D30 /* addpaln_train.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571F71B541207008B7D30 /* addpaln_train.png */; };
+		E81571FF1B54D942008B7D30 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */; };
+		E816051E1B54DF3600804E0F /* navigation-17.png in Resources */ = {isa = PBXBuildFile; fileRef = E816051D1B54DF3600804E0F /* navigation-17.png */; };
+		E81605201B54E18B00804E0F /* AddDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */; };
 		E871EEB01B539E39001698DA /* DailyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAD1B539E39001698DA /* DailyCalendarView.m */; };
 		E871EEB11B539E39001698DA /* DayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAF1B539E39001698DA /* DayTitleLabel.m */; };
 		E871EEB51B539E5F001698DA /* CLWeeklyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEB41B539E5F001698DA /* CLWeeklyCalendarView.m */; };
@@ -63,6 +77,20 @@
 
 /* Begin PBXFileReference section */
 		E80E8A7F1B4F91870016B5B3 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		E81571E81B5411CF008B7D30 /* Detailpage_etc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detailpage_etc.png; sourceTree = "<group>"; };
+		E81571E91B5411CF008B7D30 /* Detailpage_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detailpage_food.png; sourceTree = "<group>"; };
+		E81571EA1B5411CF008B7D30 /* Detailpage_hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detailpage_hotel.png; sourceTree = "<group>"; };
+		E81571EB1B5411CF008B7D30 /* Detailpage_landmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detailpage_landmark.png; sourceTree = "<group>"; };
+		E81571EC1B5411CF008B7D30 /* Detailpage_trip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detailpage_trip.png; sourceTree = "<group>"; };
+		E81571F21B541207008B7D30 /* addpaln_ect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addpaln_ect.png; sourceTree = "<group>"; };
+		E81571F31B541207008B7D30 /* addpaln_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addpaln_food.png; sourceTree = "<group>"; };
+		E81571F41B541207008B7D30 /* addpaln_hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addpaln_hotel.png; sourceTree = "<group>"; };
+		E81571F51B541207008B7D30 /* addpaln_landmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addpaln_landmark.png; sourceTree = "<group>"; };
+		E81571F61B541207008B7D30 /* addpaln_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addpaln_location.png; sourceTree = "<group>"; };
+		E81571F71B541207008B7D30 /* addpaln_train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addpaln_train.png; sourceTree = "<group>"; };
+		E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		E816051D1B54DF3600804E0F /* navigation-17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-17.png"; sourceTree = "<group>"; };
+		E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailTableViewCell.swift; sourceTree = "<group>"; };
 		E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Triplan-Bridging-Header.h"; sourceTree = "<group>"; };
 		E871EEAC1B539E39001698DA /* DailyCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCalendarView.h; sourceTree = "<group>"; };
 		E871EEAD1B539E39001698DA /* DailyCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCalendarView.m; sourceTree = "<group>"; };
@@ -205,6 +233,8 @@
 				E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */,
 				E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */,
 				E8AA64C51B48F72800EDF573 /* TravelViewController.swift */,
+				E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */,
+				E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */,
 				E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */,
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
 				E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */,
@@ -250,6 +280,18 @@
 		E8822D3B1AFDE52600617F50 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E81571F21B541207008B7D30 /* addpaln_ect.png */,
+				E81571F31B541207008B7D30 /* addpaln_food.png */,
+				E81571F41B541207008B7D30 /* addpaln_hotel.png */,
+				E816051D1B54DF3600804E0F /* navigation-17.png */,
+				E81571F51B541207008B7D30 /* addpaln_landmark.png */,
+				E81571F61B541207008B7D30 /* addpaln_location.png */,
+				E81571F71B541207008B7D30 /* addpaln_train.png */,
+				E81571E81B5411CF008B7D30 /* Detailpage_etc.png */,
+				E81571E91B5411CF008B7D30 /* Detailpage_food.png */,
+				E81571EA1B5411CF008B7D30 /* Detailpage_hotel.png */,
+				E81571EB1B5411CF008B7D30 /* Detailpage_landmark.png */,
+				E81571EC1B5411CF008B7D30 /* Detailpage_trip.png */,
 				E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */,
 				E8D76C6B1AFE8BEF00BB52FA /* navi_back-04.png */,
 				E8D76C691AFE899100BB52FA /* panel_logo_hehe.jpeg */,
@@ -356,25 +398,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81571FB1B541208008B7D30 /* addpaln_landmark.png in Resources */,
 				E8D76C561AFE5A9B00BB52FA /* tab_second_on2@2x.png in Resources */,
 				E8D76C6A1AFE899100BB52FA /* panel_logo_hehe.jpeg in Resources */,
+				E81571FD1B541208008B7D30 /* addpaln_train.png in Resources */,
+				E81571F81B541208008B7D30 /* addpaln_ect.png in Resources */,
 				E8D76C5C1AFE5CE700BB52FA /* firstpage.png in Resources */,
 				E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */,
+				E81571F11B5411CF008B7D30 /* Detailpage_trip.png in Resources */,
+				E81571ED1B5411CF008B7D30 /* Detailpage_etc.png in Resources */,
 				E8D76C661AFE80FC00BB52FA /* panel_image.jpg in Resources */,
+				E81571F91B541208008B7D30 /* addpaln_food.png in Resources */,
 				E8D76C621AFE663B00BB52FA /* main_stamp_add.png in Resources */,
 				E8822CF31AFDD31A00617F50 /* Main.storyboard in Resources */,
 				E8D76C5A1AFE5ACE00BB52FA /* tab_second_off3@2x.png in Resources */,
 				E8822CF81AFDD31A00617F50 /* LaunchScreen.xib in Resources */,
+				E816051E1B54DF3600804E0F /* navigation-17.png in Resources */,
 				E8D76C6C1AFE8BEF00BB52FA /* navi_back-04.png in Resources */,
 				E8D76C401AFE578300BB52FA /* navi_menu@2x.png in Resources */,
 				E8822CF51AFDD31A00617F50 /* Images.xcassets in Resources */,
 				E8D76C551AFE5A9B00BB52FA /* tab_first_on2@2x.png in Resources */,
+				E81571FC1B541208008B7D30 /* addpaln_location.png in Resources */,
 				E8D76C601AFE663200BB52FA /* main_stamp_off.png in Resources */,
 				E8D76C541AFE5A9B00BB52FA /* tab_first_off2@2x.png in Resources */,
+				E81571F01B5411CF008B7D30 /* Detailpage_landmark.png in Resources */,
 				E8D76C581AFE5A9B00BB52FA /* tab_third_on2@2x.png in Resources */,
 				E8D76C571AFE5A9B00BB52FA /* tab_third_off2@2x.png in Resources */,
+				E81571EF1B5411CF008B7D30 /* Detailpage_hotel.png in Resources */,
+				E81571FA1B541208008B7D30 /* addpaln_hotel.png in Resources */,
 				E8FADE501B524C96007CD38E /* StampList.plist in Resources */,
 				E8D76C3E1AFE550E00BB52FA /* navi_back@2x.png in Resources */,
+				E81571EE1B5411CF008B7D30 /* Detailpage_food.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +452,9 @@
 				E8D76C5E1AFE600D00BB52FA /* TabViewController.swift in Sources */,
 				E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */,
 				E871EEBF1B539E68001698DA /* NSDictionary+CL.m in Sources */,
+				E81605201B54E18B00804E0F /* AddDetailTableViewCell.swift in Sources */,
 				E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */,
+				E81571FF1B54D942008B7D30 /* DetailTableViewCell.swift in Sources */,
 				E871EEB11B539E39001698DA /* DayTitleLabel.m in Sources */,
 				E8D76C301AFE4F9B00BB52FA /* Stamp.swift in Sources */,
 				E871EEC01B539E68001698DA /* UIColor+CL.m in Sources */,

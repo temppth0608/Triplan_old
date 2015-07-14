@@ -95,7 +95,7 @@
 }
 -(UIColor *)colorByDate
 {
-    return [self.date isPastDate]?[UIColor colorWithHex:0x7BD1FF]:[UIColor whiteColor];
+    return [self.date isPastDate]?[UIColor colorWithHex:0x000000]:[UIColor whiteColor];
 }
 
 -(void)dailyViewDidClick: (UIGestureRecognizer *)tap

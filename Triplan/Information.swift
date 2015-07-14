@@ -9,18 +9,27 @@
 import UIKit
 
 class Information {
-    var category : String?
-    var locationTitle : String?
-    var budget : Int?
-    var memo : String?
-    var altitude : String?
-    var latitude : String?
+    var category : String
+    var locationTitle : String
+    var budget : Int
+    var memo : String
+    var altitude : String
+    var latitude : String
     
     init() {
         category = ""
         locationTitle = ""
         budget = 0
         memo = ""
+        altitude = ""
+        latitude = ""
+    }
+    
+    init(pCategory : String, pLocationTitle : String, pBudget : Int, pMemo : String) {
+        category = pCategory
+        locationTitle = pLocationTitle
+        budget = pBudget
+        memo = pMemo
         altitude = ""
         latitude = ""
     }
