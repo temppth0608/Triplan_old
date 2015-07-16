@@ -110,7 +110,9 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="7Ob-GU-Bhc"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="7Ob-GU-Bhc">
+                                            <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -337,7 +339,7 @@
                                 <rect key="frame" x="0.0" y="170" width="320" height="349"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="62" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="71" id="hqt-pw-5Xb" customClass="DetailTableViewCell" customModule="Triplan" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="hqt-pw-5Xb" customClass="DetailTableViewCell" customModule="Triplan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hqt-pw-5Xb" id="NYJ-rv-5kv">
@@ -347,7 +349,7 @@
                                                     <rect key="frame" x="20" y="0.0" width="23" height="23"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODm-CL-fQE">
-                                                    <rect key="frame" x="30" y="23" width="3" height="87"/>
+                                                    <rect key="frame" x="30" y="23" width="3" height="57"/>
                                                     <color key="backgroundColor" red="0.92549019610000005" green="0.91372549020000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLl-au-1JC">
@@ -378,7 +380,7 @@
                                             <outlet property="lineImageView" destination="ODm-CL-fQE" id="9hd-Hu-h7M"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddDetailCell" rowHeight="44" id="3Jp-tr-abe" customClass="AddDetailTableViewCell" customModule="Triplan" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddDetailCell" id="3Jp-tr-abe" customClass="AddDetailTableViewCell" customModule="Triplan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Jp-tr-abe" id="Fir-UI-taE">
@@ -402,6 +404,7 @@
                                         <connections>
                                             <outlet property="addImageView" destination="eEX-GO-lSS" id="2ge-eT-BRf"/>
                                             <outlet property="addLabel" destination="EQX-J8-fbF" id="fCD-zU-obh"/>
+                                            <segue destination="vpx-zr-HMG" kind="modal" identifier="SelectAddInfo" id="eew-7b-0Ml"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -430,6 +433,166 @@
                 <exit id="8wA-AY-Xph" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1499" y="-913"/>
+        </scene>
+        <!--Add Infomation View Controller-->
+        <scene sceneID="c2s-xG-2K3">
+            <objects>
+                <viewController id="vpx-zr-HMG" customClass="AddInfomationViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="exJ-pL-GfP"/>
+                        <viewControllerLayoutGuide type="bottom" id="URQ-tn-gij"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y3t-sO-qxC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bg-hj-tHG">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="tintColor" red="0.3529411764705882" green="0.7803921568627451" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.1137254902" green="0.12941176469999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="추가하기" id="ihW-XL-WaD">
+                                        <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="2TS-5R-wdN">
+                                            <connections>
+                                                <segue destination="FvC-zq-54H" kind="unwind" unwindAction="cancelToTravelVC:" id="skL-aP-s0k"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="확인" id="4mi-je-Iwa">
+                                            <connections>
+                                                <segue destination="FvC-zq-54H" kind="unwind" identifier="SaveInfomation" unwindAction="saveInfomation:" id="o9T-ic-DvU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="교통" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87j-Dj-BRT">
+                                <rect key="frame" x="8" y="187" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="맛집" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL7-ks-XnS">
+                                <rect key="frame" x="75" y="187" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="명소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD6-MM-qhV">
+                                <rect key="frame" x="140" y="187" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="숙박" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P01-s4-hGc">
+                                <rect key="frame" x="205" y="187" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="기타" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkf-Gt-77f">
+                                <rect key="frame" x="271" y="187" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bki-9E-qVw">
+                                <rect key="frame" x="16" y="154" width="25" height="25"/>
+                                <state key="normal" title="Button" image="addpaln_train.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCategoryButton:" destination="vpx-zr-HMG" eventType="touchUpInside" id="4K0-RW-LR9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teX-RK-1R2">
+                                <rect key="frame" x="84" y="154" width="25" height="25"/>
+                                <state key="normal" title="Button" image="addpaln_food.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCategoryButton:" destination="vpx-zr-HMG" eventType="touchUpInside" id="MD1-CH-WoI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSv-vg-WdY">
+                                <rect key="frame" x="149" y="154" width="25" height="25"/>
+                                <state key="normal" title="Button" image="addpaln_landmark.png"/>
+                                <connections>
+                                    <action selector="touchCategoryButton:" destination="vpx-zr-HMG" eventType="touchUpInside" id="hmR-bC-7Yk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyr-Bw-Tyb">
+                                <rect key="frame" x="214" y="154" width="25" height="25"/>
+                                <state key="normal" title="Button" image="addpaln_hotel.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCategoryButton:" destination="vpx-zr-HMG" eventType="touchUpInside" id="NKn-8C-5Qw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW5-RR-6Wn">
+                                <rect key="frame" x="280" y="154" width="25" height="25"/>
+                                <state key="normal" title="Button" image="addpaln_ect.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCategoryButton:" destination="vpx-zr-HMG" eventType="touchUpInside" id="erL-NF-6DS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-o1-Q1H">
+                                <rect key="frame" x="8" y="224" width="305" height="1"/>
+                                <color key="backgroundColor" red="0.76078431369999999" green="0.76078431369999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-I2-wIX">
+                                <rect key="frame" x="8" y="270" width="305" height="1"/>
+                                <color key="backgroundColor" red="0.76078431369999999" green="0.76078431369999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1C7-cP-mZy">
+                                <rect key="frame" x="7" y="316" width="305" height="1"/>
+                                <color key="backgroundColor" red="0.76078431369999999" green="0.76078431369999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="장소를 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7u6-CB-K5g">
+                                <rect key="frame" x="8" y="226" width="258" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="메모작성" translatesAutoresizingMaskIntoConstraints="NO" id="eMp-lq-n1h">
+                                <rect key="frame" x="7" y="325" width="305" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.76078431372549016" green="0.76078431372549016" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="금액을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyi-e1-Hf7">
+                                <rect key="frame" x="8" y="272" width="258" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjR-se-Y6L">
+                                <rect key="frame" x="284" y="237" width="17" height="22"/>
+                                <state key="normal" title="Button" image="addpaln_location.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="budgetTextField" destination="lyi-e1-Hf7" id="ark-b1-caW"/>
+                        <outlet property="locationTextField" destination="7u6-CB-K5g" id="A83-0s-VEH"/>
+                        <outlet property="memoTextView" destination="eMp-lq-n1h" id="fXT-Xv-O5y"/>
+                        <outlet property="myNavBar" destination="6Bg-hj-tHG" id="wZw-Sc-iBR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9f-7m-VVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FvC-zq-54H" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="-913"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="qZL-u7-a5E">
@@ -619,6 +782,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addpaln_ect.png" width="80" height="80"/>
+        <image name="addpaln_food.png" width="80" height="80"/>
+        <image name="addpaln_hotel.png" width="80" height="80"/>
+        <image name="addpaln_landmark.png" width="80" height="80"/>
+        <image name="addpaln_location.png" width="60" height="78"/>
+        <image name="addpaln_train.png" width="80" height="80"/>
         <image name="addtrip_logo.png" width="666" height="309"/>
         <image name="navi_back.png" width="22" height="22"/>
         <image name="navi_menu.png" width="22" height="22"/>

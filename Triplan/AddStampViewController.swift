@@ -15,6 +15,7 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var myTable: UITableView!
     @IBOutlet weak var titleTextField: UITextField!
     
+    //stamp 객체 생성
     var stamp : Stamp?
     
     let kPickerAnimationDuration = 0.40    // duration for the animation to slide the date picker into view
@@ -47,6 +48,7 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
         
         myTable.delegate = self
         myTable.dataSource = self
+        titleTextField.delegate = self
         
         let itemOne = [kTitleKey : "출발", kDateKey : NSDate()]
         let itemTwo = [kTitleKey : "도착", kDateKey : NSDate()]
@@ -243,7 +245,8 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
             displayInlineDatePickerForRowAtIndexPath(indexPath)
         } else {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        }        
+        }
+        self.view.endEditing(true)
     }
     
     
@@ -292,8 +295,6 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
         self.titleTextField.resignFirstResponder()
         return true
     }
-    
-    
     
     // MARK: - Navigation
     

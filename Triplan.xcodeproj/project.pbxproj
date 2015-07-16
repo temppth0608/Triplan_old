@@ -22,6 +22,9 @@
 		E81571FF1B54D942008B7D30 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */; };
 		E816051E1B54DF3600804E0F /* navigation-17.png in Resources */ = {isa = PBXBuildFile; fileRef = E816051D1B54DF3600804E0F /* navigation-17.png */; };
 		E81605201B54E18B00804E0F /* AddDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */; };
+		E81605231B5570EF00804E0F /* plan_addplan.png in Resources */ = {isa = PBXBuildFile; fileRef = E81605211B5570EF00804E0F /* plan_addplan.png */; };
+		E81605241B5570EF00804E0F /* plan_date_click.png in Resources */ = {isa = PBXBuildFile; fileRef = E81605221B5570EF00804E0F /* plan_date_click.png */; };
+		E836256A1B56377100689A29 /* AddInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83625691B56377100689A29 /* AddInfomationViewController.swift */; };
 		E871EEB01B539E39001698DA /* DailyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAD1B539E39001698DA /* DailyCalendarView.m */; };
 		E871EEB11B539E39001698DA /* DayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAF1B539E39001698DA /* DayTitleLabel.m */; };
 		E871EEB51B539E5F001698DA /* CLWeeklyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEB41B539E5F001698DA /* CLWeeklyCalendarView.m */; };
@@ -61,7 +64,6 @@
 		E8D76C6E1AFE8FA900BB52FA /* AddStampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */; };
 		E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */; };
 		E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */; };
-		E8FADE421B51FC26007CD38E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FADE411B51FC26007CD38E /* Date.swift */; };
 		E8FADE501B524C96007CD38E /* StampList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8FADE4F1B524C96007CD38E /* StampList.plist */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,9 @@
 		E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		E816051D1B54DF3600804E0F /* navigation-17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-17.png"; sourceTree = "<group>"; };
 		E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailTableViewCell.swift; sourceTree = "<group>"; };
+		E81605211B5570EF00804E0F /* plan_addplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plan_addplan.png; sourceTree = "<group>"; };
+		E81605221B5570EF00804E0F /* plan_date_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plan_date_click.png; sourceTree = "<group>"; };
+		E83625691B56377100689A29 /* AddInfomationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInfomationViewController.swift; sourceTree = "<group>"; };
 		E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Triplan-Bridging-Header.h"; sourceTree = "<group>"; };
 		E871EEAC1B539E39001698DA /* DailyCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCalendarView.h; sourceTree = "<group>"; };
 		E871EEAD1B539E39001698DA /* DailyCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCalendarView.m; sourceTree = "<group>"; };
@@ -142,7 +147,6 @@
 		E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStampViewController.swift; sourceTree = "<group>"; };
 		E8D76C6F1AFE923400BB52FA /* addtrip_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addtrip_logo.png; sourceTree = "<group>"; };
 		E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionOperator.swift; sourceTree = "<group>"; };
-		E8FADE411B51FC26007CD38E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E8FADE4F1B524C96007CD38E /* StampList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StampList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,11 +239,11 @@
 				E8AA64C51B48F72800EDF573 /* TravelViewController.swift */,
 				E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */,
 				E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */,
+				E83625691B56377100689A29 /* AddInfomationViewController.swift */,
 				E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */,
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
 				E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */,
 				E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */,
-				E8FADE411B51FC26007CD38E /* Date.swift */,
 				E80E8A7F1B4F91870016B5B3 /* Information.swift */,
 				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
 				E8822CF41AFDD31A00617F50 /* Images.xcassets */,
@@ -280,6 +284,8 @@
 		E8822D3B1AFDE52600617F50 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E81605211B5570EF00804E0F /* plan_addplan.png */,
+				E81605221B5570EF00804E0F /* plan_date_click.png */,
 				E81571F21B541207008B7D30 /* addpaln_ect.png */,
 				E81571F31B541207008B7D30 /* addpaln_food.png */,
 				E81571F41B541207008B7D30 /* addpaln_hotel.png */,
@@ -399,7 +405,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E81571FB1B541208008B7D30 /* addpaln_landmark.png in Resources */,
+				E81605231B5570EF00804E0F /* plan_addplan.png in Resources */,
 				E8D76C561AFE5A9B00BB52FA /* tab_second_on2@2x.png in Resources */,
+				E81605241B5570EF00804E0F /* plan_date_click.png in Resources */,
 				E8D76C6A1AFE899100BB52FA /* panel_logo_hehe.jpeg in Resources */,
 				E81571FD1B541208008B7D30 /* addpaln_train.png in Resources */,
 				E81571F81B541208008B7D30 /* addpaln_ect.png in Resources */,
@@ -448,8 +456,8 @@
 			files = (
 				E871EEBE1B539E68001698DA /* NSDate+CL.m in Sources */,
 				E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */,
-				E8FADE421B51FC26007CD38E /* Date.swift in Sources */,
 				E8D76C5E1AFE600D00BB52FA /* TabViewController.swift in Sources */,
+				E836256A1B56377100689A29 /* AddInfomationViewController.swift in Sources */,
 				E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */,
 				E871EEBF1B539E68001698DA /* NSDictionary+CL.m in Sources */,
 				E81605201B54E18B00804E0F /* AddDetailTableViewCell.swift in Sources */,

@@ -15,7 +15,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var transitionOperator : TransitionOperator = TransitionOperator();
     
+    // 스탬프 클래스 배열 생성
     var stamps : [Stamp] = []
+    // 스탬프 클래스의 마지막 인덱스 저장 변수
     var lastIndex : Int = 0;
     
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         readPlistFile()
         lastIndex = stamps.endIndex
         
+        //네비게이션 바 경계선 지정
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
     }
@@ -33,6 +36,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Collection View Delete, DataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         var items = stamps.count
@@ -59,24 +63,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    // MARK: - IBAction function
     @IBAction func presentNavigation(sender: AnyObject?){
         
         performSegueWithIdentifier("presentNav", sender: self)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "presentNav" {
-            let toViewController = segue.destinationViewController as! UIViewController
-            self.modalPresentationStyle = UIModalPresentationStyle.Custom
-            toViewController.transitioningDelegate = self.transitionOperator
-        } else if segue.identifier == "selectStamp" {
-            let tabVC = segue.destinationViewController as! TabViewController
-            let cell = sender as! UICollectionViewCell
-            let indexPath = self.myCollectionView?.indexPathForCell(cell)!
-            
-            tabVC.selectedStamp = self.stamps[indexPath!.row]
-        }
     }
     
     @IBAction func cancelToMainVC(segue : UIStoryboardSegue) {
@@ -95,6 +85,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         myCollectionView.reloadData()
     }
     
+    // MARK: - Navigation Control
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "presentNav" {
+            let toViewController = segue.destinationViewController as! UIViewController
+            self.modalPresentationStyle = UIModalPresentationStyle.Custom
+            toViewController.transitioningDelegate = self.transitionOperator
+        } else if segue.identifier == "selectStamp" {
+            let tabVC = segue.destinationViewController as! TabViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.myCollectionView?.indexPathForCell(cell)!
+            
+            tabVC.selectedStamp = self.stamps[indexPath!.row]
+        }
+    }
+    
+    // MARK: - Plist File Control
     func readPlistFile() {
         
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String

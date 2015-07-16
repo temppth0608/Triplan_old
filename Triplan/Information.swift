@@ -9,6 +9,8 @@
 import UIKit
 
 class Information {
+    var stampName : String
+    var dateOfInformation : NSDate
     var category : String
     var locationTitle : String
     var budget : Int
@@ -17,6 +19,8 @@ class Information {
     var latitude : String
     
     init() {
+        stampName = ""
+        dateOfInformation = NSDate()
         category = ""
         locationTitle = ""
         budget = 0
@@ -25,7 +29,9 @@ class Information {
         latitude = ""
     }
     
-    init(pCategory : String, pLocationTitle : String, pBudget : Int, pMemo : String) {
+    init(pStampName : String, pDateOfInformation : NSDate, pCategory : String, pLocationTitle : String, pBudget : Int, pMemo : String) {
+        stampName = pStampName
+        dateOfInformation = pDateOfInformation
         category = pCategory
         locationTitle = pLocationTitle
         budget = pBudget

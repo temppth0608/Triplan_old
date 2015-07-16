@@ -11,6 +11,7 @@ import UIKit
 class TabViewController: UITabBarController , UITabBarControllerDelegate{
 
     @IBOutlet weak var myTabBar: UITabBar!
+    //선택된 stamp객체 생성
     var selectedStamp = Stamp();
     
     override func viewDidLoad() {
@@ -19,10 +20,13 @@ class TabViewController: UITabBarController , UITabBarControllerDelegate{
         self.delegate = self
         //navigation tint color
         myTabBar.tintColor = UIColor(red: 90/255.0, green: 199/255.0, blue: 211/255.0, alpha: 1)
+        
+        //3개의 각각의 VC를 배열로써 지정
         let travelVC = self.viewControllers![0] as! TravelViewController
         let statisticsVC = self.viewControllers![1] as! StatisticsViewController
         let modifyVC = self.viewControllers![2] as! ModifyViewController
         
+        //선택된 stamp객체를 각각의 VC의 stamp변수에 저장
         travelVC.stamp = self.selectedStamp
         statisticsVC.stamp = self.selectedStamp
         modifyVC.stamp = self.selectedStamp

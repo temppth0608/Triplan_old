@@ -12,18 +12,20 @@ class Stamp {
     var title : String
     var startDate : NSDate!
     var endDate : NSDate!
-    var dates : [Date]?
+    var infos : [Information]
     
     init() {
         title = ""
         startDate = nil
         endDate = nil
+        infos = []
     }
     
     init(title : String, startDate : NSDate, endDate : NSDate) {
         self.title = title
         self.startDate = startDate
         self.endDate = endDate
+        infos = []
     }
 }
 

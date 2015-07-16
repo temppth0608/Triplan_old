@@ -17,6 +17,7 @@ class SlidePanelViewController: UIViewController, UITableViewDelegate, UITableVi
         
         super.viewDidLoad()
         
+        //테이블 뷰 경계선 설정
         myTable.separatorStyle = .None
         myTable.backgroundColor = UIColor.clearColor()
         myTable.delegate = self
@@ -54,10 +55,10 @@ class SlidePanelViewController: UIViewController, UITableViewDelegate, UITableVi
 //        dismissViewControllerAnimated(true, completion: nil)
 //    }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        
-        return .LightContent
-    }
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        
+//        return .LightContent
+//    }
 
     /*
     // MARK: - Navigation
@@ -70,6 +71,7 @@ class SlidePanelViewController: UIViewController, UITableViewDelegate, UITableVi
 
 }
 
+//정적 프로토타입 셀을 위한 temp class
 class PanelMenu {
     
     var icon : String
