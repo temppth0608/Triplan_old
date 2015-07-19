@@ -261,9 +261,9 @@
 				E838A3C71B5B6C3B0052CEA3 /* MobileCoreServices.framework in Frameworks */,
 				E838A3C51B5B6C320052CEA3 /* Foundation.framework in Frameworks */,
 				E838A3C31B5B6C2B0052CEA3 /* CoreImage.framework in Frameworks */,
+				E838A34E1B5A0A160052CEA3 /* MapKit.framework in Frameworks */,
 				E838A3C11B5B6C230052CEA3 /* AVFoundation.framework in Frameworks */,
 				E838A3BF1B5B6C1C0052CEA3 /* AssetsLibrary.framework in Frameworks */,
-				E838A34E1B5A0A160052CEA3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,10 +939,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Triplan",
-					"/Users/ParkTaeHyun/Desktop/앱센터/지난",
-					"프로젝트/GoogleMaps-iOS-1.9.2",
-					"/Users/ParkTaeHyun/Desktop/앱센터/지난",
-					"프로젝트/GoogleMaps-iOS-1.9.2/GoogleMapsSDKDemos",
 				);
 				INFOPLIST_FILE = Triplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -964,10 +960,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Triplan",
-					"/Users/ParkTaeHyun/Desktop/앱센터/지난",
-					"프로젝트/GoogleMaps-iOS-1.9.2",
-					"/Users/ParkTaeHyun/Desktop/앱센터/지난",
-					"프로젝트/GoogleMaps-iOS-1.9.2/GoogleMapsSDKDemos",
 				);
 				INFOPLIST_FILE = Triplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

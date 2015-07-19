@@ -98,7 +98,7 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem id="bbd-Go-XoK">
-                                        <barButtonItem key="leftBarButtonItem" image="navi_menu.png" style="plain" id="r4G-Qr-r3E">
+                                        <barButtonItem key="leftBarButtonItem" image="navi_menu.png" id="r4G-Qr-r3E">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t2t-XF-5z4">
                                                 <rect key="frame" x="16" y="11" width="24" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,7 +110,7 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="7Ob-GU-Bhc">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="7Ob-GU-Bhc">
                                             <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="NvG-pB-q6L" kind="modal" animates="NO" id="9fe-5D-cnC"/>
@@ -210,7 +210,7 @@
                     <connections>
                         <outlet property="myCollectionView" destination="Y0N-Ca-JaJ" id="bv3-iw-kgR"/>
                         <outlet property="myNavBar" destination="kRP-cD-7MA" id="YjS-RT-G9p"/>
-                        <segue destination="8H2-C3-OIt" kind="custom" identifier="presentNav" id="4Rd-h5-0ay"/>
+                        <segue destination="8H2-C3-OIt" kind="modal" identifier="presentNav" id="4Rd-h5-0ay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjT-8D-o2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
