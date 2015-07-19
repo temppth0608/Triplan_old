@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var locationManager : CLLocationManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //사용자 위치 조회 권한을 앱 시작할때 권유함
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        
         return true
     }
 

@@ -102,7 +102,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         case 2:
             selectedCategory = "food"
         case 3:
-            selectedCategory = "location"
+            selectedCategory = "landmark"
         case 4:
             selectedCategory = "hotel"
         default:

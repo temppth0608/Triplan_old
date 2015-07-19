@@ -112,6 +112,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="7Ob-GU-Bhc">
                                             <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="NvG-pB-q6L" kind="modal" animates="NO" id="9fe-5D-cnC"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -255,7 +258,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqj-KR-h6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0SR-bG-NwR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="-243"/>
+            <point key="canvasLocation" x="2031" y="-243"/>
         </scene>
         <!--설정-->
         <scene sceneID="mEL-L0-SZ0">
@@ -299,7 +302,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybV-M5-Qbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LHl-am-5Iy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="442"/>
+            <point key="canvasLocation" x="2031" y="442"/>
         </scene>
         <!--여행-->
         <scene sceneID="3SV-Yg-5K2">
@@ -559,25 +562,28 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="장소를 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7u6-CB-K5g">
                                 <rect key="frame" x="8" y="226" width="258" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="메모작성" translatesAutoresizingMaskIntoConstraints="NO" id="eMp-lq-n1h">
                                 <rect key="frame" x="7" y="325" width="305" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.76078431372549016" green="0.76078431372549016" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="금액을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyi-e1-Hf7">
                                 <rect key="frame" x="8" y="272" width="258" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjR-se-Y6L">
-                                <rect key="frame" x="284" y="237" width="17" height="22"/>
+                                <rect key="frame" x="282" y="234" width="23" height="28"/>
                                 <state key="normal" title="Button" image="addpaln_location.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mq9-1p-21E" kind="modal" animates="NO" id="5sF-9J-gFT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -593,6 +599,68 @@
                 <exit id="FvC-zq-54H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1928" y="-913"/>
+        </scene>
+        <!--Add Location Map Kit View Controller-->
+        <scene sceneID="85k-Cc-GHk">
+            <objects>
+                <viewController id="mq9-1p-21E" customClass="AddLocationMapKitViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ITg-0X-8jx"/>
+                        <viewControllerLayoutGuide type="bottom" id="5hp-Wn-AQG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KVX-7a-i7m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="83f-RE-Ys0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QO5-5T-OIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2435" y="-913"/>
+        </scene>
+        <!--촬영-->
+        <scene sceneID="xxF-F9-TFg">
+            <objects>
+                <viewController id="C7d-pV-e0S" customClass="TGInitialViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Rl-Tm-bdG"/>
+                        <viewControllerLayoutGuide type="bottom" id="iOf-TA-gdV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D3i-p7-Vah">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMA-cz-0lt">
+                                <rect key="frame" x="0.0" y="499" width="320" height="69"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIF-GW-331">
+                                        <rect key="frame" x="14" y="20" width="77" height="30"/>
+                                        <state key="normal" title="Take Photo">
+                                            <color key="titleColor" red="0.92156862750000001" green="0.50980392159999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePhotoTapped:" destination="C7d-pV-e0S" eventType="touchUpInside" id="XcQ-gT-a79"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="firstpage.png" translatesAutoresizingMaskIntoConstraints="NO" id="q5S-mi-dHU">
+                                <rect key="frame" x="0.0" y="64" width="320" height="435"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="촬영" id="caG-CC-bjR"/>
+                    <connections>
+                        <outlet property="photoView" destination="q5S-mi-dHU" id="iXb-jL-9HM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxi-EX-PjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="140"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="qZL-u7-a5E">
@@ -614,7 +682,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCA-Z1-UKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="-243"/>
+            <point key="canvasLocation" x="1503" y="-243"/>
         </scene>
         <!--Add Stamp View Controller-->
         <scene sceneID="gEd-mW-faf">
@@ -780,6 +848,24 @@
             </objects>
             <point key="canvasLocation" x="971" y="-913"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YYE-Ql-NVx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NvG-pB-q6L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eGg-ie-9GH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C7d-pV-e0S" kind="relationship" relationship="rootViewController" id="PQD-eb-fYJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlf-Iz-j7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="507" y="140"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addpaln_ect.png" width="80" height="80"/>
@@ -789,6 +875,7 @@
         <image name="addpaln_location.png" width="60" height="78"/>
         <image name="addpaln_train.png" width="80" height="80"/>
         <image name="addtrip_logo.png" width="666" height="309"/>
+        <image name="firstpage.png" width="1280" height="2272"/>
         <image name="navi_back.png" width="22" height="22"/>
         <image name="navi_menu.png" width="22" height="22"/>
         <image name="navigation-17.png" width="1280" height="2191"/>
