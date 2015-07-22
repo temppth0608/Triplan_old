@@ -23,7 +23,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        readPlistFile()
+        readPlistFile1()
+        readPlistFile2()
         lastIndex = stamps.endIndex
         
         //네비게이션 바 경계선 지정
@@ -98,11 +99,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let indexPath = self.myCollectionView?.indexPathForCell(cell)!
             
             tabVC.selectedStamp = self.stamps[indexPath!.row]
+            
+            for index in 0 ..< stamps[indexPath!.row].infos.count {
+                var tmpInfos = stamps[indexPath!.row].infos[index]
+                println("info정보 \(index) 번째")
+                println(tmpInfos.stampName)
+                println(tmpInfos.category)
+                println(tmpInfos.locationTitle)
+                println(tmpInfos.dateOfInformation)
+                println(tmpInfos.budget)
+                println("")
+            }
         }
     }
     
     // MARK: - Plist File Control
-    func readPlistFile() {
+    func readPlistFile1() {
         
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         var path = paths.stringByAppendingPathComponent("StampList.plist")
@@ -121,6 +133,39 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.stamps.append(tmpStamp)
             }
         }
+        println(path)
+    }
+    
+    func readPlistFile2() {
+        
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        var path = paths.stringByAppendingPathComponent("InformationList.plist")
+        
+        var infoArr : NSArray!
+        infoArr = NSArray(contentsOfFile: path)
+        
+        if infoArr == nil {
+            println("infoArr is nill")
+        } else {
+            for index in 0 ..< infoArr.count {
+                var infoDic = infoArr[index] as! NSDictionary
+                var tmpInfo = Information(
+                    pStampName: infoDic["StampName"] as! String,
+                    pDateOfInformation: infoDic["DateOfInformation"] as! NSDate,
+                    pCategory: infoDic["Category"] as! String,
+                    pLocationTitle: infoDic["LocationTitle"] as! String,
+                    pBudget: infoDic["Budget"] as! Int,
+                    pMemo: infoDic["Memo"]as! String)
+                
+                for index in 0 ..< stamps.count {
+                    var tmpStamp = stamps[index]
+                    if stamps[index].title == tmpInfo.stampName {
+                        stamps[index].infos.append(tmpInfo)
+                    }
+                }
+            }
+        }
+        println(path)
     }
 
     func writePlistFile() {

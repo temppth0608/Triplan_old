@@ -8,22 +8,5 @@
 	<date>2015-07-12T07:27:03Z</date>
 	<key>EndDate</key>
 	<string></string>
-	<key>Dates</key>
-	<array>
-		<dict>
-			<key>Categoty</key>
-			<string></string>
-			<key>LocationTitle</key>
-			<string></string>
-			<key>Budget</key>
-			<string></string>
-			<key>Memo</key>
-			<string></string>
-			<key>Altitutde</key>
-			<string></string>
-			<key>Latitude</key>
-			<string></string>
-		</dict>
-	</array>
 </dict>
 </plist>

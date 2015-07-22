@@ -15,7 +15,7 @@ class TGInitialViewController: UIViewController ,TGCameraDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         TGCamera.setOption(kTGCameraOptionSaveImageToAlbum, value: true)
-        photoView.clipsToBounds = true
+        photoView.clipsToBounds = false
         var clearButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "clearTapped")
         self.navigationItem.rightBarButtonItem = clearButton
     }
@@ -30,7 +30,6 @@ class TGInitialViewController: UIViewController ,TGCameraDelegate{
     }
     
     func cameraDidTakePhoto(image: UIImage!) {
-        photoView.image = image
         dismissViewControllerAnimated(true, completion: nil)
     }
     

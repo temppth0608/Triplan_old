@@ -20,7 +20,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
     //날짜에 맞는 info들만을 보여줄 Information배열 객체 생성
     var displayInfos : [Information] = []
     //weekly calendar에서 선택된 날짜를 담는 변수
-    var selectedDate : NSDate!
+    var selectedDate : NSDate = NSDate()
     //stamp 배열의 마지막 인덱스를 저장
     var lastIndex : Int = 0
 
@@ -41,26 +41,21 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         
         myTableView.delegate = self
         myTableView.dataSource = self
-        stamp.infos = [Information(pStampName: "test",
-                                   pDateOfInformation: NSDate(),
-                                   pCategory: "test",
-                                   pLocationTitle: "test",
-                                   pBudget: 1111,
-                                   pMemo: "test") ,
-                        Information(pStampName: "test2",
-                                    pDateOfInformation: NSDate(),
-                                    pCategory: "test2",
-                                    pLocationTitle: "test2",
-                                    pBudget: 2222,
-                                    pMemo: "test2"),
-                        Information(pStampName: "test3",
-                                    pDateOfInformation: NSDate(),
-                                    pCategory: "test3",
-                                    pLocationTitle: "test3",
-                                    pBudget: 3,
-                                    pMemo: "test3")]
         
-        lastIndex = stamp.infos.endIndex
+        let formatter : NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        var stringFromSelectedDate = formatter.stringFromDate(selectedDate)
+        
+        for index in 0 ..< stamp.infos.count {
+            var stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
+            
+            if stringFromInfoDate == stringFromSelectedDate {
+                displayInfos.append(stamp.infos[index])
+            }
+        }
+        
+        lastIndex = displayInfos.endIndex
         
         // calendarView를 컨트를러에 추가
         self.view.addSubview(self.calendarView)
@@ -92,16 +87,18 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             
             if stringFromInfoDate == stringFromSelectedDate {
                 displayInfos.append(stamp.infos[index])
-                println(displayInfos[index].locationTitle)
             }
         }
+        
+        lastIndex = displayInfos.endIndex
+        
         myTableView.reloadData()
     }
     
     // MARK: - TableView DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        var items = stamp.infos.count
+        var items = displayInfos.count
         if section == 0 {
             items++
         }
@@ -120,11 +117,11 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             
             let cell = myTableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailTableViewCell
 
-            cell.detailTitleLabel.text = "\(stamp.infos[indexPath.row].locationTitle)"
-            cell.detailBudgetLabel.text = "\(stamp.infos[indexPath.row].budget) 원"
-            cell.detailContentsLabel.text = "\(stamp.infos[indexPath.row].memo)"
+            cell.detailTitleLabel.text = "\(displayInfos[indexPath.row].locationTitle)"
+            cell.detailBudgetLabel.text = "\(displayInfos[indexPath.row].budget) 원"
+            cell.detailContentsLabel.text = "\(displayInfos[indexPath.row].memo)"
                 
-            switch stamp.infos[indexPath.row].category {
+            switch displayInfos[indexPath.row].category {
             case "ect":
                 cell.detailIconImageView.image = UIImage(named: "addpaln_ect.png")
             case "food":
@@ -146,9 +143,9 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         
         switch editingStyle {
         case .Delete:
-            self.stamp.infos.removeAtIndex(indexPath.row)
+            self.displayInfos.removeAtIndex(indexPath.row)
             self.myTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            lastIndex = stamp.infos.count
+            lastIndex = displayInfos.endIndex
             
         default:
             return
@@ -183,7 +180,75 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         
         let addInformationVC = segue.sourceViewController as! AddInfomationViewController
         stamp.infos.append(addInformationVC.info)
-        lastIndex = stamp.infos.endIndex
+        writePlistFile()
+        self.navigationController?.popViewControllerAnimated(true)
+        let formatter : NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        var stringFromSelectedDate = formatter.stringFromDate(selectedDate)
+        
+        displayInfos = []
+        
+        for index in 0 ..< stamp.infos.count {
+            var stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
+            
+            if stringFromInfoDate == stringFromSelectedDate {
+                displayInfos.append(stamp.infos[index])
+            }
+        }
+        
+        lastIndex = displayInfos.endIndex
         myTableView.reloadData()
     }
+    
+    // MARK: - Plist file write
+    func writePlistFile() {
+        
+        var infoArr = NSMutableArray()
+        
+        for index in 0 ..< stamp.infos.count {
+            var item : Information = stamp.infos[index]
+            
+            var stampName = item.stampName
+            var dateOfInformation = item.dateOfInformation
+            var category = item.category
+            var locationTitle = item.locationTitle
+            var budget = item.budget
+            var memo = item.memo
+            var altitude = item.altitude
+            var latitude = item.latitude
+            
+            var dic : NSDictionary = [
+                "StampName" : stampName,
+                "DateOfInformation" : dateOfInformation,
+                "Category" : category,
+                "LocationTitle" : locationTitle,
+                "Budget" : budget,
+                "Memo" : memo,
+                "Altitude" : altitude,
+                "Latitude" : latitude
+            ]
+            
+            infoArr.insertObject(dic, atIndex: 0)
+            
+            var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]as! String
+            var path = paths.stringByAppendingPathComponent("InformationList.plist")
+            var fileManager = NSFileManager.defaultManager()
+            if (!(fileManager.fileExistsAtPath(path)))
+            {
+                var bundle : NSString = NSBundle.mainBundle().pathForResource("InformationList", ofType: "plist")!
+                fileManager.copyItemAtPath(bundle as String, toPath: path, error:nil)
+            }
+
+            infoArr.writeToFile(path, atomically: true)
+        }
+    }
 }
+
+
+
+
+
+
+
+

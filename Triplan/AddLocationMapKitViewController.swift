@@ -10,7 +10,7 @@ import UIKit
 
 class AddLocationMapKitViewController: UIViewController ,GooglePlacesAutocompleteDelegate{
     
-    let gpaViewController = GooglePlacesAutocomplete(apiKey:"AIzaSyBSaevDS-91NiS9K_n4OqJUuDmF02EpP0Y", placeType: .Address)
+    let gpaViewController = GooglePlacesAutocomplete(apiKey:"AIzaSyD6Bf1UeEtmiehMzRibwmig5YJLOYps6lU", placeType: .Address)
     
     override func viewDidLoad() {
         super.viewDidLoad()

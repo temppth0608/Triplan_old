@@ -79,9 +79,11 @@
 		E8822D491AFDF60300617F50 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D481AFDF60300617F50 /* MainViewController.swift */; };
 		E8822D4B1AFDF6D500617F50 /* SlidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */; };
 		E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */; };
+		E88F88681B5F29A30065C530 /* InformationList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E88F88671B5F29A30065C530 /* InformationList.plist */; };
 		E8AA64C61B48F72800EDF573 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64C51B48F72800EDF573 /* TravelViewController.swift */; };
 		E8AA64CC1B4A450C00EDF573 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */; };
 		E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */; };
+		E8CE84461B5BB6C50093DEB3 /* mainicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8CE84451B5BB6C50093DEB3 /* mainicon.png */; };
 		E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */; };
 		E8D76C301AFE4F9B00BB52FA /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */; };
 		E8D76C3E1AFE550E00BB52FA /* navi_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D76C3D1AFE550E00BB52FA /* navi_back@2x.png */; };
@@ -225,9 +227,11 @@
 		E8822D481AFDF60300617F50 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePanelViewController.swift; sourceTree = "<group>"; };
 		E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePanelCell.swift; sourceTree = "<group>"; };
+		E88F88671B5F29A30065C530 /* InformationList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InformationList.plist; sourceTree = "<group>"; };
 		E8AA64C51B48F72800EDF573 /* TravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyViewController.swift; sourceTree = "<group>"; };
+		E8CE84451B5BB6C50093DEB3 /* mainicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainicon.png; sourceTree = "<group>"; };
 		E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 		E8D76C3D1AFE550E00BB52FA /* navi_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_back@2x.png"; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 				E838A3A11B5B6B7A0052CEA3 /* TGCameraViewController.xcassets */,
 				E8822CF61AFDD31A00617F50 /* LaunchScreen.xib */,
 				E8FADE4F1B524C96007CD38E /* StampList.plist */,
+				E88F88671B5F29A30065C530 /* InformationList.plist */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				E8D76C6B1AFE8BEF00BB52FA /* navi_back-04.png */,
 				E8D76C691AFE899100BB52FA /* panel_logo_hehe.jpeg */,
 				E8D76C651AFE80FC00BB52FA /* panel_image.jpg */,
+				E8CE84451B5BB6C50093DEB3 /* mainicon.png */,
 				E8D76C5B1AFE5CE700BB52FA /* firstpage.png */,
 				E8D76C611AFE663B00BB52FA /* main_stamp_add.png */,
 				E8D76C5F1AFE663200BB52FA /* main_stamp_off.png */,
@@ -700,8 +706,10 @@
 				E8D76C661AFE80FC00BB52FA /* panel_image.jpg in Resources */,
 				E81571F91B541208008B7D30 /* addpaln_food.png in Resources */,
 				E8D76C621AFE663B00BB52FA /* main_stamp_add.png in Resources */,
+				E88F88681B5F29A30065C530 /* InformationList.plist in Resources */,
 				E8822CF31AFDD31A00617F50 /* Main.storyboard in Resources */,
 				E8D76C5A1AFE5ACE00BB52FA /* tab_second_off3@2x.png in Resources */,
+				E8CE84461B5BB6C50093DEB3 /* mainicon.png in Resources */,
 				E8822CF81AFDD31A00617F50 /* LaunchScreen.xib in Resources */,
 				E816051E1B54DF3600804E0F /* navigation-17.png in Resources */,
 				E8D76C6C1AFE8BEF00BB52FA /* navi_back-04.png in Resources */,
