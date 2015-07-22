@@ -27,6 +27,30 @@ class Stamp {
         self.endDate = endDate
         infos = []
     }
+    
+    func getTotalInfosBudget() -> Int {
+        
+        var totalBudget : Int = 0
+        
+        for index in 0 ..< infos.count {
+            totalBudget += infos[index].budget
+        }
+        
+        return totalBudget
+    }
+    
+    func getBudget(var categoryName : String) -> Int {
+        
+        var retBudget : Int = 0
+        
+        for index in 0 ..< infos.count {
+            if infos[index].category == categoryName {
+                retBudget += infos[index].budget
+            }
+        }
+        
+        return retBudget
+    }
 }
 
 

@@ -9,6 +9,12 @@
 import UIKit
 
 class StatisticsViewController: UIViewController {
+    @IBOutlet weak var totalMoneyLabel: UILabel!
+    @IBOutlet weak var trafficMoneyLabel: UILabel!
+    @IBOutlet weak var foodMoneyLabel: UILabel!
+    @IBOutlet weak var landscapeMoneyLabel: UILabel!
+    @IBOutlet weak var hotelMoneyLabel: UILabel!
+    @IBOutlet weak var etcMoneyLabel: UILabel!
 
     @IBOutlet weak var myNavBar: UINavigationBar!
     var stamp : Stamp!
@@ -20,23 +26,27 @@ class StatisticsViewController: UIViewController {
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
 
-        // Do any additional setup after loading the view.
+        setBudget()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //각 Budget Label에 데이터 저장
+    func setBudget() {
+        
+        var train = "train"
+        var food = "food"
+        var landmark = "landmark"
+        var hotel = "hotel"
+        var ect = "ect"
+        
+        totalMoneyLabel.text = "\(stamp.getTotalInfosBudget()) 원"
+        trafficMoneyLabel.text = "\(stamp.getBudget(train)) 원"
+        foodMoneyLabel.text = "\(stamp.getBudget(food)) 원"
+        landscapeMoneyLabel.text = "\(stamp.getBudget(landmark)) 원"
+        hotelMoneyLabel.text = "\(stamp.getBudget(hotel)) 원"
+        etcMoneyLabel.text = "\(stamp.getBudget(ect)) 원"
     }
-    */
-
 }

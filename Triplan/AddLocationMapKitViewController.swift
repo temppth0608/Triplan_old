@@ -7,20 +7,29 @@
 //
 
 import UIKit
+import MapKit
 
-class AddLocationMapKitViewController: UIViewController ,GooglePlacesAutocompleteDelegate{
+class AddLocationMapKitViewController: UIViewController ,NSURLConnectionDataDelegate{
     
-    let gpaViewController = GooglePlacesAutocomplete(apiKey:"AIzaSyD6Bf1UeEtmiehMzRibwmig5YJLOYps6lU", placeType: .Address)
+    @IBOutlet weak var autocompleteTextField: AutoCompleteTextField!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    private var responseData:NSMutableData?
+    private var selectedPointAnnotation:MKPointAnnotation?
+    private var connection:NSURLConnection?
+    
+    private let googleMapsKey = "AIzaSyD6Bf1UeEtmiehMzRibwmig5YJLOYps6lU"
+    private let baseURLString = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
+
+    var latitude : String = ""
+    var altitude : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTextField()
+        handleTextFieldInterfaces()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        gpaViewController.placeDelegate = self
-        presentViewController(gpaViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,28 +37,104 @@ class AddLocationMapKitViewController: UIViewController ,GooglePlacesAutocomplet
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func configureTextField(){
+        autocompleteTextField.autoCompleteTextColor = UIColor(red: 128.0/255.0, green: 128.0/255.0, blue: 128.0/255.0, alpha: 1.0)
+        autocompleteTextField.autoCompleteTextFont = UIFont(name: "HelveticaNeue-Light", size: 12.0)
+        autocompleteTextField.autoCompleteCellHeight = 35.0
+        autocompleteTextField.maximumAutoCompleteCount = 20
+        autocompleteTextField.hidesWhenSelected = true
+        autocompleteTextField.hidesWhenEmpty = true
+        autocompleteTextField.enableAttributedText = true
+        var attributes = [String:AnyObject]()
+        attributes[NSForegroundColorAttributeName] = UIColor.blackColor()
+        attributes[NSFontAttributeName] = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
+        autocompleteTextField.autoCompleteAttributes = attributes
     }
-    */
-
-}
-
-extension AddLocationMapKitViewController: GooglePlacesAutocompleteDelegate {
-    func placeSelected(place: Place) {
-        println(place.description)
+    
+    private func handleTextFieldInterfaces(){
+        autocompleteTextField.onTextChange = {[weak self] text in
+            if !text.isEmpty{
+                if self!.connection != nil{
+                    self!.connection!.cancel()
+                    self!.connection = nil
+                }
+                let urlString = "\(self!.baseURLString)?key=\(self!.googleMapsKey)&input=\(text)"
+                let url = NSURL(string: urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
+                if url != nil{
+                    let urlRequest = NSURLRequest(URL: url!)
+                    self!.connection = NSURLConnection(request: urlRequest, delegate: self)
+                } else if url == nil {
+                    
+                }
+            }
+        }
         
-        place.getDetails { details in
-            println(details)
+        autocompleteTextField.onSelect = {[weak self] text, indexpath in
+            Location.geocodeAddressString(text, completion: { (placemark, error) -> Void in
+                if placemark != nil{
+                    let coordinate = placemark!.location.coordinate
+                    self?.latitude = coordinate.latitude.description
+                    self?.altitude = coordinate.longitude.description                    
+                    self!.addAnnotation(coordinate, address: text)
+                    self!.mapView.setCenterCoordinate(coordinate, zoomLevel: 11, animated: true)
+                }
+            })
         }
     }
     
-    func placeViewClosed() {
-        dismissViewControllerAnimated(true, completion: nil)
+    
+    //MARK: NSURLConnectionDelegate
+    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
+        responseData = NSMutableData()
+    }
+    
+    func connection(connection: NSURLConnection, didReceiveData data: NSData) {
+        responseData?.appendData(data)
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection) {
+        if responseData != nil{
+            var error:NSError?
+            if let result = NSJSONSerialization.JSONObjectWithData(responseData!, options: nil, error: &error) as? NSDictionary{
+                let status = result["status"] as? String
+                if status == "OK"{
+                    if let predictions = result["predictions"] as? NSArray{
+                        var locations = [String]()
+                        for dict in predictions as! [NSDictionary]{
+                            locations.append(dict["description"] as! String)
+                        }
+                        self.autocompleteTextField.autoCompleteStrings = locations
+                    }
+                }
+                else{
+                    self.autocompleteTextField.autoCompleteStrings = nil
+                }
+            }
+        }
+    }
+    
+    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
+        println("Error: \(error.localizedDescription)")
+    }
+    
+    //MARK: Map Utilities
+    private func addAnnotation(coordinate:CLLocationCoordinate2D, address:String?){
+        if selectedPointAnnotation != nil{
+            mapView.removeAnnotation(selectedPointAnnotation)
+        }
+        
+        selectedPointAnnotation = MKPointAnnotation()
+        selectedPointAnnotation?.coordinate = coordinate
+        selectedPointAnnotation?.title = address
+        mapView.addAnnotation(selectedPointAnnotation)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "SaveLocation" {
+            
+        }
     }
 }
+
+

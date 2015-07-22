@@ -14,6 +14,11 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var budgetTextField: UITextField!
     @IBOutlet weak var memoTextView: UITextView!
+    @IBOutlet weak var trafficButton: UIButton!
+    @IBOutlet weak var foodButton: UIButton!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
     
     var calendarView : CLWeeklyCalendarView!
     // 눌러진 카테고리에 스트링값 저장
@@ -23,6 +28,8 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     var selectedDate : NSDate!
     // infomation이 속한 stamp이름
     var belongedStampName : String!
+    var latitude : String!
+    var altitude : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,16 +103,42 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         //눌러진 버튼이미지의 tag값을 저장
         var selectedButton : Int = sender.tag as Int
         
+        //버튼 클릭시 이미지 변환까지
         switch selectedButton {
         case 1:
+            trafficButton.setImage(UIImage(named: "addpaln_train.png"), forState: UIControlState.Normal)
+            foodButton.setImage(UIImage(named: "add_icon_food.png"), forState: UIControlState.Normal)
+            cameraButton.setImage(UIImage(named: "add_icon_camera.png"), forState: UIControlState.Normal)
+            homeButton.setImage(UIImage(named: "add_icon_home.png"), forState: UIControlState.Normal)
+            locationButton.setImage(UIImage(named: "add_icon_spot.png"), forState: UIControlState.Normal)
             selectedCategory = "train"
         case 2:
+            trafficButton.setImage(UIImage(named: "add_icon_train.png"), forState: UIControlState.Normal)
+            foodButton.setImage(UIImage(named: "addpaln_food.png"), forState: UIControlState.Normal)
+            cameraButton.setImage(UIImage(named: "add_icon_camera.png"), forState: UIControlState.Normal)
+            homeButton.setImage(UIImage(named: "add_icon_home.png"), forState: UIControlState.Normal)
+            locationButton.setImage(UIImage(named: "add_icon_spot.png"), forState: UIControlState.Normal)
             selectedCategory = "food"
         case 3:
+            trafficButton.setImage(UIImage(named: "add_icon_train.png"), forState: UIControlState.Normal)
+            foodButton.setImage(UIImage(named: "add_icon_food.png"), forState: UIControlState.Normal)
+            cameraButton.setImage(UIImage(named: "addpaln_landmark.png"), forState: UIControlState.Normal)
+            homeButton.setImage(UIImage(named: "add_icon_home.png"), forState: UIControlState.Normal)
+            locationButton.setImage(UIImage(named: "add_icon_spot.png"), forState: UIControlState.Normal)
             selectedCategory = "landmark"
         case 4:
+            trafficButton.setImage(UIImage(named: "add_icon_train.png"), forState: UIControlState.Normal)
+            foodButton.setImage(UIImage(named: "add_icon_food.png"), forState: UIControlState.Normal)
+            cameraButton.setImage(UIImage(named: "add_icon_camera.png"), forState: UIControlState.Normal)
+            homeButton.setImage(UIImage(named: "addpaln_hotel.png"), forState: UIControlState.Normal)
+            locationButton.setImage(UIImage(named: "add_icon_spot.png"), forState: UIControlState.Normal)
             selectedCategory = "hotel"
         default:
+            trafficButton.setImage(UIImage(named: "add_icon_train.png"), forState: UIControlState.Normal)
+            foodButton.setImage(UIImage(named: "add_icon_food.png"), forState: UIControlState.Normal)
+            cameraButton.setImage(UIImage(named: "add_icon_camera.png"), forState: UIControlState.Normal)
+            homeButton.setImage(UIImage(named: "add_icon_home.png"), forState: UIControlState.Normal)
+            locationButton.setImage(UIImage(named: "addpaln_ect.png"), forState: UIControlState.Normal)
             selectedCategory = "ect"
         }
     }
@@ -114,7 +147,27 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "SaveInfomation" {
-            info = Information(pStampName: belongedStampName, pDateOfInformation: selectedDate, pCategory: selectedCategory, pLocationTitle: locationTextField.text, pBudget: budgetTextField.text.toInt()!, pMemo: memoTextView.text)
+            info = Information(
+                pStampName: belongedStampName,
+                pDateOfInformation: selectedDate,
+                pCategory: selectedCategory,
+                pLocationTitle: locationTextField.text,
+                pBudget: budgetTextField.text.toInt()!,
+                pMemo: memoTextView.text,
+                pAltitude: altitude,
+                pLatitude: latitude)
         }
+    }
+    
+    @IBAction func cancelToAddInformationVC(segue : UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func saveLocation(segue : UIStoryboardSegue) {
+        
+        let addLocationMapKitVC = segue.sourceViewController as! AddLocationMapKitViewController
+        latitude = addLocationMapKitVC.latitude
+        altitude = addLocationMapKitVC.altitude
+        locationTextField.text = addLocationMapKitVC.autocompleteTextField.text
     }
 }

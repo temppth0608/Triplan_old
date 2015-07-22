@@ -108,12 +108,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 println(tmpInfos.locationTitle)
                 println(tmpInfos.dateOfInformation)
                 println(tmpInfos.budget)
+                println(tmpInfos.altitude)
+                println(tmpInfos.latitude)
                 println("")
             }
         }
     }
     
     // MARK: - Plist File Control
+    //StampList.plist read
     func readPlistFile1() {
         
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
@@ -136,6 +139,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         println(path)
     }
     
+    //InformationList.plist read
     func readPlistFile2() {
         
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
@@ -155,7 +159,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                     pCategory: infoDic["Category"] as! String,
                     pLocationTitle: infoDic["LocationTitle"] as! String,
                     pBudget: infoDic["Budget"] as! Int,
-                    pMemo: infoDic["Memo"]as! String)
+                    pMemo: infoDic["Memo"] as! String,
+                    pAltitude: infoDic["Altitude"] as! String,
+                    pLatitude: infoDic["Latitude"] as! String
+                )
                 
                 for index in 0 ..< stamps.count {
                     var tmpStamp = stamps[index]
@@ -168,6 +175,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         println(path)
     }
 
+    //StampList.plist Write
     func writePlistFile() {
         
         var stampArr = NSMutableArray()

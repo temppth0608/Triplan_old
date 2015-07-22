@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5E8DC8FF336B2CC4FC2FB05 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702C400BB23B9C7A1687AF1 /* libPods.a */; };
 		E80E8A801B4F91870016B5B3 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E8A7F1B4F91870016B5B3 /* Information.swift */; };
 		E81571ED1B5411CF008B7D30 /* Detailpage_etc.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571E81B5411CF008B7D30 /* Detailpage_etc.png */; };
 		E81571EE1B5411CF008B7D30 /* Detailpage_food.png in Resources */ = {isa = PBXBuildFile; fileRef = E81571E91B5411CF008B7D30 /* Detailpage_food.png */; };
@@ -27,8 +28,6 @@
 		E836256A1B56377100689A29 /* AddInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83625691B56377100689A29 /* AddInfomationViewController.swift */; };
 		E838A34E1B5A0A160052CEA3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E838A34D1B5A0A160052CEA3 /* MapKit.framework */; };
 		E838A3531B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E838A3521B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift */; };
-		E838A35F1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E838A35D1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.swift */; };
-		E838A3601B5A2D810052CEA3 /* GooglePlacesAutocomplete2.xib in Resources */ = {isa = PBXBuildFile; fileRef = E838A35E1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.xib */; };
 		E838A3A21B5B6B7A0052CEA3 /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = E838A3661B5B6B7A0052CEA3 /* UIImage+CameraFilters.m */; };
 		E838A3A31B5B6B7A0052CEA3 /* TGCameraAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E838A3691B5B6B7A0052CEA3 /* TGCameraAuthorizationViewController.m */; };
 		E838A3A41B5B6B7A0052CEA3 /* TGCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E838A36B1B5B6B7A0052CEA3 /* TGCameraNavigationController.m */; };
@@ -79,7 +78,18 @@
 		E8822D491AFDF60300617F50 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D481AFDF60300617F50 /* MainViewController.swift */; };
 		E8822D4B1AFDF6D500617F50 /* SlidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */; };
 		E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */; };
+		E88334A31B60077600E4F9C2 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334A21B60077600E4F9C2 /* AutoCompleteTextField.swift */; };
+		E88334A71B60078200E4F9C2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334A41B60078200E4F9C2 /* Service.swift */; };
+		E88334A81B60078200E4F9C2 /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334A51B60078200E4F9C2 /* MKMapViewExtension.swift */; };
+		E88334A91B60078200E4F9C2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334A61B60078200E4F9C2 /* Location.swift */; };
+		E88334AB1B6007C900E4F9C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88334AA1B6007C900E4F9C2 /* CoreLocation.framework */; };
+		E88334AD1B60157800E4F9C2 /* DetailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334AC1B60157800E4F9C2 /* DetailInformationViewController.swift */; };
 		E88F88681B5F29A30065C530 /* InformationList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E88F88671B5F29A30065C530 /* InformationList.plist */; };
+		E88F886E1B5F3EB30065C530 /* add_icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F88691B5F3EB30065C530 /* add_icon_camera.png */; };
+		E88F886F1B5F3EB30065C530 /* add_icon_food.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F886A1B5F3EB30065C530 /* add_icon_food.png */; };
+		E88F88701B5F3EB30065C530 /* add_icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F886B1B5F3EB30065C530 /* add_icon_home.png */; };
+		E88F88711B5F3EB30065C530 /* add_icon_spot.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F886C1B5F3EB30065C530 /* add_icon_spot.png */; };
+		E88F88721B5F3EB30065C530 /* add_icon_train.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F886D1B5F3EB30065C530 /* add_icon_train.png */; };
 		E8AA64C61B48F72800EDF573 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64C51B48F72800EDF573 /* TravelViewController.swift */; };
 		E8AA64CC1B4A450C00EDF573 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */; };
 		E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */; };
@@ -119,6 +129,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0702C400BB23B9C7A1687AF1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E923CDF169E7D765B90B87D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B1E34470C68E92FDDDD6BDA8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E80E8A7F1B4F91870016B5B3 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		E81571E81B5411CF008B7D30 /* Detailpage_etc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detailpage_etc.png; sourceTree = "<group>"; };
 		E81571E91B5411CF008B7D30 /* Detailpage_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detailpage_food.png; sourceTree = "<group>"; };
@@ -139,8 +152,6 @@
 		E83625691B56377100689A29 /* AddInfomationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInfomationViewController.swift; sourceTree = "<group>"; };
 		E838A34D1B5A0A160052CEA3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E838A3521B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationMapKitViewController.swift; sourceTree = "<group>"; };
-		E838A35D1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete2.swift; sourceTree = "<group>"; };
-		E838A35E1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete2.xib; sourceTree = "<group>"; };
 		E838A3651B5B6B7A0052CEA3 /* UIImage+CameraFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CameraFilters.h"; sourceTree = "<group>"; };
 		E838A3661B5B6B7A0052CEA3 /* UIImage+CameraFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CameraFilters.m"; sourceTree = "<group>"; };
 		E838A3681B5B6B7A0052CEA3 /* TGCameraAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraAuthorizationViewController.h; sourceTree = "<group>"; };
@@ -227,7 +238,18 @@
 		E8822D481AFDF60300617F50 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePanelViewController.swift; sourceTree = "<group>"; };
 		E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePanelCell.swift; sourceTree = "<group>"; };
+		E88334A21B60077600E4F9C2 /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		E88334A41B60078200E4F9C2 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E88334A51B60078200E4F9C2 /* MKMapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
+		E88334A61B60078200E4F9C2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E88334AA1B6007C900E4F9C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E88334AC1B60157800E4F9C2 /* DetailInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformationViewController.swift; sourceTree = "<group>"; };
 		E88F88671B5F29A30065C530 /* InformationList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InformationList.plist; sourceTree = "<group>"; };
+		E88F88691B5F3EB30065C530 /* add_icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_camera.png; sourceTree = "<group>"; };
+		E88F886A1B5F3EB30065C530 /* add_icon_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_food.png; sourceTree = "<group>"; };
+		E88F886B1B5F3EB30065C530 /* add_icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_home.png; sourceTree = "<group>"; };
+		E88F886C1B5F3EB30065C530 /* add_icon_spot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_spot.png; sourceTree = "<group>"; };
+		E88F886D1B5F3EB30065C530 /* add_icon_train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_train.png; sourceTree = "<group>"; };
 		E8AA64C51B48F72800EDF573 /* TravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88334AB1B6007C900E4F9C2 /* CoreLocation.framework in Frameworks */,
 				E838A3C91B5B6C400052CEA3 /* UIKit.framework in Frameworks */,
 				E838A3C71B5B6C3B0052CEA3 /* MobileCoreServices.framework in Frameworks */,
 				E838A3C51B5B6C320052CEA3 /* Foundation.framework in Frameworks */,
@@ -268,6 +291,7 @@
 				E838A34E1B5A0A160052CEA3 /* MapKit.framework in Frameworks */,
 				E838A3C11B5B6C230052CEA3 /* AVFoundation.framework in Frameworks */,
 				E838A3BF1B5B6C1C0052CEA3 /* AssetsLibrary.framework in Frameworks */,
+				C5E8DC8FF336B2CC4FC2FB05 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +305,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A613B8C41C6537861567FDC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E923CDF169E7D765B90B87D /* Pods.debug.xcconfig */,
+				B1E34470C68E92FDDDD6BDA8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E838A34F1B5A0BBD0052CEA3 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,25 +331,17 @@
 		E838A3501B5A0BD90052CEA3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E8822CED1AFDD31A00617F50 /* AppDelegate.swift */,
 				E8822D481AFDF60300617F50 /* MainViewController.swift */,
 				E838A3CA1B5B6D530052CEA3 /* TGInitialViewController.swift */,
-				E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */,
-				E8D76C671AFE83B700BB52FA /* AddCell.swift */,
 				E8822D4A1AFDF6D500617F50 /* SlidePanelViewController.swift */,
-				E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */,
 				E8D76C6D1AFE8FA900BB52FA /* AddStampViewController.swift */,
 				E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */,
 				E8AA64C51B48F72800EDF573 /* TravelViewController.swift */,
-				E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */,
-				E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */,
+				E88334AC1B60157800E4F9C2 /* DetailInformationViewController.swift */,
 				E83625691B56377100689A29 /* AddInfomationViewController.swift */,
 				E838A3521B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift */,
 				E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */,
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
-				E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */,
-				E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */,
-				E80E8A7F1B4F91870016B5B3 /* Information.swift */,
 				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
 			);
 			name = ViewController;
@@ -325,23 +350,13 @@
 		E838A3511B5A0BF70052CEA3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E88F88751B5F5C3E0065C530 /* Plist File */,
 				E8822D3B1AFDE52600617F50 /* image */,
 				E8822CF41AFDD31A00617F50 /* Images.xcassets */,
 				E838A3A11B5B6B7A0052CEA3 /* TGCameraViewController.xcassets */,
 				E8822CF61AFDD31A00617F50 /* LaunchScreen.xib */,
-				E8FADE4F1B524C96007CD38E /* StampList.plist */,
-				E88F88671B5F29A30065C530 /* InformationList.plist */,
 			);
 			name = Resource;
-			sourceTree = "<group>";
-		};
-		E838A3611B5B6B5D0052CEA3 /* GooglePlacesAutocomplete */ = {
-			isa = PBXGroup;
-			children = (
-				E838A35D1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.swift */,
-				E838A35E1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.xib */,
-			);
-			name = GooglePlacesAutocomplete;
 			sourceTree = "<group>";
 		};
 		E838A3621B5B6B7A0052CEA3 /* TGCameraViewController */ = {
@@ -509,6 +524,8 @@
 				E8822CEA1AFDD31A00617F50 /* Triplan */,
 				E8822D001AFDD31B00617F50 /* TriplanTests */,
 				E8822CE91AFDD31A00617F50 /* Products */,
+				A613B8C41C6537861567FDC5 /* Pods */,
+				EB9BF1BBC66B5657ADAF9F4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -525,6 +542,9 @@
 			isa = PBXGroup;
 			children = (
 				E838A3501B5A0BD90052CEA3 /* ViewController */,
+				E88F88741B5F5C240065C530 /* Class */,
+				E88F88771B5F5CB50065C530 /* AppDelegate */,
+				E88F88761B5F5C640065C530 /* Cell */,
 				E838A3511B5A0BF70052CEA3 /* Resource */,
 				E838A34F1B5A0BBD0052CEA3 /* Framework */,
 				E8DAD1A11AFE0B5D0085EBC2 /* Library */,
@@ -561,6 +581,11 @@
 		E8822D3B1AFDE52600617F50 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E88F88691B5F3EB30065C530 /* add_icon_camera.png */,
+				E88F886A1B5F3EB30065C530 /* add_icon_food.png */,
+				E88F886B1B5F3EB30065C530 /* add_icon_home.png */,
+				E88F886C1B5F3EB30065C530 /* add_icon_spot.png */,
+				E88F886D1B5F3EB30065C530 /* add_icon_train.png */,
 				E81605211B5570EF00804E0F /* plan_addplan.png */,
 				E81605221B5570EF00804E0F /* plan_date_click.png */,
 				E81571F21B541207008B7D30 /* addpaln_ect.png */,
@@ -595,15 +620,82 @@
 			name = image;
 			sourceTree = "<group>";
 		};
+		E88334A11B60075A00E4F9C2 /* AutoComplete */ = {
+			isa = PBXGroup;
+			children = (
+				E88334A41B60078200E4F9C2 /* Service.swift */,
+				E88334A51B60078200E4F9C2 /* MKMapViewExtension.swift */,
+				E88334A61B60078200E4F9C2 /* Location.swift */,
+				E88334A21B60077600E4F9C2 /* AutoCompleteTextField.swift */,
+			);
+			name = AutoComplete;
+			sourceTree = "<group>";
+		};
+		E88F88731B5F5C040065C530 /* TransitionOperator */ = {
+			isa = PBXGroup;
+			children = (
+				E8DAD19F1AFDFEF20085EBC2 /* TransitionOperator.swift */,
+			);
+			name = TransitionOperator;
+			sourceTree = "<group>";
+		};
+		E88F88741B5F5C240065C530 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */,
+				E80E8A7F1B4F91870016B5B3 /* Information.swift */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		E88F88751B5F5C3E0065C530 /* Plist File */ = {
+			isa = PBXGroup;
+			children = (
+				E8FADE4F1B524C96007CD38E /* StampList.plist */,
+				E88F88671B5F29A30065C530 /* InformationList.plist */,
+			);
+			name = "Plist File";
+			sourceTree = "<group>";
+		};
+		E88F88761B5F5C640065C530 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */,
+				E8D76C671AFE83B700BB52FA /* AddCell.swift */,
+				E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */,
+				E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */,
+				E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		E88F88771B5F5CB50065C530 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E8822CED1AFDD31A00617F50 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
 		E8DAD1A11AFE0B5D0085EBC2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E88334A11B60075A00E4F9C2 /* AutoComplete */,
 				E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */,
+				E88F88731B5F5C040065C530 /* TransitionOperator */,
 				E838A3621B5B6B7A0052CEA3 /* TGCameraViewController */,
-				E838A3611B5B6B5D0052CEA3 /* GooglePlacesAutocomplete */,
 				E871EEA91B539E02001698DA /* CLWeeklyCalendarView */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		EB9BF1BBC66B5657ADAF9F4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E88334AA1B6007C900E4F9C2 /* CoreLocation.framework */,
+				0702C400BB23B9C7A1687AF1 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,9 +705,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8822D071AFDD31B00617F50 /* Build configuration list for PBXNativeTarget "Triplan" */;
 			buildPhases = (
+				1B53FE765D9593FC2E910477 /* Check Pods Manifest.lock */,
 				E8822CE41AFDD31A00617F50 /* Sources */,
 				E8822CE51AFDD31A00617F50 /* Frameworks */,
 				E8822CE61AFDD31A00617F50 /* Resources */,
+				765C9B6F11DB6098D7081327 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -699,13 +793,15 @@
 				E81571F81B541208008B7D30 /* addpaln_ect.png in Resources */,
 				E8D76C5C1AFE5CE700BB52FA /* firstpage.png in Resources */,
 				E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */,
-				E838A3601B5A2D810052CEA3 /* GooglePlacesAutocomplete2.xib in Resources */,
 				E81571F11B5411CF008B7D30 /* Detailpage_trip.png in Resources */,
+				E88F886F1B5F3EB30065C530 /* add_icon_food.png in Resources */,
 				E838A3BC1B5B6B7A0052CEA3 /* TGCameraViewController.bundle in Resources */,
 				E81571ED1B5411CF008B7D30 /* Detailpage_etc.png in Resources */,
+				E88F88701B5F3EB30065C530 /* add_icon_home.png in Resources */,
 				E8D76C661AFE80FC00BB52FA /* panel_image.jpg in Resources */,
 				E81571F91B541208008B7D30 /* addpaln_food.png in Resources */,
 				E8D76C621AFE663B00BB52FA /* main_stamp_add.png in Resources */,
+				E88F88711B5F3EB30065C530 /* add_icon_spot.png in Resources */,
 				E88F88681B5F29A30065C530 /* InformationList.plist in Resources */,
 				E8822CF31AFDD31A00617F50 /* Main.storyboard in Resources */,
 				E8D76C5A1AFE5ACE00BB52FA /* tab_second_off3@2x.png in Resources */,
@@ -718,8 +814,10 @@
 				E8D76C551AFE5A9B00BB52FA /* tab_first_on2@2x.png in Resources */,
 				E81571FC1B541208008B7D30 /* addpaln_location.png in Resources */,
 				E8D76C601AFE663200BB52FA /* main_stamp_off.png in Resources */,
+				E88F886E1B5F3EB30065C530 /* add_icon_camera.png in Resources */,
 				E8D76C541AFE5A9B00BB52FA /* tab_first_off2@2x.png in Resources */,
 				E81571F01B5411CF008B7D30 /* Detailpage_landmark.png in Resources */,
+				E88F88721B5F3EB30065C530 /* add_icon_train.png in Resources */,
 				E8D76C581AFE5A9B00BB52FA /* tab_third_on2@2x.png in Resources */,
 				E8D76C571AFE5A9B00BB52FA /* tab_third_off2@2x.png in Resources */,
 				E81571EF1B5411CF008B7D30 /* Detailpage_hotel.png in Resources */,
@@ -740,12 +838,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B53FE765D9593FC2E910477 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		765C9B6F11DB6098D7081327 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E8822CE41AFDD31A00617F50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88334AD1B60157800E4F9C2 /* DetailInformationViewController.swift in Sources */,
 				E838A3AB1B5B6B7A0052CEA3 /* TGCameraFlash.m in Sources */,
+				E88334A71B60078200E4F9C2 /* Service.swift in Sources */,
 				E871EEBE1B539E68001698DA /* NSDate+CL.m in Sources */,
 				E838A3B31B5B6B7A0052CEA3 /* TGCameraGridView.m in Sources */,
 				E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */,
@@ -764,10 +897,10 @@
 				E838A3A21B5B6B7A0052CEA3 /* UIImage+CameraFilters.m in Sources */,
 				E838A3A81B5B6B7A0052CEA3 /* TGAssetsLibrary.m in Sources */,
 				E838A3AA1B5B6B7A0052CEA3 /* TGCameraColor.m in Sources */,
-				E838A35F1B5A2D810052CEA3 /* GooglePlacesAutocomplete2.swift in Sources */,
 				E838A3531B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift in Sources */,
 				E871EEBF1B539E68001698DA /* NSDictionary+CL.m in Sources */,
 				E81605201B54E18B00804E0F /* AddDetailTableViewCell.swift in Sources */,
+				E88334A81B60078200E4F9C2 /* MKMapViewExtension.swift in Sources */,
 				E8822D4D1AFDFAD200617F50 /* SlidePanelCell.swift in Sources */,
 				E81571FF1B54D942008B7D30 /* DetailTableViewCell.swift in Sources */,
 				E838A3A51B5B6B7A0052CEA3 /* TGCameraViewController.m in Sources */,
@@ -783,10 +916,12 @@
 				E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */,
 				E8AA64C61B48F72800EDF573 /* TravelViewController.swift in Sources */,
 				E80E8A801B4F91870016B5B3 /* Information.swift in Sources */,
+				E88334A91B60078200E4F9C2 /* Location.swift in Sources */,
 				E8822CEE1AFDD31A00617F50 /* AppDelegate.swift in Sources */,
 				E838A3B01B5B6B7A0052CEA3 /* TGAssetImageFile.m in Sources */,
 				E8D76C681AFE83B700BB52FA /* AddCell.swift in Sources */,
 				E838A3AF1B5B6B7A0052CEA3 /* TGCameraToggle.m in Sources */,
+				E88334A31B60077600E4F9C2 /* AutoCompleteTextField.swift in Sources */,
 				E838A3B81B5B6B7A0052CEA3 /* TGTintedLabel.m in Sources */,
 				E8822D4B1AFDF6D500617F50 /* SlidePanelViewController.swift in Sources */,
 				E838A3B71B5B6B7A0052CEA3 /* TGTintedButton.m in Sources */,
@@ -939,6 +1074,7 @@
 		};
 		E8822D081AFDD31B00617F50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E923CDF169E7D765B90B87D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -960,6 +1096,7 @@
 		};
 		E8822D091AFDD31B00617F50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1E34470C68E92FDDDD6BDA8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

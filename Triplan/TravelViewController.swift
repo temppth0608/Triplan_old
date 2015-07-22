@@ -42,6 +42,8 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         myTableView.delegate = self
         myTableView.dataSource = self
         
+        
+        //날짜에 따라서 테이블에 보여줄 displayInfos객체에 데이터 저장
         let formatter : NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
@@ -77,6 +79,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         
         displayInfos = []
         
+        //날짜에 따라서 테이블에 보여줄 displayInfos객체에 데이터 저장
         let formatter : NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
@@ -166,8 +169,15 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "SelectAddInfo" {
+            
             let addInfomationVC = segue.destinationViewController as! AddInfomationViewController
             addInfomationVC.belongedStampName = stamp.title
+        } else if segue.identifier == "SelectInformation" {
+            
+            let detailInformationVC = segue.destinationViewController as! DetailInformationViewController
+            let cell = sender as! UITableViewCell
+            let indexPath = self.myTableView.indexPathForCell(cell)!
+            detailInformationVC.information = stamp.infos[indexPath.row]
         }
     }
     
@@ -202,6 +212,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
     }
     
     // MARK: - Plist file write
+    //InformationList.plist write
     func writePlistFile() {
         
         var infoArr = NSMutableArray()

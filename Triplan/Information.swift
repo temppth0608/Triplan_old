@@ -29,15 +29,15 @@ class Information {
         latitude = ""
     }
     
-    init(pStampName : String, pDateOfInformation : NSDate, pCategory : String, pLocationTitle : String, pBudget : Int, pMemo : String) {
+    init(pStampName : String, pDateOfInformation : NSDate, pCategory : String, pLocationTitle : String, pBudget : Int, pMemo : String, pAltitude : String, pLatitude : String) {
         stampName = pStampName
         dateOfInformation = pDateOfInformation
         category = pCategory
         locationTitle = pLocationTitle
         budget = pBudget
         memo = pMemo
-        altitude = ""
-        latitude = ""
+        altitude = pAltitude
+        latitude = pLatitude
     }
 }
 

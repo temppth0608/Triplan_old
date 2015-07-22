@@ -246,13 +246,88 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TUB-zc-MyJ">
+                                <rect key="frame" x="0.0" y="231" width="320" height="161"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addpaln_train.png" translatesAutoresizingMaskIntoConstraints="NO" id="hmu-pf-aaa">
+                                        <rect key="frame" x="21" y="15" width="25" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addpaln_food.png" translatesAutoresizingMaskIntoConstraints="NO" id="eGD-7e-itb">
+                                        <rect key="frame" x="21" y="68" width="25" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addpaln_landmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="gLZ-wz-SrC">
+                                        <rect key="frame" x="21" y="120" width="25" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addpaln_hotel.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Jo-ih-Tam">
+                                        <rect key="frame" x="166" y="15" width="25" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addpaln_ect.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vam-GJ-n6r">
+                                        <rect key="frame" x="166" y="68" width="25" height="25"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgJ-cc-wgK">
+                                        <rect key="frame" x="63" y="18" width="95" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek9-Gd-Tuw">
+                                        <rect key="frame" x="63" y="71" width="95" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-Me-Gze">
+                                        <rect key="frame" x="63" y="123" width="95" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h20-wt-G6P">
+                                        <rect key="frame" x="217" y="18" width="95" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-0i-9XE">
+                                        <rect key="frame" x="217" y="71" width="95" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.92941176470588238" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="경비" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-JO-jQP">
+                                <rect key="frame" x="16" y="195" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20000 원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-Sl-sri">
+                                <rect key="frame" x="152" y="195" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.41568627450980394" green="0.77254901960784317" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="스탬프" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBd-HX-Umb">
+                                <rect key="frame" x="16" y="407" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="통계" image="tab_second_off3.png" id="MZf-eK-hgh"/>
                     <navigationItem key="navigationItem" id="27w-Ep-if4"/>
                     <connections>
+                        <outlet property="etcMoneyLabel" destination="R8s-0i-9XE" id="Pp1-zE-Pg6"/>
+                        <outlet property="foodMoneyLabel" destination="Ek9-Gd-Tuw" id="N7J-7X-wq3"/>
+                        <outlet property="hotelMoneyLabel" destination="h20-wt-G6P" id="7qz-me-6g8"/>
+                        <outlet property="landscapeMoneyLabel" destination="aOT-Me-Gze" id="GBO-E3-tCl"/>
                         <outlet property="myNavBar" destination="Drr-cO-yqj" id="Tpx-6n-HA5"/>
+                        <outlet property="totalMoneyLabel" destination="ib1-Sl-sri" id="Mjq-2H-Ch5"/>
+                        <outlet property="trafficMoneyLabel" destination="VgJ-cc-wgK" id="k2A-et-m1V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqj-KR-h6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -381,6 +456,7 @@
                                             <outlet property="detailIconImageView" destination="zlB-gy-dxR" id="eKd-9w-OKg"/>
                                             <outlet property="detailTitleLabel" destination="JLl-au-1JC" id="HcF-63-E2N"/>
                                             <outlet property="lineImageView" destination="ODm-CL-fQE" id="9hd-Hu-h7M"/>
+                                            <segue destination="3nL-Db-tP7" kind="modal" identifier="SelectInformation" id="QZJ-gB-e6w"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddDetailCell" id="3Jp-tr-abe" customClass="AddDetailTableViewCell" customModule="Triplan" customModuleProvider="target">
@@ -460,7 +536,7 @@
                                     <navigationItem title="추가하기" id="ihW-XL-WaD">
                                         <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="2TS-5R-wdN">
                                             <connections>
-                                                <segue destination="FvC-zq-54H" kind="unwind" unwindAction="cancelToTravelVC:" id="skL-aP-s0k"/>
+                                                <segue destination="FvC-zq-54H" kind="unwind" identifier="" unwindAction="cancelToTravelVC:" id="skL-aP-s0k"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="확인" id="4mi-je-Iwa">
@@ -503,7 +579,7 @@
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bki-9E-qVw">
                                 <rect key="frame" x="16" y="154" width="25" height="25"/>
-                                <state key="normal" title="Button" image="addpaln_train.png">
+                                <state key="normal" title="Button" image="add_icon_train.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -512,7 +588,7 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teX-RK-1R2">
                                 <rect key="frame" x="84" y="154" width="25" height="25"/>
-                                <state key="normal" title="Button" image="addpaln_food.png">
+                                <state key="normal" title="Button" image="add_icon_food.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -521,14 +597,14 @@
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSv-vg-WdY">
                                 <rect key="frame" x="149" y="154" width="25" height="25"/>
-                                <state key="normal" title="Button" image="addpaln_landmark.png"/>
+                                <state key="normal" title="Button" image="add_icon_camera.png"/>
                                 <connections>
                                     <action selector="touchCategoryButton:" destination="vpx-zr-HMG" eventType="touchUpInside" id="hmR-bC-7Yk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyr-Bw-Tyb">
                                 <rect key="frame" x="214" y="154" width="25" height="25"/>
-                                <state key="normal" title="Button" image="addpaln_hotel.png">
+                                <state key="normal" title="Button" image="add_icon_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -537,7 +613,7 @@
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW5-RR-6Wn">
                                 <rect key="frame" x="280" y="154" width="25" height="25"/>
-                                <state key="normal" title="Button" image="addpaln_ect.png">
+                                <state key="normal" title="Button" image="add_icon_spot.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -582,7 +658,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mq9-1p-21E" kind="modal" animates="NO" id="5sF-9J-gFT"/>
+                                    <segue destination="mq9-1p-21E" kind="modal" id="xC9-fS-4ak"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -590,15 +666,54 @@
                     </view>
                     <connections>
                         <outlet property="budgetTextField" destination="lyi-e1-Hf7" id="ark-b1-caW"/>
+                        <outlet property="cameraButton" destination="xSv-vg-WdY" id="KMh-ri-cgR"/>
+                        <outlet property="foodButton" destination="teX-RK-1R2" id="Zoe-gi-2pT"/>
+                        <outlet property="homeButton" destination="eyr-Bw-Tyb" id="qeG-fn-Et9"/>
+                        <outlet property="locationButton" destination="mW5-RR-6Wn" id="ZW0-eQ-2wM"/>
                         <outlet property="locationTextField" destination="7u6-CB-K5g" id="A83-0s-VEH"/>
                         <outlet property="memoTextView" destination="eMp-lq-n1h" id="fXT-Xv-O5y"/>
                         <outlet property="myNavBar" destination="6Bg-hj-tHG" id="wZw-Sc-iBR"/>
+                        <outlet property="trafficButton" destination="Bki-9E-qVw" id="NOg-HP-mWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9f-7m-VVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FvC-zq-54H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1928" y="-913"/>
+        </scene>
+        <!--Detail Information View Controller-->
+        <scene sceneID="Yci-Qy-yJ9">
+            <objects>
+                <viewController id="3nL-Db-tP7" customClass="DetailInformationViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tdP-3t-mSt"/>
+                        <viewControllerLayoutGuide type="bottom" id="NaU-ZR-vdH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="51U-tK-n6N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBj-nv-65f">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="n8w-kW-Ztb">
+                                        <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="2AF-mF-J1q">
+                                            <color key="tintColor" red="0.30588235294117649" green="0.73725490196078436" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="myNavBar" destination="TBj-nv-65f" id="qJ5-uf-3XS"/>
+                        <outlet property="myNavItem" destination="n8w-kW-Ztb" id="NN6-qZ-ysW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Jt-JN-BAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="-1573"/>
         </scene>
         <!--Add Location Map Kit View Controller-->
         <scene sceneID="85k-Cc-GHk">
@@ -611,13 +726,46 @@
                     <view key="view" contentMode="scaleToFill" id="KVX-7a-i7m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ao1-pS-OXd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfb-GS-LW7" customClass="AutoCompleteTextField" customModule="Triplan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="238" width="320" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exL-Ir-Xbo">
+                                <rect key="frame" x="16" y="20" width="45" height="30"/>
+                                <state key="normal" title="cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Agi-7h-TLQ" kind="unwind" unwindAction="cancelToAddInformationVC:" id="ycq-B2-OI5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urj-nc-4mQ">
+                                <rect key="frame" x="75" y="20" width="32" height="30"/>
+                                <state key="normal" title="save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Agi-7h-TLQ" kind="unwind" identifier="SaveLocation" unwindAction="saveLocation:" id="nrq-zJ-SRo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="83f-RE-Ys0"/>
+                    <connections>
+                        <outlet property="autocompleteTextField" destination="yfb-GS-LW7" id="maf-GM-n8o"/>
+                        <outlet property="mapView" destination="Ao1-pS-OXd" id="PxM-T9-OcG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QO5-5T-OIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Agi-7h-TLQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="-913"/>
+            <point key="canvasLocation" x="2366" y="-1198"/>
         </scene>
         <!--촬영-->
         <scene sceneID="xxF-F9-TFg">
@@ -861,7 +1009,6 @@
         <!--Navigation Controller-->
         <scene sceneID="YYE-Ql-NVx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlf-Iz-j7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="NvG-pB-q6L" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eGg-ie-9GH">
@@ -873,12 +1020,18 @@
                         <segue destination="C7d-pV-e0S" kind="relationship" relationship="rootViewController" id="PQD-eb-fYJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlf-Iz-j7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="507" y="140"/>
         </scene>
     </scenes>
     <resources>
         <image name="CameraShot" width="78" height="78"/>
+        <image name="add_icon_camera.png" width="80" height="80"/>
+        <image name="add_icon_food.png" width="80" height="80"/>
+        <image name="add_icon_home.png" width="80" height="80"/>
+        <image name="add_icon_spot.png" width="80" height="80"/>
+        <image name="add_icon_train.png" width="80" height="80"/>
         <image name="addpaln_ect.png" width="80" height="80"/>
         <image name="addpaln_food.png" width="80" height="80"/>
         <image name="addpaln_hotel.png" width="80" height="80"/>
