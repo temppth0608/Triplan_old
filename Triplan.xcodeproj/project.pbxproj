@@ -84,6 +84,16 @@
 		E88334A91B60078200E4F9C2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334A61B60078200E4F9C2 /* Location.swift */; };
 		E88334AB1B6007C900E4F9C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88334AA1B6007C900E4F9C2 /* CoreLocation.framework */; };
 		E88334AD1B60157800E4F9C2 /* DetailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334AC1B60157800E4F9C2 /* DetailInformationViewController.swift */; };
+		E88334AF1B60C92E00E4F9C2 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334AE1B60C92E00E4F9C2 /* PictureCollectionViewCell.swift */; };
+		E88334B11B60D1B100E4F9C2 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88334B01B60D1B100E4F9C2 /* Photos.framework */; };
+		E88334B31B60D68200E4F9C2 /* expand_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E88334B21B60D68200E4F9C2 /* expand_icon.png */; };
+		E88334B51B60D8CB00E4F9C2 /* ExpandMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334B41B60D8CB00E4F9C2 /* ExpandMapViewController.swift */; };
+		E88334B91B60DBF100E4F9C2 /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334B61B60DBF100E4F9C2 /* GoogleDataProvider.swift */; };
+		E88334BA1B60DBF100E4F9C2 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334B71B60DBF100E4F9C2 /* GooglePlace.swift */; };
+		E88334BB1B60DBF100E4F9C2 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334B81B60DBF100E4F9C2 /* PlaceMarker.swift */; };
+		E88334BE1B60DEF100E4F9C2 /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */; };
+		E88334BF1B60DEF100E4F9C2 /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */; };
+		E88334C11B60E03800E4F9C2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334C01B60E03800E4F9C2 /* UIViewExtension.swift */; };
 		E88F88681B5F29A30065C530 /* InformationList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E88F88671B5F29A30065C530 /* InformationList.plist */; };
 		E88F886E1B5F3EB30065C530 /* add_icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F88691B5F3EB30065C530 /* add_icon_camera.png */; };
 		E88F886F1B5F3EB30065C530 /* add_icon_food.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F886A1B5F3EB30065C530 /* add_icon_food.png */; };
@@ -244,6 +254,16 @@
 		E88334A61B60078200E4F9C2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E88334AA1B6007C900E4F9C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E88334AC1B60157800E4F9C2 /* DetailInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformationViewController.swift; sourceTree = "<group>"; };
+		E88334AE1B60C92E00E4F9C2 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
+		E88334B01B60D1B100E4F9C2 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E88334B21B60D68200E4F9C2 /* expand_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expand_icon.png; sourceTree = "<group>"; };
+		E88334B41B60D8CB00E4F9C2 /* ExpandMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandMapViewController.swift; sourceTree = "<group>"; };
+		E88334B61B60DBF100E4F9C2 /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
+		E88334B71B60DBF100E4F9C2 /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
+		E88334B81B60DBF100E4F9C2 /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
+		E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
+		E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
+		E88334C01B60E03800E4F9C2 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E88F88671B5F29A30065C530 /* InformationList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InformationList.plist; sourceTree = "<group>"; };
 		E88F88691B5F3EB30065C530 /* add_icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_camera.png; sourceTree = "<group>"; };
 		E88F886A1B5F3EB30065C530 /* add_icon_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_food.png; sourceTree = "<group>"; };
@@ -283,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88334B11B60D1B100E4F9C2 /* Photos.framework in Frameworks */,
 				E88334AB1B6007C900E4F9C2 /* CoreLocation.framework in Frameworks */,
 				E838A3C91B5B6C400052CEA3 /* UIKit.framework in Frameworks */,
 				E838A3C71B5B6C3B0052CEA3 /* MobileCoreServices.framework in Frameworks */,
@@ -338,10 +359,13 @@
 				E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */,
 				E8AA64C51B48F72800EDF573 /* TravelViewController.swift */,
 				E88334AC1B60157800E4F9C2 /* DetailInformationViewController.swift */,
+				E88334B41B60D8CB00E4F9C2 /* ExpandMapViewController.swift */,
 				E83625691B56377100689A29 /* AddInfomationViewController.swift */,
 				E838A3521B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift */,
 				E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */,
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
+				E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */,
+				E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */,
 				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
 			);
 			name = ViewController;
@@ -581,6 +605,7 @@
 		E8822D3B1AFDE52600617F50 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E88334B21B60D68200E4F9C2 /* expand_icon.png */,
 				E88F88691B5F3EB30065C530 /* add_icon_camera.png */,
 				E88F886A1B5F3EB30065C530 /* add_icon_food.png */,
 				E88F886B1B5F3EB30065C530 /* add_icon_home.png */,
@@ -644,6 +669,9 @@
 			children = (
 				E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */,
 				E80E8A7F1B4F91870016B5B3 /* Information.swift */,
+				E88334B61B60DBF100E4F9C2 /* GoogleDataProvider.swift */,
+				E88334B71B60DBF100E4F9C2 /* GooglePlace.swift */,
+				E88334B81B60DBF100E4F9C2 /* PlaceMarker.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -660,6 +688,7 @@
 		E88F88761B5F5C640065C530 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E88334AE1B60C92E00E4F9C2 /* PictureCollectionViewCell.swift */,
 				E8D76C2D1AFE4EC400BB52FA /* MainCell.swift */,
 				E8D76C671AFE83B700BB52FA /* AddCell.swift */,
 				E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */,
@@ -680,6 +709,7 @@
 		E8DAD1A11AFE0B5D0085EBC2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E88334C01B60E03800E4F9C2 /* UIViewExtension.swift */,
 				E88334A11B60075A00E4F9C2 /* AutoComplete */,
 				E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */,
 				E88F88731B5F5C040065C530 /* TransitionOperator */,
@@ -692,6 +722,7 @@
 		EB9BF1BBC66B5657ADAF9F4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E88334B01B60D1B100E4F9C2 /* Photos.framework */,
 				E88334AA1B6007C900E4F9C2 /* CoreLocation.framework */,
 				0702C400BB23B9C7A1687AF1 /* libPods.a */,
 			);
@@ -789,6 +820,7 @@
 				E81605241B5570EF00804E0F /* plan_date_click.png in Resources */,
 				E8D76C6A1AFE899100BB52FA /* panel_logo_hehe.jpeg in Resources */,
 				E838A3B91B5B6B7A0052CEA3 /* TGCameraAuthorizationViewController.xib in Resources */,
+				E88334B31B60D68200E4F9C2 /* expand_icon.png in Resources */,
 				E81571FD1B541208008B7D30 /* addpaln_train.png in Resources */,
 				E81571F81B541208008B7D30 /* addpaln_ect.png in Resources */,
 				E8D76C5C1AFE5CE700BB52FA /* firstpage.png in Resources */,
@@ -823,6 +855,7 @@
 				E81571EF1B5411CF008B7D30 /* Detailpage_hotel.png in Resources */,
 				E81571FA1B541208008B7D30 /* addpaln_hotel.png in Resources */,
 				E8FADE501B524C96007CD38E /* StampList.plist in Resources */,
+				E88334BF1B60DEF100E4F9C2 /* MarkerInfoView.xib in Resources */,
 				E8D76C3E1AFE550E00BB52FA /* navi_back@2x.png in Resources */,
 				E81571EE1B5411CF008B7D30 /* Detailpage_food.png in Resources */,
 				E838A3BD1B5B6B7A0052CEA3 /* TGCameraViewController.xcassets in Resources */,
@@ -881,6 +914,7 @@
 				E88334A71B60078200E4F9C2 /* Service.swift in Sources */,
 				E871EEBE1B539E68001698DA /* NSDate+CL.m in Sources */,
 				E838A3B31B5B6B7A0052CEA3 /* TGCameraGridView.m in Sources */,
+				E88334B51B60D8CB00E4F9C2 /* ExpandMapViewController.swift in Sources */,
 				E8AA64CE1B4A455900EDF573 /* ModifyViewController.swift in Sources */,
 				E8D76C5E1AFE600D00BB52FA /* TabViewController.swift in Sources */,
 				E838A3B11B5B6B7A0052CEA3 /* TGCameraFilterView.m in Sources */,
@@ -888,6 +922,7 @@
 				E836256A1B56377100689A29 /* AddInfomationViewController.swift in Sources */,
 				E838A3A41B5B6B7A0052CEA3 /* TGCameraNavigationController.m in Sources */,
 				E838A3B21B5B6B7A0052CEA3 /* TGCameraFocusView.m in Sources */,
+				E88334AF1B60C92E00E4F9C2 /* PictureCollectionViewCell.swift in Sources */,
 				E838A3A31B5B6B7A0052CEA3 /* TGCameraAuthorizationViewController.m in Sources */,
 				E838A3B61B5B6B7A0052CEA3 /* TGCameraSlideView.m in Sources */,
 				E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */,
@@ -898,6 +933,7 @@
 				E838A3A81B5B6B7A0052CEA3 /* TGAssetsLibrary.m in Sources */,
 				E838A3AA1B5B6B7A0052CEA3 /* TGCameraColor.m in Sources */,
 				E838A3531B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift in Sources */,
+				E88334BB1B60DBF100E4F9C2 /* PlaceMarker.swift in Sources */,
 				E871EEBF1B539E68001698DA /* NSDictionary+CL.m in Sources */,
 				E81605201B54E18B00804E0F /* AddDetailTableViewCell.swift in Sources */,
 				E88334A81B60078200E4F9C2 /* MKMapViewExtension.swift in Sources */,
@@ -905,6 +941,8 @@
 				E81571FF1B54D942008B7D30 /* DetailTableViewCell.swift in Sources */,
 				E838A3A51B5B6B7A0052CEA3 /* TGCameraViewController.m in Sources */,
 				E871EEB11B539E39001698DA /* DayTitleLabel.m in Sources */,
+				E88334C11B60E03800E4F9C2 /* UIViewExtension.swift in Sources */,
+				E88334B91B60DBF100E4F9C2 /* GoogleDataProvider.swift in Sources */,
 				E838A3B51B5B6B7A0052CEA3 /* TGCameraSlideUpView.m in Sources */,
 				E838A3A71B5B6B7A0052CEA3 /* TGAlbum.m in Sources */,
 				E8D76C301AFE4F9B00BB52FA /* Stamp.swift in Sources */,
@@ -912,7 +950,9 @@
 				E871EEC01B539E68001698DA /* UIColor+CL.m in Sources */,
 				E871EEB01B539E39001698DA /* DailyCalendarView.m in Sources */,
 				E838A3AD1B5B6B7A0052CEA3 /* TGCameraGrid.m in Sources */,
+				E88334BE1B60DEF100E4F9C2 /* MarkerInfoView.swift in Sources */,
 				E8D76C6E1AFE8FA900BB52FA /* AddStampViewController.swift in Sources */,
+				E88334BA1B60DBF100E4F9C2 /* GooglePlace.swift in Sources */,
 				E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */,
 				E8AA64C61B48F72800EDF573 /* TravelViewController.swift in Sources */,
 				E80E8A801B4F91870016B5B3 /* Information.swift in Sources */,

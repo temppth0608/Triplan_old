@@ -9,16 +9,15 @@
 import UIKit
 
 class StatisticsViewController: UIViewController {
+    
     @IBOutlet weak var totalMoneyLabel: UILabel!
     @IBOutlet weak var trafficMoneyLabel: UILabel!
     @IBOutlet weak var foodMoneyLabel: UILabel!
     @IBOutlet weak var landscapeMoneyLabel: UILabel!
     @IBOutlet weak var hotelMoneyLabel: UILabel!
     @IBOutlet weak var etcMoneyLabel: UILabel!
-
     @IBOutlet weak var myNavBar: UINavigationBar!
     var stamp : Stamp!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
