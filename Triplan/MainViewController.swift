@@ -136,7 +136,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.stamps.append(tmpStamp)
             }
         }
-        println(path)
     }
     
     //InformationList.plist read
@@ -172,7 +171,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 }
             }
         }
-        println(path)
     }
 
     //StampList.plist Write

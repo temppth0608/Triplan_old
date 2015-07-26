@@ -40,13 +40,28 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         myNavBar.shadowImage = UIImage()
         myNavItem.title = information.stampName
+        
         self.mapView.delegate = self
-
-        coordinate = CLLocationCoordinate2D(latitude: (information.latitude).toDouble()!
-                                        , longitude: (information.altitude).toDouble()!)
+        
+        if !((information.latitude).toDouble() != nil) {
+            coordinate = CLLocationCoordinate2D(
+                latitude: -33.868 ,
+                longitude: 151.2086
+            )
+        } else if !((information.altitude).toDouble() != nil) {
+            coordinate = CLLocationCoordinate2D(
+                latitude: -33.868 ,
+                longitude: 151.2086
+            )
+        } else {
+            coordinate = CLLocationCoordinate2D(
+                latitude: (information.latitude).toDouble()! ,
+                longitude: (information.altitude).toDouble()!
+            )
+            setMapView()
+        }
         
         fetchPhotos()
-        setMapView()
         setLocationAddress(coordinate)
         setOuletValue()
     }
@@ -104,10 +119,9 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
             if fetchResult.count > 0 {
                 // Perform the image request
                 imgManager.requestImageForAsset(fetchResult.objectAtIndex(fetchResult.count - 1 - index) as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
-                    
+
                     // Add the returned image to your array
                     self.images.append(image)
-                    
                     // If you haven't already reached the first
                     // index of the fetch result and if you haven't
                     // already stored all of the images you need,
@@ -117,7 +131,7 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
                         self.fetchPhotoAtIndexFromEnd(index + 1)
                     } else {
                         // Else you have completed creating your array
-//                        println("Completed array: \(self.images)")
+                        println("Completed array: \(self.images)")
                     }
                 })
             }
@@ -163,7 +177,7 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
         case "hotel" :
             categoryImageView.image = UIImage(named: "Detailpage_hotel.png")
         default :
-            categoryImageView.image = UIImage(named: "Detailpage_ect.png")
+            categoryImageView.image = UIImage(named: "Detailpage_etc.png")
         }
     }
     
@@ -179,6 +193,13 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
             
             let expandMapVC = segue.destinationViewController as! ExpandMapViewController
             expandMapVC.coordinate = self.coordinate
+        } else if segue.identifier == "SelectPicture"{
+            
+            let pictureVC = segue.destinationViewController as! PictureViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.myCollectionView.indexPathForCell(cell)!
+
+            pictureVC.image = images[indexPath.item]
         }
     }
 }

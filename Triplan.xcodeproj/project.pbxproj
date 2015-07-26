@@ -63,6 +63,7 @@
 		E838A3C71B5B6C3B0052CEA3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E838A3C61B5B6C3B0052CEA3 /* MobileCoreServices.framework */; };
 		E838A3C91B5B6C400052CEA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E838A3C81B5B6C400052CEA3 /* UIKit.framework */; };
 		E838A3CB1B5B6D530052CEA3 /* TGInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E838A3CA1B5B6D530052CEA3 /* TGInitialViewController.swift */; };
+		E83F3E451B647B760035A157 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F3E441B647B760035A157 /* PictureViewController.swift */; };
 		E871EEB01B539E39001698DA /* DailyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAD1B539E39001698DA /* DailyCalendarView.m */; };
 		E871EEB11B539E39001698DA /* DayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEAF1B539E39001698DA /* DayTitleLabel.m */; };
 		E871EEB51B539E5F001698DA /* CLWeeklyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E871EEB41B539E5F001698DA /* CLWeeklyCalendarView.m */; };
@@ -94,6 +95,13 @@
 		E88334BE1B60DEF100E4F9C2 /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */; };
 		E88334BF1B60DEF100E4F9C2 /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */; };
 		E88334C11B60E03800E4F9C2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334C01B60E03800E4F9C2 /* UIViewExtension.swift */; };
+		E88334CA1B60EA5300E4F9C2 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334C81B60EA5300E4F9C2 /* MarkerView.swift */; };
+		E88334CB1B60EA5300E4F9C2 /* MarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88334C91B60EA5300E4F9C2 /* MarkerView.xib */; };
+		E88334CD1B60F25800E4F9C2 /* statistic_zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = E88334CC1B60F25800E4F9C2 /* statistic_zoom.png */; };
+		E88334D01B62A97C00E4F9C2 /* left_scroll_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E88334CE1B62A97C00E4F9C2 /* left_scroll_icon.png */; };
+		E88334D11B62A97C00E4F9C2 /* right_scroll_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E88334CF1B62A97C00E4F9C2 /* right_scroll_icon.png */; };
+		E88334D31B62AA1000E4F9C2 /* CStampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88334D21B62AA1000E4F9C2 /* CStampCollectionViewCell.swift */; };
+		E88334D51B62ABB500E4F9C2 /* CStamp_example.png in Resources */ = {isa = PBXBuildFile; fileRef = E88334D41B62ABB500E4F9C2 /* CStamp_example.png */; };
 		E88F88681B5F29A30065C530 /* InformationList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E88F88671B5F29A30065C530 /* InformationList.plist */; };
 		E88F886E1B5F3EB30065C530 /* add_icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F88691B5F3EB30065C530 /* add_icon_camera.png */; };
 		E88F886F1B5F3EB30065C530 /* add_icon_food.png in Resources */ = {isa = PBXBuildFile; fileRef = E88F886A1B5F3EB30065C530 /* add_icon_food.png */; };
@@ -221,6 +229,7 @@
 		E838A3C61B5B6C3B0052CEA3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E838A3C81B5B6C400052CEA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E838A3CA1B5B6D530052CEA3 /* TGInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGInitialViewController.swift; sourceTree = "<group>"; };
+		E83F3E441B647B760035A157 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Triplan-Bridging-Header.h"; sourceTree = "<group>"; };
 		E871EEAC1B539E39001698DA /* DailyCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCalendarView.h; sourceTree = "<group>"; };
 		E871EEAD1B539E39001698DA /* DailyCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCalendarView.m; sourceTree = "<group>"; };
@@ -264,6 +273,13 @@
 		E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
 		E88334C01B60E03800E4F9C2 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		E88334C81B60EA5300E4F9C2 /* MarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
+		E88334C91B60EA5300E4F9C2 /* MarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerView.xib; sourceTree = "<group>"; };
+		E88334CC1B60F25800E4F9C2 /* statistic_zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistic_zoom.png; sourceTree = "<group>"; };
+		E88334CE1B62A97C00E4F9C2 /* left_scroll_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_scroll_icon.png; sourceTree = "<group>"; };
+		E88334CF1B62A97C00E4F9C2 /* right_scroll_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_scroll_icon.png; sourceTree = "<group>"; };
+		E88334D21B62AA1000E4F9C2 /* CStampCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CStampCollectionViewCell.swift; sourceTree = "<group>"; };
+		E88334D41B62ABB500E4F9C2 /* CStamp_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CStamp_example.png; sourceTree = "<group>"; };
 		E88F88671B5F29A30065C530 /* InformationList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InformationList.plist; sourceTree = "<group>"; };
 		E88F88691B5F3EB30065C530 /* add_icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_camera.png; sourceTree = "<group>"; };
 		E88F886A1B5F3EB30065C530 /* add_icon_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon_food.png; sourceTree = "<group>"; };
@@ -359,6 +375,7 @@
 				E8D76C5D1AFE600D00BB52FA /* TabViewController.swift */,
 				E8AA64C51B48F72800EDF573 /* TravelViewController.swift */,
 				E88334AC1B60157800E4F9C2 /* DetailInformationViewController.swift */,
+				E83F3E441B647B760035A157 /* PictureViewController.swift */,
 				E88334B41B60D8CB00E4F9C2 /* ExpandMapViewController.swift */,
 				E83625691B56377100689A29 /* AddInfomationViewController.swift */,
 				E838A3521B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift */,
@@ -366,6 +383,8 @@
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
 				E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */,
 				E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */,
+				E88334C81B60EA5300E4F9C2 /* MarkerView.swift */,
+				E88334C91B60EA5300E4F9C2 /* MarkerView.xib */,
 				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
 			);
 			name = ViewController;
@@ -605,7 +624,11 @@
 		E8822D3B1AFDE52600617F50 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E88334D41B62ABB500E4F9C2 /* CStamp_example.png */,
+				E88334CE1B62A97C00E4F9C2 /* left_scroll_icon.png */,
+				E88334CF1B62A97C00E4F9C2 /* right_scroll_icon.png */,
 				E88334B21B60D68200E4F9C2 /* expand_icon.png */,
+				E88334CC1B60F25800E4F9C2 /* statistic_zoom.png */,
 				E88F88691B5F3EB30065C530 /* add_icon_camera.png */,
 				E88F886A1B5F3EB30065C530 /* add_icon_food.png */,
 				E88F886B1B5F3EB30065C530 /* add_icon_home.png */,
@@ -667,6 +690,7 @@
 		E88F88741B5F5C240065C530 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				E88334C01B60E03800E4F9C2 /* UIViewExtension.swift */,
 				E8D76C2F1AFE4F9B00BB52FA /* Stamp.swift */,
 				E80E8A7F1B4F91870016B5B3 /* Information.swift */,
 				E88334B61B60DBF100E4F9C2 /* GoogleDataProvider.swift */,
@@ -694,6 +718,7 @@
 				E8822D4C1AFDFAD200617F50 /* SlidePanelCell.swift */,
 				E81571FE1B54D942008B7D30 /* DetailTableViewCell.swift */,
 				E816051F1B54E18B00804E0F /* AddDetailTableViewCell.swift */,
+				E88334D21B62AA1000E4F9C2 /* CStampCollectionViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -709,7 +734,6 @@
 		E8DAD1A11AFE0B5D0085EBC2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				E88334C01B60E03800E4F9C2 /* UIViewExtension.swift */,
 				E88334A11B60075A00E4F9C2 /* AutoComplete */,
 				E871EEAB1B539E38001698DA /* Triplan-Bridging-Header.h */,
 				E88F88731B5F5C040065C530 /* TransitionOperator */,
@@ -814,14 +838,18 @@
 			files = (
 				E81571FB1B541208008B7D30 /* addpaln_landmark.png in Resources */,
 				E838A3BB1B5B6B7A0052CEA3 /* TGPhotoViewController.xib in Resources */,
+				E88334D01B62A97C00E4F9C2 /* left_scroll_icon.png in Resources */,
 				E81605231B5570EF00804E0F /* plan_addplan.png in Resources */,
 				E838A3BA1B5B6B7A0052CEA3 /* TGCameraViewController.xib in Resources */,
 				E8D76C561AFE5A9B00BB52FA /* tab_second_on2@2x.png in Resources */,
 				E81605241B5570EF00804E0F /* plan_date_click.png in Resources */,
 				E8D76C6A1AFE899100BB52FA /* panel_logo_hehe.jpeg in Resources */,
 				E838A3B91B5B6B7A0052CEA3 /* TGCameraAuthorizationViewController.xib in Resources */,
+				E88334CD1B60F25800E4F9C2 /* statistic_zoom.png in Resources */,
 				E88334B31B60D68200E4F9C2 /* expand_icon.png in Resources */,
 				E81571FD1B541208008B7D30 /* addpaln_train.png in Resources */,
+				E88334D11B62A97C00E4F9C2 /* right_scroll_icon.png in Resources */,
+				E88334CB1B60EA5300E4F9C2 /* MarkerView.xib in Resources */,
 				E81571F81B541208008B7D30 /* addpaln_ect.png in Resources */,
 				E8D76C5C1AFE5CE700BB52FA /* firstpage.png in Resources */,
 				E8D76C701AFE923400BB52FA /* addtrip_logo.png in Resources */,
@@ -852,6 +880,7 @@
 				E88F88721B5F3EB30065C530 /* add_icon_train.png in Resources */,
 				E8D76C581AFE5A9B00BB52FA /* tab_third_on2@2x.png in Resources */,
 				E8D76C571AFE5A9B00BB52FA /* tab_third_off2@2x.png in Resources */,
+				E88334D51B62ABB500E4F9C2 /* CStamp_example.png in Resources */,
 				E81571EF1B5411CF008B7D30 /* Detailpage_hotel.png in Resources */,
 				E81571FA1B541208008B7D30 /* addpaln_hotel.png in Resources */,
 				E8FADE501B524C96007CD38E /* StampList.plist in Resources */,
@@ -926,6 +955,7 @@
 				E838A3A31B5B6B7A0052CEA3 /* TGCameraAuthorizationViewController.m in Sources */,
 				E838A3B61B5B6B7A0052CEA3 /* TGCameraSlideView.m in Sources */,
 				E8D76C2E1AFE4EC400BB52FA /* MainCell.swift in Sources */,
+				E83F3E451B647B760035A157 /* PictureViewController.swift in Sources */,
 				E838A3AE1B5B6B7A0052CEA3 /* TGCameraShot.m in Sources */,
 				E838A3CB1B5B6D530052CEA3 /* TGInitialViewController.swift in Sources */,
 				E838A3B41B5B6B7A0052CEA3 /* TGCameraSlideDownView.m in Sources */,
@@ -944,6 +974,7 @@
 				E88334C11B60E03800E4F9C2 /* UIViewExtension.swift in Sources */,
 				E88334B91B60DBF100E4F9C2 /* GoogleDataProvider.swift in Sources */,
 				E838A3B51B5B6B7A0052CEA3 /* TGCameraSlideUpView.m in Sources */,
+				E88334D31B62AA1000E4F9C2 /* CStampCollectionViewCell.swift in Sources */,
 				E838A3A71B5B6B7A0052CEA3 /* TGAlbum.m in Sources */,
 				E8D76C301AFE4F9B00BB52FA /* Stamp.swift in Sources */,
 				E838A3A91B5B6B7A0052CEA3 /* TGCamera.m in Sources */,
@@ -951,6 +982,7 @@
 				E871EEB01B539E39001698DA /* DailyCalendarView.m in Sources */,
 				E838A3AD1B5B6B7A0052CEA3 /* TGCameraGrid.m in Sources */,
 				E88334BE1B60DEF100E4F9C2 /* MarkerInfoView.swift in Sources */,
+				E88334CA1B60EA5300E4F9C2 /* MarkerView.swift in Sources */,
 				E8D76C6E1AFE8FA900BB52FA /* AddStampViewController.swift in Sources */,
 				E88334BA1B60DBF100E4F9C2 /* GooglePlace.swift in Sources */,
 				E8DAD1A01AFDFEF20085EBC2 /* TransitionOperator.swift in Sources */,

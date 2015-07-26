@@ -70,7 +70,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
     // MARK: - CLCalendar Delegate
     // 1주의 시작 요일 을 저장(1 - MON, 7- SUN)
     func CLCalendarBehaviorAttributes() -> [NSObject : AnyObject]! {
-        return [CLCalendarWeekStartDay : 1]
+        return [CLCalendarWeekStartDay : 6]
     }
     
     //각각의 요일이 눌렷을때 이벤트

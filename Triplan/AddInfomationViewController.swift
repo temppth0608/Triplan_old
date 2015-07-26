@@ -28,8 +28,8 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     var selectedDate : NSDate!
     // infomation이 속한 stamp이름
     var belongedStampName : String!
-    var latitude : String!
-    var altitude : String!
+    var latitude : String! = ""
+    var altitude : String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,6 +147,11 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "SaveInfomation" {
+            
+            if !(budgetTextField.text.toInt() != nil) {
+                budgetTextField.text = "0"
+            }
+
             info = Information(
                 pStampName: belongedStampName,
                 pDateOfInformation: selectedDate,

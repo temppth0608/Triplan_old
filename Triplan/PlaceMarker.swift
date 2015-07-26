@@ -23,3 +23,15 @@ class PlaceMarker: GMSMarker {
     appearAnimation = kGMSMarkerAnimationPop
   }
 }
+
+class PlaceMarker2 :GMSMarker {
+    
+    let place : GooglePlace
+    
+    init(place: GooglePlace) {
+        self.place = place
+        super.init()
+        
+        icon = UIImage(named:"Detailpage_etc.png")
+    }
+}
