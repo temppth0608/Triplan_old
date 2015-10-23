@@ -22,6 +22,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     
     var calendarView : CLWeeklyCalendarView!
     // 눌러진 카테고리에 스트링값 저장
+    var date : NSDate!
     var selectedCategory : String = "train"
     var info : Information!
     // 눌려진 NSDate객체
@@ -41,6 +42,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
             calendarView = CLWeeklyCalendarView(frame: CGRect(x: 0, y: 64.0, width: view.bounds.width, height: 80.0))
         }
         calendarView.delegate = self
+        //calendarView.redrawToDate(date)
         locationTextField.delegate = self
         budgetTextField.delegate = self
         memoTextView.delegate = self
@@ -53,7 +55,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     
     // MARK: - CLCalendar Delegate
     func CLCalendarBehaviorAttributes() -> [NSObject : AnyObject]! {
-        return [CLCalendarWeekStartDay : 1]
+        return [CLCalendarWeekStartDay : getDayFromSelectedDate()]
     }
     
     func dailyCalendarViewDidSelect(date: NSDate!) {
@@ -142,7 +144,19 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
             selectedCategory = "ect"
         }
     }
+
+    @IBAction func cancelToAddInformationVC(segue : UIStoryboardSegue) {
+        
+    }
     
+    @IBAction func saveLocation(segue : UIStoryboardSegue) {
+        
+        let addLocationMapKitVC = segue.sourceViewController as! AddLocationMapKitViewController
+        latitude = addLocationMapKitVC.latitude
+        altitude = addLocationMapKitVC.altitude
+        locationTextField.text = addLocationMapKitVC.autocompleteTextField.text
+    }
+
     // MARK: - Navigation Control
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -151,7 +165,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
             if !(budgetTextField.text.toInt() != nil) {
                 budgetTextField.text = "0"
             }
-
+            
             info = Information(
                 pStampName: belongedStampName,
                 pDateOfInformation: selectedDate,
@@ -164,15 +178,24 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         }
     }
     
-    @IBAction func cancelToAddInformationVC(segue : UIStoryboardSegue) {
+    // MARK: - genaral function
+    func getDayFromSelectedDate() -> Int {
         
-    }
-    
-    @IBAction func saveLocation(segue : UIStoryboardSegue) {
+        var retData : Int = 0
         
-        let addLocationMapKitVC = segue.sourceViewController as! AddLocationMapKitViewController
-        latitude = addLocationMapKitVC.latitude
-        altitude = addLocationMapKitVC.altitude
-        locationTextField.text = addLocationMapKitVC.autocompleteTextField.text
+        let dateFormatter : NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek : String = dateFormatter.stringFromDate(date)
+        
+        switch(dayOfWeek) {
+        case "월요일": retData = 1
+        case "화요일": retData = 2
+        case "수요일": retData = 3
+        case "목요일": retData = 4
+        case "금요일": retData = 5
+        case "토요일": retData = 6
+        default : retData = 7
+        }
+        return retData
     }
 }

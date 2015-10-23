@@ -53,7 +53,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b24-6G-E0f">
-                                <rect key="frame" x="-60" y="48" width="278" height="51"/>
+                                <rect key="frame" x="-65" y="66" width="293" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Triplan(돌아가기)">
                                     <color key="titleColor" red="0.1137254902" green="0.12941176469999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,7 +79,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtj-H1-EeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="c2Q-Yp-tjy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="507" y="-1334"/>
+            <point key="canvasLocation" x="373" y="-1334"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="on2-uu-7CQ">
@@ -93,32 +93,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRP-cD-7MA">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <navigationItem id="bbd-Go-XoK">
-                                        <barButtonItem key="leftBarButtonItem" image="navi_menu.png" id="r4G-Qr-r3E">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t2t-XF-5z4">
-                                                <rect key="frame" x="16" y="11" width="24" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="navi_menu.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="presentNavigation:" destination="Qoo-WM-Jci" eventType="touchUpInside" id="kVO-Kh-FZv"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="7Ob-GU-Bhc">
-                                            <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="NvG-pB-q6L" kind="modal" animates="NO" id="9fe-5D-cnC"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y0N-Ca-JaJ">
                                 <rect key="frame" x="16" y="90" width="288" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,6 +168,32 @@
                                     <outlet property="delegate" destination="Qoo-WM-Jci" id="9OT-xO-ZmG"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRP-cD-7MA">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem id="bbd-Go-XoK">
+                                        <barButtonItem key="leftBarButtonItem" image="navi_menu.png" id="r4G-Qr-r3E">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t2t-XF-5z4">
+                                                <rect key="frame" x="16" y="11" width="24" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="navi_menu.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="presentNavigation:" destination="Qoo-WM-Jci" eventType="touchUpInside" id="kVO-Kh-FZv"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="7Ob-GU-Bhc">
+                                            <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="NvG-pB-q6L" kind="modal" animates="NO" id="9fe-5D-cnC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -431,15 +431,21 @@
                                     <color key="titleColor" red="0.10980392160000001" green="0.12549019610000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="LHl-am-5Iy" kind="unwind" unwindAction="deleteFromModifyVC:" id="qXo-jX-0Mz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTn-rN-amR">
                                 <rect key="frame" x="34" y="445" width="253" height="45"/>
                                 <color key="backgroundColor" red="0.50980392156862742" green="0.7803921568627451" blue="0.83137254901960789" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="확인">
+                                <state key="normal" title="수정하기">
                                     <color key="titleColor" red="0.10980392160000001" green="0.12549019610000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="LHl-am-5Iy" kind="unwind" unwindAction="modifyFromModifyVC:" id="C0W-O0-FM5"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="uvW-3O-cH7">
                                 <rect key="frame" x="0.0" y="142" width="320" height="249"/>
@@ -454,7 +460,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mxh-VP-8f4">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z8F-xZ-r6c">
@@ -562,7 +568,7 @@
                                 <rect key="frame" x="0.0" y="170" width="320" height="349"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="hqt-pw-5Xb" customClass="DetailTableViewCell" customModule="Triplan" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailCell" id="hqt-pw-5Xb" customClass="DetailTableViewCell" customModule="Triplan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hqt-pw-5Xb" id="NYJ-rv-5kv">
@@ -604,7 +610,7 @@
                                             <segue destination="3nL-Db-tP7" kind="modal" identifier="SelectInformation" id="QZJ-gB-e6w"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddDetailCell" id="3Jp-tr-abe" customClass="AddDetailTableViewCell" customModule="Triplan" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddDetailCell" id="3Jp-tr-abe" customClass="AddDetailTableViewCell" customModule="Triplan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Jp-tr-abe" id="Fir-UI-taE">
@@ -838,9 +844,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-Vu-I4v">
-                                <rect key="frame" x="0.0" y="105" width="320" height="357"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5e-UU-Yao">
                                 <rect key="frame" x="7" y="20" width="71" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -851,11 +854,23 @@
                                     <segue destination="wn5-o9-HNs" kind="unwind" unwindAction="cancelToDetailInformationVC:" id="9I4-qs-P9c"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-wW-bgi">
+                                <rect key="frame" x="8" y="93" width="305" height="382"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="e52-HO-5YD">
+                                        <rect key="frame" x="133" y="327" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="2Oi-cp-Lbo" id="gp8-qF-6kM"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="gaf-Vu-I4v" id="aD3-LI-gNl"/>
+                        <outlet property="imageScrollView" destination="YiR-wW-bgi" id="Kmy-DD-edK"/>
+                        <outlet property="pageControl" destination="e52-HO-5YD" id="m5r-9J-xfc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bC5-1D-AHa" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,8 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
     var selectedDate : NSDate = NSDate()
     //stamp 배열의 마지막 인덱스를 저장
     var lastIndex : Int = 0
+    var allStamps : [Stamp] = []
+    var allInfos : [Information] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +40,17 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             calendarView = CLWeeklyCalendarView(frame: CGRect(x: 0, y: 64.0, width: self.view.bounds.width, height: 80.0))
         }
         calendarView.delegate = self
+        calendarView.redrawToDate(stamp.startDate)
         
         myTableView.delegate = self
         myTableView.dataSource = self
         
+        for i in 0 ..< allStamps.count {
+            for j in 0 ..< allStamps[i].infos.count {
+                var tmpStamps = allStamps[i]
+                allInfos.append(tmpStamps.infos[j])
+            }
+        }
         
         //날짜에 따라서 테이블에 보여줄 displayInfos객체에 데이터 저장
         let formatter : NSDateFormatter = NSDateFormatter()
@@ -58,7 +67,6 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         }
         
         lastIndex = displayInfos.endIndex
-        
         // calendarView를 컨트를러에 추가
         self.view.addSubview(self.calendarView)
     }
@@ -70,7 +78,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
     // MARK: - CLCalendar Delegate
     // 1주의 시작 요일 을 저장(1 - MON, 7- SUN)
     func CLCalendarBehaviorAttributes() -> [NSObject : AnyObject]! {
-        return [CLCalendarWeekStartDay : 6]
+        return [CLCalendarWeekStartDay : getDayFromStampStartDate()]
     }
     
     //각각의 요일이 눌렷을때 이벤트
@@ -172,12 +180,14 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             
             let addInfomationVC = segue.destinationViewController as! AddInfomationViewController
             addInfomationVC.belongedStampName = stamp.title
+            addInfomationVC.date = self.selectedDate
         } else if segue.identifier == "SelectInformation" {
             
             let detailInformationVC = segue.destinationViewController as! DetailInformationViewController
             let cell = sender as! UITableViewCell
             let indexPath = self.myTableView.indexPathForCell(cell)!
-            detailInformationVC.information = stamp.infos[indexPath.row]
+            println(indexPath.row)
+            detailInformationVC.information = displayInfos[indexPath.row]
         }
     }
     
@@ -190,6 +200,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         
         let addInformationVC = segue.sourceViewController as! AddInfomationViewController
         stamp.infos.append(addInformationVC.info)
+        allInfos.append(addInformationVC.info)
         writePlistFile()
         self.navigationController?.popViewControllerAnimated(true)
         let formatter : NSDateFormatter = NSDateFormatter()
@@ -217,8 +228,8 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         
         var infoArr = NSMutableArray()
         
-        for index in 0 ..< stamp.infos.count {
-            var item : Information = stamp.infos[index]
+        for index in 0 ..< allInfos.count {
+            var item : Information = allInfos[index]
             
             var stampName = item.stampName
             var dateOfInformation = item.dateOfInformation
@@ -253,6 +264,27 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
 
             infoArr.writeToFile(path, atomically: true)
         }
+    }
+    
+    // MARK: - genaral function
+    func getDayFromStampStartDate() -> Int {
+        
+        var retData : Int = 0
+        
+        let dateFormatter : NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek : String = dateFormatter.stringFromDate(stamp.startDate)
+        
+        switch(dayOfWeek) {
+            case "월요일": retData = 1
+            case "화요일": retData = 2
+            case "수요일": retData = 3
+            case "목요일": retData = 4
+            case "금요일": retData = 5
+            case "토요일": retData = 6
+            default : retData = 7
+        }
+        return retData
     }
 }
 

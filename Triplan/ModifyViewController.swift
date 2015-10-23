@@ -38,6 +38,9 @@ class ModifyViewController: UIViewController , UITableViewDataSource, UITableVie
     var startDate : NSDate?
     var endDate : NSDate?
     
+    //index of all stamps array to delete one stamp
+    var indexOfStamps : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,7 +63,6 @@ class ModifyViewController: UIViewController , UITableViewDataSource, UITableVie
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "localeChanged", name: NSCurrentLocaleDidChangeNotification, object: nil)
         startDate = dataArray[0][kDateKey] as? NSDate
         endDate = dataArray[1][kDateKey] as? NSDate
-
     }
     
     func localeChanged(notif : NSNotification) {

@@ -13,6 +13,8 @@ class TabViewController: UITabBarController , UITabBarControllerDelegate{
     @IBOutlet weak var myTabBar: UITabBar!
     //선택된 stamp객체 생성
     var selectedStamp = Stamp();
+    var allStamps : [Stamp] = []
+    var indexOfStamps : Int!
     
     override func viewDidLoad() {
         
@@ -28,8 +30,10 @@ class TabViewController: UITabBarController , UITabBarControllerDelegate{
         
         //선택된 stamp객체를 각각의 VC의 stamp변수에 저장
         travelVC.stamp = self.selectedStamp
+        travelVC.allStamps = self.allStamps
         statisticsVC.stamp = self.selectedStamp
         modifyVC.stamp = self.selectedStamp
+        modifyVC.indexOfStamps = self.indexOfStamps
     }
 
     override func didReceiveMemoryWarning() {

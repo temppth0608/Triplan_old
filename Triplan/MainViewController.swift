@@ -26,6 +26,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         readPlistFile1()
         readPlistFile2()
         lastIndex = stamps.endIndex
+        stamps = reverse(stamps)
+        
+        for index in 0 ..< stamps.count {
+            stamps[index].infos = reverse(stamps[index].infos)
+        }
         
         //네비게이션 바 경계선 지정
         myNavBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -86,6 +91,36 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         myCollectionView.reloadData()
     }
     
+    //수정
+    @IBAction func modifyFromModifyVC(segue : UIStoryboardSegue) {
+        
+        var modifyVC = segue.sourceViewController as! ModifyViewController
+        
+        var indexForUpdate = modifyVC.indexOfStamps
+        stamps[indexForUpdate].title = modifyVC.titleTextField.text
+        stamps[indexForUpdate].startDate = modifyVC.startDate
+        stamps[indexForUpdate].endDate = modifyVC.endDate
+        
+        writePlistFile()
+        myCollectionView.reloadData()
+    }
+    
+    //삭제
+    @IBAction func deleteFromModifyVC(segue : UIStoryboardSegue) {
+        
+        var modifyVC = segue.sourceViewController as! ModifyViewController
+        
+        var indexForDelete = modifyVC.indexOfStamps
+        
+        stamps.removeAtIndex(indexForDelete)
+        lastIndex--
+        
+        var alertHelper = AlertHelper()
+        alertHelper.triggerAlert(fromController: self, title: "알림", message: "삭제 완료!", closeText: "닫기")
+        myCollectionView.reloadData()
+        writePlistFile()
+    }
+    
     // MARK: - Navigation Control
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -99,6 +134,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let indexPath = self.myCollectionView?.indexPathForCell(cell)!
             
             tabVC.selectedStamp = self.stamps[indexPath!.row]
+            tabVC.allStamps = self.stamps
+            tabVC.indexOfStamps = indexPath!.row
             
             for index in 0 ..< stamps[indexPath!.row].infos.count {
                 var tmpInfos = stamps[indexPath!.row].infos[index]
@@ -204,5 +241,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             stampArr.writeToFile(path, atomically: true)
         }
+    }
+}
+
+class AlertHelper {
+    //Alert function
+    func triggerAlert(fromController controller : UIViewController,title : String, message : String, closeText : String) {
+        
+        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertViewController.addAction(UIAlertAction(title: closeText, style: UIAlertActionStyle.Cancel, handler: nil))
+        controller.presentViewController(alertViewController, animated: true, completion: nil)
     }
 }
