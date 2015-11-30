@@ -105,34 +105,28 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
         // the requestImageForAsset will return both the image
         // and thumbnail; by setting synchronous to true it
         // will return just the thumbnail
-        var requestOptions = PHImageRequestOptions()
+        let requestOptions = PHImageRequestOptions()
         requestOptions.synchronous = true
         
         // Sort the images by creation date
-        var fetchOptions = PHFetchOptions()
+        let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: true)]
         
-        if let fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions) {
+        let fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
             
-            // If the fetch result isn't empty,
-            // proceed with the image request
-            if fetchResult.count > 0 {
-                // Perform the image request
-                imgManager.requestImageForAsset(fetchResult.objectAtIndex(fetchResult.count - 1 - index) as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
-                    // Add the returned image to your array
-                    self.images.append(image)
-                    // If you haven't already reached the first
-                    // index of the fetch result and if you haven't
-                    // already stored all of the images you need,
-                    // perform the fetch request again with an
-                    // incremented index
-                    if index + 1 < fetchResult.count && self.images.count < self.totalImageCountNeeded {
-                        self.fetchPhotoAtIndexFromEnd(index + 1)
-                    } else {
-                        // Else you have completed creating your array
-                    }
-                })
-            }
+        // If the fetch result isn't empty,
+        // proceed with the image request
+        if fetchResult.count > 0 {
+        // Perform the image request
+            imgManager.requestImageForAsset(fetchResult.objectAtIndex(fetchResult.count - 1 - index) as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
+            // Add the returned image to your array
+                self.images.append(image!)
+                if index + 1 < fetchResult.count && self.images.count < self.totalImageCountNeeded {
+                    self.fetchPhotoAtIndexFromEnd(index + 1)
+                } else {
+                    // Else you have completed creating your array
+                }
+            })
         }
     }
     
@@ -158,7 +152,7 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
             //Add this line
             if let address = response?.firstResult() {
                 let lines = address.lines as! [String]
-                self.locationAddressLabel.text = join("\n", lines)
+                self.locationAddressLabel.text = lines.joinWithSeparator("\n")
             }
         }
     }

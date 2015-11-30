@@ -47,7 +47,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         
         for i in 0 ..< allStamps.count {
             for j in 0 ..< allStamps[i].infos.count {
-                var tmpStamps = allStamps[i]
+                let tmpStamps = allStamps[i]
                 allInfos.append(tmpStamps.infos[j])
             }
         }
@@ -56,10 +56,10 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         let formatter : NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        var stringFromSelectedDate = formatter.stringFromDate(selectedDate)
+        let stringFromSelectedDate = formatter.stringFromDate(selectedDate)
         
         for index in 0 ..< stamp.infos.count {
-            var stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
+            let stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
             
             if stringFromInfoDate == stringFromSelectedDate {
                 displayInfos.append(stamp.infos[index])
@@ -91,10 +91,10 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         let formatter : NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        var stringFromSelectedDate = formatter.stringFromDate(selectedDate)
+        let stringFromSelectedDate = formatter.stringFromDate(selectedDate)
         
         for index in 0 ..< stamp.infos.count {
-            var stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
+            let stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
             
             if stringFromInfoDate == stringFromSelectedDate {
                 displayInfos.append(stamp.infos[index])
@@ -186,7 +186,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             let detailInformationVC = segue.destinationViewController as! DetailInformationViewController
             let cell = sender as! UITableViewCell
             let indexPath = self.myTableView.indexPathForCell(cell)!
-            println(indexPath.row)
+            print(indexPath.row)
             detailInformationVC.information = displayInfos[indexPath.row]
         }
     }
@@ -206,12 +206,12 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
         let formatter : NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        var stringFromSelectedDate = formatter.stringFromDate(selectedDate)
+        let stringFromSelectedDate = formatter.stringFromDate(selectedDate)
         
         displayInfos = []
         
         for index in 0 ..< stamp.infos.count {
-            var stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
+            let stringFromInfoDate = formatter.stringFromDate(stamp.infos[index].dateOfInformation)
             
             if stringFromInfoDate == stringFromSelectedDate {
                 displayInfos.append(stamp.infos[index])
@@ -226,21 +226,21 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
     //InformationList.plist write
     func writePlistFile() {
         
-        var infoArr = NSMutableArray()
+        let infoArr = NSMutableArray()
         
         for index in 0 ..< allInfos.count {
-            var item : Information = allInfos[index]
+            let item : Information = allInfos[index]
             
-            var stampName = item.stampName
-            var dateOfInformation = item.dateOfInformation
-            var category = item.category
-            var locationTitle = item.locationTitle
-            var budget = item.budget
-            var memo = item.memo
-            var altitude = item.altitude
-            var latitude = item.latitude
+            let stampName = item.stampName
+            let dateOfInformation = item.dateOfInformation
+            let category = item.category
+            let locationTitle = item.locationTitle
+            let budget = item.budget
+            let memo = item.memo
+            let altitude = item.altitude
+            let latitude = item.latitude
             
-            var dic : NSDictionary = [
+            let dic : NSDictionary = [
                 "StampName" : stampName,
                 "DateOfInformation" : dateOfInformation,
                 "Category" : category,
@@ -253,13 +253,16 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             
             infoArr.insertObject(dic, atIndex: 0)
             
-            var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]as! String
-            var path = paths.stringByAppendingPathComponent("InformationList.plist")
-            var fileManager = NSFileManager.defaultManager()
+            let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+            let path = (paths as NSString).stringByAppendingPathComponent("InformationList.plist")
+            let fileManager = NSFileManager.defaultManager()
             if (!(fileManager.fileExistsAtPath(path)))
             {
-                var bundle : NSString = NSBundle.mainBundle().pathForResource("InformationList", ofType: "plist")!
-                fileManager.copyItemAtPath(bundle as String, toPath: path, error:nil)
+                let bundle : NSString = NSBundle.mainBundle().pathForResource("InformationList", ofType: "plist")!
+                do {
+                    try fileManager.copyItemAtPath(bundle as String, toPath: path)
+                } catch _ {
+                }
             }
 
             infoArr.writeToFile(path, atomically: true)

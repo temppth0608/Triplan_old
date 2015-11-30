@@ -45,7 +45,7 @@ class PictureViewController: UIViewController ,UIScrollViewDelegate{
             return;
         }
         
-        if let pageView = pageViews[page] {
+        if let _ = pageViews[page] {
             
         }else {
             var frame = imageScrollView.bounds;

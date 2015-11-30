@@ -19,10 +19,10 @@ class GoogleDataProvider {
     return NSURLSession.sharedSession()
   }
   
-  func fetchPlacesNearCoordinate(coordinate: CLLocationCoordinate2D, radius: Double, types:[String], completion: (([GooglePlace]) -> Void)) -> ()
-  {
+  func fetchPlacesNearCoordinate(coordinate: CLLocationCoordinate2D, radius: Double, types:[String], completion: (([GooglePlace]) -> Void)) -> () {
+    
     var urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=\(apiKey)&location=\(coordinate.latitude),\(coordinate.longitude)&radius=\(radius)&rankby=prominence&sensor=true"
-    let typesString = types.count > 0 ? join("|", types) : "food"
+    let typesString = types.count > 0 ? types.joinWithSeparator("|") : "food"
     urlString += "&types=\(typesString)"
     urlString = urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
     
@@ -33,7 +33,7 @@ class GoogleDataProvider {
     placesTask = session.dataTaskWithURL(NSURL(string: urlString)!) {data, response, error in
       UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       var placesArray = [GooglePlace]()
-      if let json = NSJSONSerialization.JSONObjectWithData(data, options:nil, error:nil) as? NSDictionary {
+      if let json = (try? NSJSONSerialization.JSONObjectWithData(data!, options:[])) as? NSDictionary {
         if let results = json["results"] as? NSArray {
           for rawPlace:AnyObject in results {
             let place = GooglePlace(dictionary: rawPlace as! NSDictionary, acceptedTypes: types)
@@ -56,15 +56,14 @@ class GoogleDataProvider {
 
   
   
-  func fetchDirectionsFrom(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, completion: ((String?) -> Void)) -> ()
-  {
+  func fetchDirectionsFrom(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, completion: ((String?) -> Void)) -> () {
     let urlString = "https://maps.googleapis.com/maps/api/directions/json?key=\(apiKey)&origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&mode=walking"
     
     UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     session.dataTaskWithURL(NSURL(string: urlString)!) {data, response, error in
       UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       var encodedRoute: String?
-      if let json = NSJSONSerialization.JSONObjectWithData(data, options:nil, error:nil) as? [String:AnyObject] {
+      if let json = (try? NSJSONSerialization.JSONObjectWithData(data!, options:[])) as? [String:AnyObject] {
         if let routes = json["routes"] as AnyObject? as? [AnyObject] {
           if let route = routes.first as? [String : AnyObject] {
             if let polyline = route["overview_polyline"] as AnyObject? as? [String : String] {
@@ -82,8 +81,7 @@ class GoogleDataProvider {
   }
   
   
-  func fetchPhotoFromReference(reference: String, completion: ((UIImage?) -> Void)) -> ()
-  {
+  func fetchPhotoFromReference(reference: String, completion: ((UIImage?) -> Void)) -> () {
     if let photo = photoCache[reference] as UIImage! {
       completion(photo)
     } else {
@@ -92,7 +90,7 @@ class GoogleDataProvider {
       UIApplication.sharedApplication().networkActivityIndicatorVisible = true
       session.downloadTaskWithURL(NSURL(string: urlString)!) {url, response, error in
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        let downloadedPhoto = UIImage(data: NSData(contentsOfURL: url)!)
+        let downloadedPhoto = UIImage(data: NSData(contentsOfURL: url!)!)
         self.photoCache[reference] = downloadedPhoto
         dispatch_async(dispatch_get_main_queue()) {
           completion(downloadedPhoto)

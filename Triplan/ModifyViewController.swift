@@ -153,7 +153,7 @@ class ModifyViewController: UIViewController , UITableViewDataSource, UITableVie
             cellID = kDateCellID       // the start/end date cells
         }
         
-        cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? UITableViewCell
+        cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as UITableViewCell
         
         if indexPath.row == 0 {
             // we decide here that first cell in the table is not selectable (it's just an indicator)
@@ -214,7 +214,7 @@ class ModifyViewController: UIViewController , UITableViewDataSource, UITableVie
             before = datePickerIndexPath?.row < indexPath.row
         }
         
-        var sameCellClicked = (datePickerIndexPath?.row == indexPath.row + 1)
+        let sameCellClicked = (datePickerIndexPath?.row == indexPath.row + 1)
         
         // remove any date picker cell if it exists
         if self.hasInlineDatePicker() {
@@ -288,7 +288,7 @@ class ModifyViewController: UIViewController , UITableViewDataSource, UITableVie
     */
     
     // MARK: - KeyBoard Event
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -318,10 +318,10 @@ class ModifyViewController: UIViewController , UITableViewDataSource, UITableVie
             targetedCellIndexPath = NSIndexPath(forRow: datePickerIndexPath!.row - 1, inSection: 0)
         } else {
             // external date picker: update the current "selected" cell's date
-            targetedCellIndexPath = myTable.indexPathForSelectedRow()!
+            targetedCellIndexPath = myTable.indexPathForSelectedRow!
         }
         
-        var cell = myTable.cellForRowAtIndexPath(targetedCellIndexPath!)
+        let cell = myTable.cellForRowAtIndexPath(targetedCellIndexPath!)
         let targetedDatePicker: AnyObject = sender
         
         // update our data model

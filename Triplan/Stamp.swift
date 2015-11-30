@@ -39,7 +39,7 @@ class Stamp {
         return totalBudget
     }
     
-    func getBudget(var categoryName : String) -> Int {
+    func getBudget(categoryName : String) -> Int {
         
         var retBudget : Int = 0
         

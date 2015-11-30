@@ -26,10 +26,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         readPlistFile1()
         readPlistFile2()
         lastIndex = stamps.endIndex
-        stamps = reverse(stamps)
+        stamps = Array(stamps.reverse())
         
         for index in 0 ..< stamps.count {
-            stamps[index].infos = reverse(stamps[index].infos)
+            stamps[index].infos = Array(stamps[index].infos.reverse())
         }
         
         //네비게이션 바 경계선 지정
@@ -82,7 +82,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func saveStamp(segue : UIStoryboardSegue) {
         
-        var addStampVC = segue.sourceViewController as! AddStampViewController
+        let addStampVC = segue.sourceViewController as! AddStampViewController
         
         stamps.append(addStampVC.stamp!)
         writePlistFile()
@@ -94,12 +94,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     //수정
     @IBAction func modifyFromModifyVC(segue : UIStoryboardSegue) {
         
-        var modifyVC = segue.sourceViewController as! ModifyViewController
+        let modifyVC = segue.sourceViewController as! ModifyViewController
         
-        var indexForUpdate = modifyVC.indexOfStamps
-        stamps[indexForUpdate].title = modifyVC.titleTextField.text
-        stamps[indexForUpdate].startDate = modifyVC.startDate
-        stamps[indexForUpdate].endDate = modifyVC.endDate
+        let indexForModify = modifyVC.indexOfStamps
+        stamps[indexForModify].title = modifyVC.titleTextField.text!
+        stamps[indexForModify].startDate = modifyVC.startDate
+        stamps[indexForModify].endDate = modifyVC.endDate
         
         writePlistFile()
         myCollectionView.reloadData()
@@ -108,24 +108,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     //삭제
     @IBAction func deleteFromModifyVC(segue : UIStoryboardSegue) {
         
-        var modifyVC = segue.sourceViewController as! ModifyViewController
+        let modifyVC = segue.sourceViewController as! ModifyViewController
         
-        var indexForDelete = modifyVC.indexOfStamps
+        let indexForDelete = modifyVC.indexOfStamps
         
         stamps.removeAtIndex(indexForDelete)
         lastIndex--
         
-        var alertHelper = AlertHelper()
-        alertHelper.triggerAlert(fromController: self, title: "알림", message: "삭제 완료!", closeText: "닫기")
-        myCollectionView.reloadData()
         writePlistFile()
+        myCollectionView.reloadData()
     }
     
     // MARK: - Navigation Control
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "presentNav" {
-            let toViewController = segue.destinationViewController as! UIViewController
+            let toViewController = segue.destinationViewController 
             self.modalPresentationStyle = UIModalPresentationStyle.Custom
             toViewController.transitioningDelegate = self.transitionOperator
         } else if segue.identifier == "selectStamp" {
@@ -138,16 +136,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             tabVC.indexOfStamps = indexPath!.row
             
             for index in 0 ..< stamps[indexPath!.row].infos.count {
-                var tmpInfos = stamps[indexPath!.row].infos[index]
-                println("info정보 \(index) 번째")
-                println(tmpInfos.stampName)
-                println(tmpInfos.category)
-                println(tmpInfos.locationTitle)
-                println(tmpInfos.dateOfInformation)
-                println(tmpInfos.budget)
-                println(tmpInfos.altitude)
-                println(tmpInfos.latitude)
-                println("")
+                let tmpInfos = stamps[indexPath!.row].infos[index]
+                print("info정보 \(index) 번째")
+                print(tmpInfos.stampName)
+                print(tmpInfos.category)
+                print(tmpInfos.locationTitle)
+                print(tmpInfos.dateOfInformation)
+                print(tmpInfos.budget)
+                print(tmpInfos.altitude)
+                print(tmpInfos.latitude)
+                print("")
             }
         }
     }
@@ -156,18 +154,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     //StampList.plist read
     func readPlistFile1() {
         
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        var path = paths.stringByAppendingPathComponent("StampList.plist")
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
+        let path = (paths as NSString).stringByAppendingPathComponent("StampList.plist")
 
         var stampArr : NSArray!
         stampArr = NSArray(contentsOfFile: path)
         
         if stampArr == nil {
-            println("stampArr is nil")
+            print("stampArr is nil")
         } else {
             for index in 0 ..< stampArr.count {
-                var stampDic = stampArr[index] as! NSDictionary
-                var tmpStamp = Stamp(title: stampDic["Title"] as! String,
+                let stampDic = stampArr[index] as! NSDictionary
+                let tmpStamp = Stamp(title: stampDic["Title"] as! String,
                     startDate: stampDic["StartDate"] as! NSDate,
                     endDate: stampDic["EndDate"] as! NSDate)
                 self.stamps.append(tmpStamp)
@@ -178,18 +176,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     //InformationList.plist read
     func readPlistFile2() {
         
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        var path = paths.stringByAppendingPathComponent("InformationList.plist")
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
+        let path = (paths as NSString).stringByAppendingPathComponent("InformationList.plist")
         
         var infoArr : NSArray!
         infoArr = NSArray(contentsOfFile: path)
         
         if infoArr == nil {
-            println("infoArr is nill")
+            print("infoArr is nill")
         } else {
             for index in 0 ..< infoArr.count {
-                var infoDic = infoArr[index] as! NSDictionary
-                var tmpInfo = Information(
+                let infoDic = infoArr[index] as! NSDictionary
+                let tmpInfo = Information(
                     pStampName: infoDic["StampName"] as! String,
                     pDateOfInformation: infoDic["DateOfInformation"] as! NSDate,
                     pCategory: infoDic["Category"] as! String,
@@ -201,7 +199,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 )
                 
                 for index in 0 ..< stamps.count {
-                    var tmpStamp = stamps[index]
+                    //var tmpStamp = stamps[index]
                     if stamps[index].title == tmpInfo.stampName {
                         stamps[index].infos.append(tmpInfo)
                     }
@@ -213,16 +211,27 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     //StampList.plist Write
     func writePlistFile() {
         
-        var stampArr = NSMutableArray()
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let path = (paths as NSString).stringByAppendingPathComponent("StampList.plist")
+        let fileManager = NSFileManager.defaultManager()
+        
+        if stamps.count == 0 {
+            do {
+                try fileManager.removeItemAtPath(path)
+            } catch _ {
+                
+            }
+        }
+        let stampArr = NSMutableArray()
         
         for index in 0 ..< stamps.count {
-            var item : Stamp = stamps[index]
+            let item : Stamp = stamps[index]
             
-            var title : String = item.title
-            var startDate : NSDate = item.startDate
-            var endDate : NSDate = item.endDate
+            let title : String = item.title
+            let startDate : NSDate = item.startDate
+            let endDate : NSDate = item.endDate
             
-            var dic : NSDictionary = [
+            let dic : NSDictionary = [
                 "Title" : title,
                 "StartDate" : startDate,
                 "EndDate" : endDate,
@@ -230,27 +239,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             stampArr.insertObject(dic, atIndex: 0)
             
-            var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]as! String
-            var path = paths.stringByAppendingPathComponent("StampList.plist")
-            var fileManager = NSFileManager.defaultManager()
             if (!(fileManager.fileExistsAtPath(path)))
             {
-                var bundle : NSString = NSBundle.mainBundle().pathForResource("StampList", ofType: "plist")!
-                fileManager.copyItemAtPath(bundle as String, toPath: path, error:nil)
+                let bundle : NSString = NSBundle.mainBundle().pathForResource("StampList", ofType: "plist")!
+                do {
+                    try fileManager.copyItemAtPath(bundle as String, toPath: path)
+                } catch _ {
+                }
             }
-            
             stampArr.writeToFile(path, atomically: true)
         }
     }
 }
 
-class AlertHelper {
-    //Alert function
-    func triggerAlert(fromController controller : UIViewController,title : String, message : String, closeText : String) {
-        
-        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alertViewController.addAction(UIAlertAction(title: closeText, style: UIAlertActionStyle.Cancel, handler: nil))
-        controller.presentViewController(alertViewController, animated: true, completion: nil)
-    }
-}

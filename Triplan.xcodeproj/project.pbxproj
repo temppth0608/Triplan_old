@@ -381,10 +381,6 @@
 				E838A3521B5A0CFC0052CEA3 /* AddLocationMapKitViewController.swift */,
 				E8AA64CB1B4A450C00EDF573 /* StatisticsViewController.swift */,
 				E8AA64CD1B4A455900EDF573 /* ModifyViewController.swift */,
-				E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */,
-				E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */,
-				E88334C81B60EA5300E4F9C2 /* MarkerView.swift */,
-				E88334C91B60EA5300E4F9C2 /* MarkerView.xib */,
 				E8822CF11AFDD31A00617F50 /* Main.storyboard */,
 			);
 			name = ViewController;
@@ -696,6 +692,10 @@
 				E88334B61B60DBF100E4F9C2 /* GoogleDataProvider.swift */,
 				E88334B71B60DBF100E4F9C2 /* GooglePlace.swift */,
 				E88334B81B60DBF100E4F9C2 /* PlaceMarker.swift */,
+				E88334BC1B60DEF100E4F9C2 /* MarkerInfoView.swift */,
+				E88334BD1B60DEF100E4F9C2 /* MarkerInfoView.xib */,
+				E88334C81B60EA5300E4F9C2 /* MarkerView.swift */,
+				E88334C91B60EA5300E4F9C2 /* MarkerView.xib */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -799,7 +799,9 @@
 		E8822CE01AFDD31A00617F50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "태현";
 				TargetAttributes = {
 					E8822CE71AFDD31A00617F50 = {
@@ -1087,6 +1089,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1159,6 +1162,7 @@
 				INFOPLIST_FILE = Triplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier).com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ParkTaeHyun/Desktop/Triplan/Triplan/Triplan-Bridging-Header.h";
@@ -1181,6 +1185,7 @@
 				INFOPLIST_FILE = Triplan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier).com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ParkTaeHyun/Desktop/Triplan/Triplan/Triplan-Bridging-Header.h";
@@ -1201,6 +1206,7 @@
 				);
 				INFOPLIST_FILE = TriplanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AppCenter.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Triplan.app/Triplan";
 			};
@@ -1216,6 +1222,7 @@
 				);
 				INFOPLIST_FILE = TriplanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AppCenter.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Triplan.app/Triplan";
 			};

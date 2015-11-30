@@ -16,7 +16,7 @@ class TGInitialViewController: UIViewController ,TGCameraDelegate{
         super.viewDidLoad()
         TGCamera.setOption(kTGCameraOptionSaveImageToAlbum, value: true)
         photoView.clipsToBounds = false
-        var clearButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "clearTapped")
+        let clearButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "clearTapped")
         self.navigationItem.rightBarButtonItem = clearButton
     }
 
@@ -58,7 +58,7 @@ class TGInitialViewController: UIViewController ,TGCameraDelegate{
     
     // MARK: - IBAction function
     @IBAction func takePhotoTapped(sender: AnyObject) {
-        var navigationController = TGCameraNavigationController.newWithCameraDelegate(self)
+        let navigationController = TGCameraNavigationController.newWithCameraDelegate(self)
         self.presentViewController(navigationController, animated: true, completion: nil)
     }
 }

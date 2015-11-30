@@ -65,7 +65,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     // MARK: - Text Field, View Delegate
     
     //다른 화면을 터치하면 키보드 숨겨짐
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -103,7 +103,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     @IBAction func touchCategoryButton(sender : AnyObject) {
         
         //눌러진 버튼이미지의 tag값을 저장
-        var selectedButton : Int = sender.tag as Int
+        let selectedButton : Int = sender.tag as Int
         
         //버튼 클릭시 이미지 변환까지
         switch selectedButton {
@@ -162,7 +162,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         
         if segue.identifier == "SaveInfomation" {
             
-            if !(budgetTextField.text.toInt() != nil) {
+            if !(Int(budgetTextField.text!) != nil) {
                 budgetTextField.text = "0"
             }
             
@@ -170,8 +170,8 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
                 pStampName: belongedStampName,
                 pDateOfInformation: selectedDate,
                 pCategory: selectedCategory,
-                pLocationTitle: locationTextField.text,
-                pBudget: budgetTextField.text.toInt()!,
+                pLocationTitle: locationTextField.text!,
+                pBudget: Int(budgetTextField.text!)!,
                 pMemo: memoTextView.text,
                 pAltitude: altitude,
                 pLatitude: latitude)

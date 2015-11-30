@@ -90,7 +90,7 @@ class ExpandMapViewController: UIViewController ,GMSMapViewDelegate, CLLocationM
     }
     
     // 1
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         // 2
         if status == .AuthorizedWhenInUse {
             
@@ -108,15 +108,14 @@ class ExpandMapViewController: UIViewController ,GMSMapViewDelegate, CLLocationM
     }
     
     // 5
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        if let location = locations.first as? CLLocation {
-            // 6
-            mapView.camera = GMSCameraPosition(target: self.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        mapView.camera = GMSCameraPosition(target: self.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             
-            // 7
-            locationManager.stopUpdatingLocation()
-            fetchNearbyPlaces(self.coordinate)
-        }
+        // 7
+        locationManager.stopUpdatingLocation()
+        fetchNearbyPlaces(self.coordinate)
+        
     }
     
     

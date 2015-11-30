@@ -72,7 +72,7 @@ class AddLocationMapKitViewController: UIViewController ,NSURLConnectionDataDele
         autocompleteTextField.onSelect = {[weak self] text, indexpath in
             Location.geocodeAddressString(text, completion: { (placemark, error) -> Void in
                 if placemark != nil{
-                    let coordinate = placemark!.location.coordinate
+                    let coordinate = placemark!.location!.coordinate
                     self?.latitude = coordinate.latitude.description
                     self?.altitude = coordinate.longitude.description                    
                     self!.addAnnotation(coordinate, address: text)
@@ -92,41 +92,37 @@ class AddLocationMapKitViewController: UIViewController ,NSURLConnectionDataDele
         responseData?.appendData(data)
     }
     
-    func connectionDidFinishLoading(connection: NSURLConnection) {
-        if responseData != nil{
-            var error:NSError?
-            if let result = NSJSONSerialization.JSONObjectWithData(responseData!, options: nil, error: &error) as? NSDictionary{
-                let status = result["status"] as? String
-                if status == "OK"{
-                    if let predictions = result["predictions"] as? NSArray{
-                        var locations = [String]()
-                        for dict in predictions as! [NSDictionary]{
-                            locations.append(dict["description"] as! String)
-                        }
-                        self.autocompleteTextField.autoCompleteStrings = locations
-                    }
-                }
-                else{
-                    self.autocompleteTextField.autoCompleteStrings = nil
-                }
-            }
-        }
-    }
+//    func connectionDidFinishLoading(connection: NSURLConnection) {
+//        
+//        if responseData != nil{
+//            let result = NSJSONSerialization.JSONObjectWithData(responseData!, options: [])
+//            let status = result["status"] as? String
+//            if status == "OK" {
+//                if let predictions = result["predictions"] as? NSArray{
+//                    var locations = [String]()
+//                    for dict in predictions as! [NSDictionary]{
+//                        locations.append(dict["description"] as! String)
+//                    }
+//                    self.autocompleteTextField.autoCompleteStrings = locations
+//                }
+//            }
+//        }
+//    }
     
     func connection(connection: NSURLConnection, didFailWithError error: NSError) {
-        println("Error: \(error.localizedDescription)")
+        print("Error: \(error.localizedDescription)")
     }
     
     //MARK: Map Utilities
     private func addAnnotation(coordinate:CLLocationCoordinate2D, address:String?){
         if selectedPointAnnotation != nil{
-            mapView.removeAnnotation(selectedPointAnnotation)
+            mapView.removeAnnotation(selectedPointAnnotation!)
         }
         
         selectedPointAnnotation = MKPointAnnotation()
         selectedPointAnnotation?.coordinate = coordinate
         selectedPointAnnotation?.title = address
-        mapView.addAnnotation(selectedPointAnnotation)
+        mapView.addAnnotation(selectedPointAnnotation!)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

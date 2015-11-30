@@ -33,19 +33,21 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
         myNavBar.shadowImage = UIImage()
 
         mapView.delegate = self
-        
         if stamp.infos.count == 0 {
-            
+            coordinate.latitude = -33.868
+            coordinate.longitude = 151.2086
         } else {
-            coordinate.latitude = (stamp.infos[0].latitude).toDouble()!
-            coordinate.longitude = (stamp.infos[0].altitude).toDouble()!
+            if stamp.infos[0].latitude == "" && stamp.infos[0].altitude == "" {
+                coordinate.latitude = -33.868
+                coordinate.longitude = 151.2086
+            }else {
+                coordinate.latitude = (stamp.infos[0].latitude).toDouble()!
+                coordinate.longitude = (stamp.infos[0].altitude).toDouble()!
+            }
             setMapView()
         }
         setBudget()
-        
-        for i in 0 ..< 10 {
-            setCStampImages()
-        }
+        setCStampImages()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,22 +72,23 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
     //MARK: UICollectionView Delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let cell = myCollectionView.dequeueReusableCellWithReuseIdentifier("CStampCell", forIndexPath: indexPath) as! CStampCollectionViewCell
-        
-        
+//        let clickedImageIndex = indexPath.row + 1
+//        let image = UIImage(named: "stamp-\(clickedImageIndex).png")
+//        let imageView = UIImageView(image: image)
+//        imageView.frame = CGRectMake(0, 0, 100, 100)
+//        
+//        let alertController = UIAlertController(title: "Alert", message: "message", preferredStyle: UIAlertControllerStyle.Alert)
+//        let alertAction = UIAlertAction(title: "title", style: UIAlertActionStyle.Default, handler: nil)
+//        alertAction.setValue(imageView, forKey: "image")
+//        alertController.addAction(alertAction)
+//        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     //MARK: GMSMapView Delegate
     func mapView(mapView: GMSMapView!, markerInfoContents marker: GMSMarker!) -> UIView! {
-        // 1
         let placeMarker = marker as! PlaceMarker2
         
-        print("a")
-        // 2
-        
         if let infoView = UIView.viewFromNibName("MarkerView") as? MarkerView {
-
-            // 4
             if let photo = placeMarker.place.photo {
                 infoView.markerImage.image = photo
             } else {
@@ -102,11 +105,11 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
     //각 Budget Label에 데이터 저장
     func setBudget() {
         
-        var train = "train"
-        var food = "food"
-        var landmark = "landmark"
-        var hotel = "hotel"
-        var ect = "ect"
+        let train = "train"
+        let food = "food"
+        let landmark = "landmark"
+        let hotel = "hotel"
+        let ect = "ect"
         
         totalMoneyLabel.text = "\(stamp.getTotalInfosBudget()) 원"
         trafficMoneyLabel.text = "\(stamp.getBudget(train)) 원"
@@ -125,6 +128,9 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
     
     func setCStampImages() {
         
-        cStampImages.append(UIImage(named: "CStamp_example.png")!)
+        let imageCount = 20
+        for index in 1 ... imageCount {
+            self.cStampImages.append(UIImage(named: "stamp-\(index).png")!)
+        }
     }
 }
