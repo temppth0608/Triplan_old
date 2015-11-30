@@ -9,6 +9,7 @@
 import UIKit
 
 class ExpandMapViewController: UIViewController ,GMSMapViewDelegate, CLLocationManagerDelegate{
+    
     @IBOutlet weak var mapView: GMSMapView!
     
     var coordinate : CLLocationCoordinate2D!

@@ -186,7 +186,6 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             let detailInformationVC = segue.destinationViewController as! DetailInformationViewController
             let cell = sender as! UITableViewCell
             let indexPath = self.myTableView.indexPathForCell(cell)!
-            print(indexPath.row)
             detailInformationVC.information = displayInfos[indexPath.row]
         }
     }
@@ -237,7 +236,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
             let locationTitle = item.locationTitle
             let budget = item.budget
             let memo = item.memo
-            let altitude = item.altitude
+            let longitude = item.longitude
             let latitude = item.latitude
             
             let dic : NSDictionary = [
@@ -247,7 +246,7 @@ class TravelViewController: UIViewController , CLWeeklyCalendarViewDelegate, UIT
                 "LocationTitle" : locationTitle,
                 "Budget" : budget,
                 "Memo" : memo,
-                "Altitude" : altitude,
+                "Longitude" : longitude,
                 "Latitude" : latitude
             ]
             

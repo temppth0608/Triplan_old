@@ -15,7 +15,7 @@ class Information {
     var locationTitle : String
     var budget : Int
     var memo : String
-    var altitude : String
+    var longitude : String
     var latitude : String
     
     init() {
@@ -25,18 +25,18 @@ class Information {
         locationTitle = ""
         budget = 0
         memo = ""
-        altitude = ""
+        longitude = ""
         latitude = ""
     }
     
-    init(pStampName : String, pDateOfInformation : NSDate, pCategory : String, pLocationTitle : String, pBudget : Int, pMemo : String, pAltitude : String, pLatitude : String) {
+    init(pStampName : String, pDateOfInformation : NSDate, pCategory : String, pLocationTitle : String, pBudget : Int, pMemo : String, pLongitude : String, pLatitude : String) {
         stampName = pStampName
         dateOfInformation = pDateOfInformation
         category = pCategory
         locationTitle = pLocationTitle
         budget = pBudget
         memo = pMemo
-        altitude = pAltitude
+        longitude = pLongitude
         latitude = pLatitude
     }
 }

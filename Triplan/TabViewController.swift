@@ -32,6 +32,7 @@ class TabViewController: UITabBarController , UITabBarControllerDelegate{
         travelVC.stamp = self.selectedStamp
         travelVC.allStamps = self.allStamps
         statisticsVC.stamp = self.selectedStamp
+        statisticsVC.stamps = self.allStamps
         modifyVC.stamp = self.selectedStamp
         modifyVC.indexOfStamps = self.indexOfStamps
     }

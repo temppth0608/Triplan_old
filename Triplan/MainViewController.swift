@@ -64,7 +64,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let cell = myCollectionView.dequeueReusableCellWithReuseIdentifier("mainCell", forIndexPath: indexPath)as! MainCell
             
             cell.titleLabel.text = "\(stamps[indexPath.row].title)"
-            cell.mainImageView.image = UIImage(named: "main_stamp_off.png")
+            if stamps[indexPath.row].hasStamp == true && stamps[indexPath.row].stampName != "" {
+                cell.mainImageView.image = UIImage(named: stamps[indexPath.row].stampName)
+            }else {
+                cell.mainImageView.image = UIImage(named: "main_stamp_off.png")
+            }
             return cell
         }
     }
@@ -77,7 +81,21 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func cancelToMainVC(segue : UIStoryboardSegue) {
         
+        self.myCollectionView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func cancelFromStatisticsVC(segue : UIStoryboardSegue) {
+        
+        let statisticsVC = segue.sourceViewController as! StatisticsViewController
+        
+        let tmpStamps = statisticsVC.stamps
+        
+        for index in 0 ..< stamps.count {
+            self.stamps[index] = tmpStamps[index]
+        }
+        
+        self.myCollectionView.reloadData()
     }
     
     @IBAction func saveStamp(segue : UIStoryboardSegue) {
@@ -134,19 +152,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             tabVC.selectedStamp = self.stamps[indexPath!.row]
             tabVC.allStamps = self.stamps
             tabVC.indexOfStamps = indexPath!.row
-            
-            for index in 0 ..< stamps[indexPath!.row].infos.count {
-                let tmpInfos = stamps[indexPath!.row].infos[index]
-                print("info정보 \(index) 번째")
-                print(tmpInfos.stampName)
-                print(tmpInfos.category)
-                print(tmpInfos.locationTitle)
-                print(tmpInfos.dateOfInformation)
-                print(tmpInfos.budget)
-                print(tmpInfos.altitude)
-                print(tmpInfos.latitude)
-                print("")
-            }
         }
     }
     
@@ -161,13 +166,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         stampArr = NSArray(contentsOfFile: path)
         
         if stampArr == nil {
-            print("stampArr is nil")
         } else {
             for index in 0 ..< stampArr.count {
                 let stampDic = stampArr[index] as! NSDictionary
                 let tmpStamp = Stamp(title: stampDic["Title"] as! String,
-                    startDate: stampDic["StartDate"] as! NSDate,
-                    endDate: stampDic["EndDate"] as! NSDate)
+                                    startDate: stampDic["StartDate"] as! NSDate,
+                                    endDate: stampDic["EndDate"] as! NSDate,
+                                    hasStamp : stampDic["HasStamp"] as! Bool,
+                                    stampName : stampDic["StampName"] as! String)
+                tmpStamp.chackHasStamp()
                 self.stamps.append(tmpStamp)
             }
         }
@@ -178,12 +185,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
         let path = (paths as NSString).stringByAppendingPathComponent("InformationList.plist")
+        print("path : \(path)")
         
         var infoArr : NSArray!
         infoArr = NSArray(contentsOfFile: path)
         
         if infoArr == nil {
-            print("infoArr is nill")
         } else {
             for index in 0 ..< infoArr.count {
                 let infoDic = infoArr[index] as! NSDictionary
@@ -194,7 +201,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                     pLocationTitle: infoDic["LocationTitle"] as! String,
                     pBudget: infoDic["Budget"] as! Int,
                     pMemo: infoDic["Memo"] as! String,
-                    pAltitude: infoDic["Altitude"] as! String,
+                    pLongitude: infoDic["Longitude"] as! String,
                     pLatitude: infoDic["Latitude"] as! String
                 )
                 
@@ -230,11 +237,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let title : String = item.title
             let startDate : NSDate = item.startDate
             let endDate : NSDate = item.endDate
+            let hasStamp : Bool = item.hasStamp
+            let stampName : String = item.stampName
             
             let dic : NSDictionary = [
                 "Title" : title,
                 "StartDate" : startDate,
                 "EndDate" : endDate,
+                "HasStamp" : hasStamp,
+                "StampName" : stampName
             ]
             
             stampArr.insertObject(dic, atIndex: 0)

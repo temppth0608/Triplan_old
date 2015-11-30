@@ -262,7 +262,7 @@
                                     <navigationItem title="통계" id="5Gn-dK-zRy">
                                         <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="q19-WJ-7IB">
                                             <connections>
-                                                <segue destination="0SR-bG-NwR" kind="unwind" unwindAction="cancelToMainVC:" id="Fvs-rb-ra4"/>
+                                                <segue destination="0SR-bG-NwR" kind="unwind" unwindAction="cancelFromStatisticsVC:" id="s9f-7u-D7G"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -331,29 +331,26 @@
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.92941176470588238" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="경비" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-JO-jQP">
-                                <rect key="frame" x="16" y="195" width="30" height="21"/>
+                                <rect key="frame" x="16" y="196" width="30" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.10980392160000001" green="0.12549019610000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20000 원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-Sl-sri">
-                                <rect key="frame" x="152" y="195" width="152" height="21"/>
+                                <rect key="frame" x="148" y="196" width="152" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.41568627450980394" green="0.77254901960784317" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="스탬프" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBd-HX-Umb">
-                                <rect key="frame" x="16" y="366" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="textColor" red="0.10980392160000001" green="0.12549019610000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-VM-Qj1" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="123"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Detailpage_etc.png" translatesAutoresizingMaskIntoConstraints="NO" id="9LL-J7-2YC">
+                                        <rect key="frame" x="105" y="67" width="20" height="20"/>
+                                        <animations/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbg-yy-Qse">
                                         <rect key="frame" x="282" y="85" width="30" height="30"/>
                                         <animations/>
@@ -364,10 +361,6 @@
                                             <segue destination="E5e-vb-Z14" kind="modal" id="MH1-Vh-p4H"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Detailpage_etc.png" translatesAutoresizingMaskIntoConstraints="NO" id="9LL-J7-2YC">
-                                        <rect key="frame" x="150" y="52" width="20" height="20"/>
-                                        <animations/>
-                                    </imageView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -376,15 +369,15 @@
                                 </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_scroll_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="s7y-Gc-EZY">
-                                <rect key="frame" x="6" y="433" width="20" height="20"/>
+                                <rect key="frame" x="6" y="441" width="20" height="20"/>
                                 <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="right_scroll_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="hJf-HP-HSB">
-                                <rect key="frame" x="294" y="433" width="20" height="20"/>
+                                <rect key="frame" x="294" y="441" width="20" height="20"/>
                                 <animations/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YdR-eJ-kyI">
-                                <rect key="frame" x="29" y="395" width="263" height="103"/>
+                                <rect key="frame" x="29" y="403" width="263" height="103"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYx-o6-hJD">
@@ -401,7 +394,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stamp-2" translatesAutoresizingMaskIntoConstraints="NO" id="qcG-io-LVn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stamp1" translatesAutoresizingMaskIntoConstraints="NO" id="qcG-io-LVn">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <animations/>
                                                 </imageView>
@@ -421,6 +414,13 @@
                                     <outlet property="delegate" destination="9oL-R7-RFo" id="zgh-S2-WPi"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="스탬프" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBd-HX-Umb">
+                                <rect key="frame" x="16" y="366" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.12549019610000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -444,10 +444,10 @@
             </objects>
             <point key="canvasLocation" x="2031" y="-243"/>
         </scene>
-        <!--View Controller-->
+        <!--Expand Map View Controller-->
         <scene sceneID="akb-3c-vhh">
             <objects>
-                <viewController id="E5e-vb-Z14" sceneMemberID="viewController">
+                <viewController id="E5e-vb-Z14" customClass="ExpandMapViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N5l-RP-tQf"/>
                         <viewControllerLayoutGuide type="bottom" id="muy-Uq-MqD"/>
@@ -464,6 +464,9 @@
                                         <nil key="title"/>
                                         <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="66u-mh-5Kp">
                                             <color key="tintColor" red="0.14901960780000001" green="0.77647058820000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="tZY-Gi-MaZ" kind="unwind" unwindAction="cancelToDetailInformationVC:" id="eoj-6i-AQu"/>
+                                            </connections>
                                         </barButtonItem>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="8fu-tu-jUR">
                                             <rect key="frame" x="65" y="7" width="191" height="30"/>
@@ -474,6 +477,9 @@
                                                 <segment title="Satellite"/>
                                                 <segment title="Hybrid"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmentChanged:" destination="E5e-vb-Z14" eventType="valueChanged" id="q4v-zS-fwE"/>
+                                            </connections>
                                         </segmentedControl>
                                     </navigationItem>
                                 </items>
@@ -484,6 +490,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfE-k4-THY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tZY-Gi-MaZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2457" y="-242"/>
         </scene>
@@ -1519,7 +1526,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="194"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uN2-Wj-OXu">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uN2-Wj-OXu">
                                                     <rect key="frame" x="-3" y="7" width="326" height="180"/>
                                                     <animations/>
                                                     <date key="date" timeIntervalSinceReferenceDate="457857259.37967998">
@@ -1656,7 +1663,7 @@
         <image name="navi_menu.png" width="22" height="22"/>
         <image name="navigation-17.png" width="1280" height="2191"/>
         <image name="right_scroll_icon.png" width="152" height="204"/>
-        <image name="stamp-2" width="446" height="414"/>
+        <image name="stamp1" width="444" height="391"/>
         <image name="statistic_zoom.png" width="114" height="114"/>
         <image name="tab_first_off2.png" width="25" height="25"/>
         <image name="tab_second_off3.png" width="25" height="25"/>

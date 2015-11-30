@@ -20,6 +20,7 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
     @IBOutlet weak var myNavBar: UINavigationBar!
     @IBOutlet weak var myCollectionView: UICollectionView!
     
+    var stamps : [Stamp]!
     var stamp : Stamp!
     let locationManager = CLLocationManager()
     let dataProvider = GoogleDataProvider()
@@ -37,12 +38,12 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
             coordinate.latitude = -33.868
             coordinate.longitude = 151.2086
         } else {
-            if stamp.infos[0].latitude == "" && stamp.infos[0].altitude == "" {
+            if stamp.infos[0].latitude == "" && stamp.infos[0].longitude == "" {
                 coordinate.latitude = -33.868
                 coordinate.longitude = 151.2086
             }else {
                 coordinate.latitude = (stamp.infos[0].latitude).toDouble()!
-                coordinate.longitude = (stamp.infos[0].altitude).toDouble()!
+                coordinate.longitude = (stamp.infos[0].longitude).toDouble()!
             }
             setMapView()
         }
@@ -72,16 +73,16 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
     //MARK: UICollectionView Delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-//        let clickedImageIndex = indexPath.row + 1
-//        let image = UIImage(named: "stamp-\(clickedImageIndex).png")
-//        let imageView = UIImageView(image: image)
-//        imageView.frame = CGRectMake(0, 0, 100, 100)
-//        
-//        let alertController = UIAlertController(title: "Alert", message: "message", preferredStyle: UIAlertControllerStyle.Alert)
-//        let alertAction = UIAlertAction(title: "title", style: UIAlertActionStyle.Default, handler: nil)
-//        alertAction.setValue(imageView, forKey: "image")
-//        alertController.addAction(alertAction)
-//        self.presentViewController(alertController, animated: true, completion: nil)
+        let clickedImageIndex = indexPath.row + 1
+        let stampName = "stamp\(clickedImageIndex).png"
+        
+        let alertController = UIAlertController(title: "알림", message: "스탬프 선택!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "알림", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        stamp.setStampName(stampName)
+        
+        writePlistFile()
     }
     
     //MARK: GMSMapView Delegate
@@ -130,7 +131,54 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
         
         let imageCount = 20
         for index in 1 ... imageCount {
-            self.cStampImages.append(UIImage(named: "stamp-\(index).png")!)
+            self.cStampImages.append(UIImage(named: "stamp\(index).png")!)
+        }
+    }
+    
+    //StampList.plist Write
+    func writePlistFile() {
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let path = (paths as NSString).stringByAppendingPathComponent("StampList.plist")
+        let fileManager = NSFileManager.defaultManager()
+        
+        if stamps.count == 0 {
+            do {
+                try fileManager.removeItemAtPath(path)
+            } catch _ {
+                
+            }
+        }
+        let stampArr = NSMutableArray()
+        
+        for index in 0 ..< stamps.count {
+            let item : Stamp = stamps[index]
+            
+            let title : String = item.title
+            let startDate : NSDate = item.startDate
+            let endDate : NSDate = item.endDate
+            let hasStamp : Bool = item.hasStamp
+            let stampName : String = item.stampName
+            
+            let dic : NSDictionary = [
+                "Title" : title,
+                "StartDate" : startDate,
+                "EndDate" : endDate,
+                "HasStamp" : hasStamp,
+                "StampName" : stampName
+            ]
+            
+            stampArr.insertObject(dic, atIndex: 0)
+            
+            if (!(fileManager.fileExistsAtPath(path)))
+            {
+                let bundle : NSString = NSBundle.mainBundle().pathForResource("StampList", ofType: "plist")!
+                do {
+                    try fileManager.copyItemAtPath(bundle as String, toPath: path)
+                } catch _ {
+                }
+            }
+            stampArr.writeToFile(path, atomically: true)
         }
     }
 }
