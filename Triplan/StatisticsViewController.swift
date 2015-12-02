@@ -76,8 +76,8 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
         let clickedImageIndex = indexPath.row + 1
         let stampName = "stamp\(clickedImageIndex).png"
         
-        let alertController = UIAlertController(title: "알림", message: "스탬프 선택!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "알림", style: UIAlertActionStyle.Default, handler: nil))
+        let alertController = UIAlertController(title: "알림", message: "스탬프를 등록하셨습니다 :)", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
         
         stamp.setStampName(stampName)
@@ -100,6 +100,11 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
         } else {
             return nil
         }
+    }
+    
+    //MARK: General Function
+    @IBAction func cancelToStaticsticsVD(segue : UIStoryboardSegue) {
+        
     }
 
     //MARK: General Function
@@ -180,5 +185,30 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
             }
             stampArr.writeToFile(path, atomically: true)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if self.shouldPerformSegueWithIdentifier("SelectExpand", sender: sender) {
+            
+            let infosLocationVC = segue.destinationViewController as! InfosLocationMapViewController
+            infosLocationVC.stamp = self.stamp
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        
+        if identifier == "SelectExpand" {
+            
+            if self.stamp.infos.isEmpty {
+                let alertController = UIAlertController(title: "알림", message: "등록한 여행지가 없습니다 :(", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return false
+            } else {
+                return true
+            }
+        }
+        return false
     }
 }

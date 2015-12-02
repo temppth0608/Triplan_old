@@ -121,14 +121,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-OI-bne">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stamp_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-OI-bne">
                                                     <rect key="frame" x="2" y="17" width="125" height="108"/>
                                                     <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-eD-evY">
-                                                    <rect key="frame" x="15" y="79" width="99" height="21"/>
+                                                    <rect key="frame" x="15" y="83" width="99" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.15294117647058825" green="0.1803921568627451" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -138,13 +138,14 @@
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="TRN-OI-bne" firstAttribute="centerX" secondItem="WBK-eD-evY" secondAttribute="centerX" id="4Jb-VJ-eZX"/>
                                             <constraint firstItem="TRN-OI-bne" firstAttribute="leading" secondItem="Zox-3l-X2s" secondAttribute="leadingMargin" constant="-6" id="4kx-io-hGC"/>
-                                            <constraint firstItem="WBK-eD-evY" firstAttribute="top" secondItem="Zox-3l-X2s" secondAttribute="topMargin" constant="71" id="4mp-jI-Oak"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="TRN-OI-bne" secondAttribute="bottom" constant="8" id="6jc-vo-TDa"/>
-                                            <constraint firstItem="WBK-eD-evY" firstAttribute="leading" secondItem="Zox-3l-X2s" secondAttribute="leadingMargin" constant="7" id="6rx-qS-qb7"/>
                                             <constraint firstItem="TRN-OI-bne" firstAttribute="centerX" secondItem="Zox-3l-X2s" secondAttribute="centerX" id="HVu-4V-akM"/>
+                                            <constraint firstItem="WBK-eD-evY" firstAttribute="centerX" secondItem="TRN-OI-bne" secondAttribute="centerX" id="KGh-tW-s64"/>
+                                            <constraint firstItem="WBK-eD-evY" firstAttribute="top" secondItem="Zox-3l-X2s" secondAttribute="topMargin" constant="75" id="TWz-0N-cJy"/>
+                                            <constraint firstItem="WBK-eD-evY" firstAttribute="leading" secondItem="Zox-3l-X2s" secondAttribute="leadingMargin" constant="7" id="VcB-0B-PNo"/>
                                             <constraint firstItem="TRN-OI-bne" firstAttribute="top" secondItem="Zox-3l-X2s" secondAttribute="topMargin" constant="9" id="iwd-Rl-v6x"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="WBK-eD-evY" secondAttribute="bottom" constant="29" id="pK2-Dn-Zbh"/>
                                         </constraints>
                                         <size key="customSize" width="128" height="141"/>
                                         <connections>
@@ -262,7 +263,7 @@
                                     <navigationItem title="통계" id="5Gn-dK-zRy">
                                         <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="q19-WJ-7IB">
                                             <connections>
-                                                <segue destination="0SR-bG-NwR" kind="unwind" unwindAction="cancelFromStatisticsVC:" id="s9f-7u-D7G"/>
+                                                <segue destination="0SR-bG-NwR" kind="unwind" unwindAction="cancelToMainVC:" id="Kge-wc-tGJ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -344,36 +345,34 @@
                                 <color key="textColor" red="0.41568627450980394" green="0.77254901960784317" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_scroll_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="s7y-Gc-EZY">
+                                <rect key="frame" x="6" y="441" width="20" height="20"/>
+                                <animations/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-VM-Qj1" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="123"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Detailpage_etc.png" translatesAutoresizingMaskIntoConstraints="NO" id="9LL-J7-2YC">
-                                        <rect key="frame" x="105" y="67" width="20" height="20"/>
-                                        <animations/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbg-yy-Qse">
-                                        <rect key="frame" x="282" y="85" width="30" height="30"/>
-                                        <animations/>
-                                        <state key="normal" image="statistic_zoom.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="E5e-vb-Z14" kind="modal" id="MH1-Vh-p4H"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="65" width="320" height="123"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="9oL-R7-RFo" id="YSU-jR-201"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_scroll_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="s7y-Gc-EZY">
-                                <rect key="frame" x="6" y="441" width="20" height="20"/>
-                                <animations/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="right_scroll_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="hJf-HP-HSB">
                                 <rect key="frame" x="294" y="441" width="20" height="20"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbg-yy-Qse">
+                                <rect key="frame" x="284" y="150" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" image="statistic_zoom.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="E5e-vb-Z14" kind="modal" identifier="SelectExpand" id="MH1-Vh-p4H"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Detailpage_etc.png" translatesAutoresizingMaskIntoConstraints="NO" id="9LL-J7-2YC">
+                                <rect key="frame" x="148" y="123" width="20" height="20"/>
                                 <animations/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YdR-eJ-kyI">
@@ -394,8 +393,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stamp1" translatesAutoresizingMaskIntoConstraints="NO" id="qcG-io-LVn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stamp1" translatesAutoresizingMaskIntoConstraints="NO" id="qcG-io-LVn">
+                                                    <rect key="frame" x="0.0" y="4" width="80" height="72"/>
                                                     <animations/>
                                                 </imageView>
                                             </subviews>
@@ -403,6 +402,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstItem="qcG-io-LVn" firstAttribute="leading" secondItem="ykN-uo-Vsm" secondAttribute="leading" id="FUa-Me-rnm"/>
+                                            <constraint firstItem="qcG-io-LVn" firstAttribute="top" secondItem="ykN-uo-Vsm" secondAttribute="topMargin" constant="-4" id="Kxi-em-ZfZ"/>
+                                            <constraint firstItem="qcG-io-LVn" firstAttribute="centerY" secondItem="ykN-uo-Vsm" secondAttribute="centerY" id="ZPI-GI-AoH"/>
+                                            <constraint firstAttribute="trailing" secondItem="qcG-io-LVn" secondAttribute="trailing" id="xAI-Ty-oWg"/>
+                                        </constraints>
                                         <size key="customSize" width="80" height="80"/>
                                         <connections>
                                             <outlet property="cStampImage" destination="qcG-io-LVn" id="ohJ-yG-4Sc"/>
@@ -444,10 +449,10 @@
             </objects>
             <point key="canvasLocation" x="2031" y="-243"/>
         </scene>
-        <!--Expand Map View Controller-->
+        <!--Infos Location Map View Controller-->
         <scene sceneID="akb-3c-vhh">
             <objects>
-                <viewController id="E5e-vb-Z14" customClass="ExpandMapViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E5e-vb-Z14" customClass="InfosLocationMapViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N5l-RP-tQf"/>
                         <viewControllerLayoutGuide type="bottom" id="muy-Uq-MqD"/>
@@ -456,31 +461,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po8-9E-W0P">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCL-lw-wFS" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kzr-Qw-WxM">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem id="bSY-bN-SjT">
-                                        <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="66u-mh-5Kp">
-                                            <color key="tintColor" red="0.14901960780000001" green="0.77647058820000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <navigationItem title="경로보기" id="gbS-XU-ATF">
+                                        <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="eg3-m5-WHz">
                                             <connections>
-                                                <segue destination="tZY-Gi-MaZ" kind="unwind" unwindAction="cancelToDetailInformationVC:" id="eoj-6i-AQu"/>
+                                                <segue destination="tZY-Gi-MaZ" kind="unwind" unwindAction="cancelToStaticsticsVD:" id="9ir-q0-Gkd"/>
                                             </connections>
                                         </barButtonItem>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="8fu-tu-jUR">
-                                            <rect key="frame" x="65" y="7" width="191" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
-                                            <segments>
-                                                <segment title="Normal"/>
-                                                <segment title="Satellite"/>
-                                                <segment title="Hybrid"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="segmentChanged:" destination="E5e-vb-Z14" eventType="valueChanged" id="q4v-zS-fwE"/>
-                                            </connections>
-                                        </segmentedControl>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -488,6 +483,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="aCL-lw-wFS" id="kka-DW-YMA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfE-k4-THY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tZY-Gi-MaZ" userLabel="Exit" sceneMemberID="exit"/>
@@ -1013,9 +1011,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5e-UU-Yao">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5e-UU-Yao">
                                 <rect key="frame" x="7" y="20" width="71" height="37"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="KgT-v5-CiL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1024,15 +1025,21 @@
                                     <segue destination="wn5-o9-HNs" kind="unwind" unwindAction="cancelToDetailInformationVC:" id="9I4-qs-P9c"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-wW-bgi">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-wW-bgi">
                                 <rect key="frame" x="8" y="93" width="305" height="382"/>
                                 <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="e52-HO-5YD">
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="e52-HO-5YD">
                                         <rect key="frame" x="133" y="327" width="39" height="37"/>
                                         <animations/>
                                     </pageControl>
                                 </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="e52-HO-5YD" secondAttribute="trailing" constant="133" id="B1g-Ua-s1v"/>
+                                    <constraint firstItem="e52-HO-5YD" firstAttribute="centerX" secondItem="YiR-wW-bgi" secondAttribute="centerX" id="CgW-uj-A3z"/>
+                                    <constraint firstItem="e52-HO-5YD" firstAttribute="top" secondItem="YiR-wW-bgi" secondAttribute="top" constant="327" id="R0K-hM-5Mz"/>
+                                    <constraint firstAttribute="bottom" secondItem="e52-HO-5YD" secondAttribute="bottom" constant="18" id="wUv-tf-GhS"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="2Oi-cp-Lbo" id="gp8-qF-6kM"/>
                                 </connections>
@@ -1040,6 +1047,15 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w5e-UU-Yao" firstAttribute="top" secondItem="Gcc-cc-dJA" secondAttribute="bottom" id="0gF-r0-frv"/>
+                            <constraint firstItem="YiR-wW-bgi" firstAttribute="centerX" secondItem="6vV-Z5-4LT" secondAttribute="centerX" id="88G-jP-GOh"/>
+                            <constraint firstItem="YiR-wW-bgi" firstAttribute="centerY" secondItem="6vV-Z5-4LT" secondAttribute="centerY" id="Ge2-0G-hiH"/>
+                            <constraint firstItem="YiR-wW-bgi" firstAttribute="top" secondItem="w5e-UU-Yao" secondAttribute="bottom" constant="36" id="Nci-CW-X4b"/>
+                            <constraint firstItem="CMg-vU-6a9" firstAttribute="top" secondItem="YiR-wW-bgi" secondAttribute="bottom" constant="93" id="ftg-fx-rqD"/>
+                            <constraint firstItem="YiR-wW-bgi" firstAttribute="leading" secondItem="6vV-Z5-4LT" secondAttribute="leadingMargin" constant="-8" id="jt7-Eq-fSX"/>
+                            <constraint firstItem="w5e-UU-Yao" firstAttribute="leading" secondItem="6vV-Z5-4LT" secondAttribute="leadingMargin" constant="-9" id="vpa-ZE-P1x"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageScrollView" destination="YiR-wW-bgi" id="Kmy-DD-edK"/>
@@ -1164,7 +1180,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="zmW-Uo-iAu" kind="modal" identifier="SelectExpand" id="FaF-WF-Lts"/>
+                                            <segue destination="zmW-Uo-iAu" kind="modal" identifier="SelectExpand" id="434-Kd-R47"/>
                                         </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZNs-vx-j9D">
@@ -1664,6 +1680,7 @@
         <image name="navigation-17.png" width="1280" height="2191"/>
         <image name="right_scroll_icon.png" width="152" height="204"/>
         <image name="stamp1" width="444" height="391"/>
+        <image name="stamp_default.png" width="444" height="391"/>
         <image name="statistic_zoom.png" width="114" height="114"/>
         <image name="tab_first_off2.png" width="25" height="25"/>
         <image name="tab_second_off3.png" width="25" height="25"/>

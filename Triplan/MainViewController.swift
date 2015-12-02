@@ -67,7 +67,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             if stamps[indexPath.row].hasStamp == true && stamps[indexPath.row].stampName != "" {
                 cell.mainImageView.image = UIImage(named: stamps[indexPath.row].stampName)
             }else {
-                cell.mainImageView.image = UIImage(named: "main_stamp_off.png")
+                cell.mainImageView.image = UIImage(named: "stamp_default.png")
             }
             return cell
         }
