@@ -22,7 +22,7 @@ class AddLocationMapKitViewController: UIViewController ,NSURLConnectionDataDele
     private let baseURLString = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
 
     var latitude : String = ""
-    var altitude : String = ""
+    var longitude : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,7 @@ class AddLocationMapKitViewController: UIViewController ,NSURLConnectionDataDele
                 if placemark != nil{
                     let coordinate = placemark!.location!.coordinate
                     self?.latitude = coordinate.latitude.description
-                    self?.altitude = coordinate.longitude.description                    
+                    self?.longitude = coordinate.longitude.description
                     self!.addAnnotation(coordinate, address: text)
                     self!.mapView.setCenterCoordinate(coordinate, zoomLevel: 11, animated: true)
                 }
@@ -92,22 +92,26 @@ class AddLocationMapKitViewController: UIViewController ,NSURLConnectionDataDele
         responseData?.appendData(data)
     }
     
-//    func connectionDidFinishLoading(connection: NSURLConnection) {
-//        
-//        if responseData != nil{
-//            let result = NSJSONSerialization.JSONObjectWithData(responseData!, options: [])
-//            let status = result["status"] as? String
-//            if status == "OK" {
-//                if let predictions = result["predictions"] as? NSArray{
-//                    var locations = [String]()
-//                    for dict in predictions as! [NSDictionary]{
-//                        locations.append(dict["description"] as! String)
-//                    }
-//                    self.autocompleteTextField.autoCompleteStrings = locations
-//                }
-//            }
-//        }
-//    }
+    func connectionDidFinishLoading(connection: NSURLConnection) {
+        
+        if responseData != nil{
+            do {
+                let result = try NSJSONSerialization.JSONObjectWithData(responseData!, options: [])
+                let status = result["status"] as? String
+                if status == "OK" {
+                    if let predictions = result["predictions"] as? NSArray{
+                        var locations = [String]()
+                        for dict in predictions as! [NSDictionary]{
+                            locations.append(dict["description"] as! String)
+                        }
+                        self.autocompleteTextField.autoCompleteStrings = locations
+                    }
+                }
+            } catch _ {
+                
+            }
+        }
+    }
     
     func connection(connection: NSURLConnection, didFailWithError error: NSError) {
         print("Error: \(error.localizedDescription)")

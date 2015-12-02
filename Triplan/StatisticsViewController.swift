@@ -20,6 +20,7 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
     @IBOutlet weak var myNavBar: UINavigationBar!
     @IBOutlet weak var myCollectionView: UICollectionView!
     
+    var stamps : [Stamp]!
     var stamp : Stamp!
     let locationManager = CLLocationManager()
     let dataProvider = GoogleDataProvider()
@@ -37,12 +38,12 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
             coordinate.latitude = -33.868
             coordinate.longitude = 151.2086
         } else {
-            if stamp.infos[0].latitude == "" && stamp.infos[0].altitude == "" {
+            if stamp.infos[0].latitude == "" && stamp.infos[0].longitude == "" {
                 coordinate.latitude = -33.868
                 coordinate.longitude = 151.2086
             }else {
                 coordinate.latitude = (stamp.infos[0].latitude).toDouble()!
-                coordinate.longitude = (stamp.infos[0].altitude).toDouble()!
+                coordinate.longitude = (stamp.infos[0].longitude).toDouble()!
             }
             setMapView()
         }
@@ -72,16 +73,16 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
     //MARK: UICollectionView Delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-//        let clickedImageIndex = indexPath.row + 1
-//        let image = UIImage(named: "stamp-\(clickedImageIndex).png")
-//        let imageView = UIImageView(image: image)
-//        imageView.frame = CGRectMake(0, 0, 100, 100)
-//        
-//        let alertController = UIAlertController(title: "Alert", message: "message", preferredStyle: UIAlertControllerStyle.Alert)
-//        let alertAction = UIAlertAction(title: "title", style: UIAlertActionStyle.Default, handler: nil)
-//        alertAction.setValue(imageView, forKey: "image")
-//        alertController.addAction(alertAction)
-//        self.presentViewController(alertController, animated: true, completion: nil)
+        let clickedImageIndex = indexPath.row + 1
+        let stampName = "stamp\(clickedImageIndex).png"
+        
+        let alertController = UIAlertController(title: "알림", message: "스탬프를 등록하셨습니다 :)", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        stamp.setStampName(stampName)
+        
+        writePlistFile()
     }
     
     //MARK: GMSMapView Delegate
@@ -99,6 +100,11 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
         } else {
             return nil
         }
+    }
+    
+    //MARK: General Function
+    @IBAction func cancelToStaticsticsVD(segue : UIStoryboardSegue) {
+        
     }
 
     //MARK: General Function
@@ -130,7 +136,79 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
         
         let imageCount = 20
         for index in 1 ... imageCount {
-            self.cStampImages.append(UIImage(named: "stamp-\(index).png")!)
+            self.cStampImages.append(UIImage(named: "stamp\(index).png")!)
         }
+    }
+    
+    //StampList.plist Write
+    func writePlistFile() {
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let path = (paths as NSString).stringByAppendingPathComponent("StampList.plist")
+        let fileManager = NSFileManager.defaultManager()
+        
+        if stamps.count == 0 {
+            do {
+                try fileManager.removeItemAtPath(path)
+            } catch _ {
+                
+            }
+        }
+        let stampArr = NSMutableArray()
+        
+        for index in 0 ..< stamps.count {
+            let item : Stamp = stamps[index]
+            
+            let title : String = item.title
+            let startDate : NSDate = item.startDate
+            let endDate : NSDate = item.endDate
+            let hasStamp : Bool = item.hasStamp
+            let stampName : String = item.stampName
+            
+            let dic : NSDictionary = [
+                "Title" : title,
+                "StartDate" : startDate,
+                "EndDate" : endDate,
+                "HasStamp" : hasStamp,
+                "StampName" : stampName
+            ]
+            
+            stampArr.insertObject(dic, atIndex: 0)
+            
+            if (!(fileManager.fileExistsAtPath(path)))
+            {
+                let bundle : NSString = NSBundle.mainBundle().pathForResource("StampList", ofType: "plist")!
+                do {
+                    try fileManager.copyItemAtPath(bundle as String, toPath: path)
+                } catch _ {
+                }
+            }
+            stampArr.writeToFile(path, atomically: true)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if self.shouldPerformSegueWithIdentifier("SelectExpand", sender: sender) {
+            
+            let infosLocationVC = segue.destinationViewController as! InfosLocationMapViewController
+            infosLocationVC.stamp = self.stamp
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        
+        if identifier == "SelectExpand" {
+            
+            if self.stamp.infos.isEmpty {
+                let alertController = UIAlertController(title: "알림", message: "등록한 여행지가 없습니다 :(", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return false
+            } else {
+                return true
+            }
+        }
+        return false
     }
 }

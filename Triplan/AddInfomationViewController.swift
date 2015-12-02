@@ -30,7 +30,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     // infomation이 속한 stamp이름
     var belongedStampName : String!
     var latitude : String! = ""
-    var altitude : String! = ""
+    var longitude : String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,7 +153,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         
         let addLocationMapKitVC = segue.sourceViewController as! AddLocationMapKitViewController
         latitude = addLocationMapKitVC.latitude
-        altitude = addLocationMapKitVC.altitude
+        longitude = addLocationMapKitVC.longitude
         locationTextField.text = addLocationMapKitVC.autocompleteTextField.text
     }
 
@@ -173,8 +173,8 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
                 pLocationTitle: locationTextField.text!,
                 pBudget: Int(budgetTextField.text!)!,
                 pMemo: memoTextView.text,
-                pAltitude: altitude,
-                pLatitude: latitude)
+                pLongitude: longitude,
+                pLatitude : latitude)
         }
     }
     

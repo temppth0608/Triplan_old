@@ -9,6 +9,7 @@
 import UIKit
 
 class ExpandMapViewController: UIViewController ,GMSMapViewDelegate, CLLocationManagerDelegate{
+    
     @IBOutlet weak var mapView: GMSMapView!
     
     var coordinate : CLLocationCoordinate2D!
@@ -65,7 +66,7 @@ class ExpandMapViewController: UIViewController ,GMSMapViewDelegate, CLLocationM
             }
         }
     }
-    
+
     func mapView(mapView: GMSMapView!, markerInfoContents marker: GMSMarker!) -> UIView! {
         // 1
         let placeMarker = marker as! PlaceMarker
@@ -113,13 +114,10 @@ class ExpandMapViewController: UIViewController ,GMSMapViewDelegate, CLLocationM
         mapView.camera = GMSCameraPosition(target: self.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             
         // 7
-        locationManager.stopUpdatingLocation()
+        //locationManager.stopUpdatingLocation()
         fetchNearbyPlaces(self.coordinate)
         
     }
-    
-    
-    
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         // 1

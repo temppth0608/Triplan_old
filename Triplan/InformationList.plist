@@ -14,7 +14,7 @@
 	<integer>0</integer>
 	<key>Memo</key>
 	<string></string>
-	<key>Altitude</key>
+	<key>Longitude</key>
 	<string></string>
 	<key>Latitude</key>
 	<string></string>

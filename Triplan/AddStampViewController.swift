@@ -304,7 +304,7 @@ class AddStampViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if segue.identifier == "saveStamp" {
             if !titleTextField.isEqual("") {
-                stamp = Stamp(title: titleTextField.text!, startDate: startDate!, endDate: endDate!)
+                stamp = Stamp(title: titleTextField.text!, startDate: startDate!, endDate: endDate!, hasStamp: false, stampName: "")
             }
         }
     }

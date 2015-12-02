@@ -48,7 +48,7 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
                 latitude: -33.868 ,
                 longitude: 151.2086
             )
-        } else if !((information.altitude).toDouble() != nil) {
+        } else if !((information.longitude).toDouble() != nil) {
             coordinate = CLLocationCoordinate2D(
                 latitude: -33.868 ,
                 longitude: 151.2086
@@ -56,7 +56,7 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
         } else {
             coordinate = CLLocationCoordinate2D(
                 latitude: (information.latitude).toDouble()! ,
-                longitude: (information.altitude).toDouble()!
+                longitude: (information.longitude).toDouble()!
             )
             setMapView()
         }
@@ -132,7 +132,7 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
     
     func setMapView() {
         
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude((information.latitude).toDouble()!, longitude: (information.altitude).toDouble()!, zoom: 14.0)
+        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude((information.latitude).toDouble()!, longitude: (information.longitude).toDouble()!, zoom: 14.0)
         
         mapView.camera = camera
     }

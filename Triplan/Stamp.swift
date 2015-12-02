@@ -13,19 +13,56 @@ class Stamp {
     var startDate : NSDate!
     var endDate : NSDate!
     var infos : [Information]
+    var hasStamp : Bool = false
+    var stampName : String
     
     init() {
         title = ""
         startDate = nil
         endDate = nil
         infos = []
+        stampName = ""
     }
     
-    init(title : String, startDate : NSDate, endDate : NSDate) {
+    init(title : String, startDate : NSDate, endDate : NSDate,hasStamp : Bool, stampName : String) {
         self.title = title
         self.startDate = startDate
         self.endDate = endDate
         infos = []
+        self.hasStamp = hasStamp
+        self.stampName = stampName
+    }
+    
+    func setStampName(imageName : String) {
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let now = NSDate()
+        let stringFromNow = formatter.stringFromDate(now)
+        let stringFromEndDate = formatter.stringFromDate(self.endDate)
+        
+        if stringFromNow.toDouble() >= stringFromEndDate.toDouble() {
+            hasStamp = true
+        } else {
+            hasStamp = false
+        }
+        
+        self.stampName = imageName
+    }
+    
+    func chackHasStamp() {
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let now = NSDate()
+        let stringFromNow = formatter.stringFromDate(now)
+        let stringFromEndDate = formatter.stringFromDate(self.endDate)
+        
+        if stringFromNow.toDouble() >= stringFromEndDate.toDouble() {
+            hasStamp = true
+        } else {
+            hasStamp = false
+        }
     }
     
     func getTotalInfosBudget() -> Int {
