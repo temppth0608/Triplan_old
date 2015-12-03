@@ -109,15 +109,15 @@ class ExpandMapViewController: UIViewController ,GMSMapViewDelegate, CLLocationM
     }
     
     // 5
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-        mapView.camera = GMSCameraPosition(target: self.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            
-        // 7
-        //locationManager.stopUpdatingLocation()
-        fetchNearbyPlaces(self.coordinate)
-        
-    }
+//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//
+//        mapView.camera = GMSCameraPosition(target: self.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+//            
+//        // 7
+//        //locationManager.stopUpdatingLocation()
+//        fetchNearbyPlaces(self.coordinate)
+//        
+//    }
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         // 1

@@ -161,7 +161,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
         let path = (paths as NSString).stringByAppendingPathComponent("StampList.plist")
-
+        
         var stampArr : NSArray!
         stampArr = NSArray(contentsOfFile: path)
         
@@ -185,7 +185,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
         let path = (paths as NSString).stringByAppendingPathComponent("InformationList.plist")
-        print("path : \(path)")
         
         var infoArr : NSArray!
         infoArr = NSArray(contentsOfFile: path)

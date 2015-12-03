@@ -6,3 +6,4 @@
 #import "CLWeeklyCalendarView.h"
 #import "TGCameraViewController.h"
 #import "GoogleMaps.h"
+#import "AppBlade.h"
