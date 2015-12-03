@@ -23,7 +23,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
     var calendarView : CLWeeklyCalendarView!
     // 눌러진 카테고리에 스트링값 저장
     var date : NSDate!
-    var selectedCategory : String = "train"
+    var selectedCategory : String = ""
     var info : Information!
     // 눌려진 NSDate객체
     var selectedDate : NSDate!
@@ -88,6 +88,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         UIView.setAnimationDuration(0.2)
         self.view.frame = CGRectMake(0,-130,self.view.frame.size.width,self.view.frame.size.height);
         UIView.commitAnimations();
+        self.memoTextView.text = ""
     }
     
     // 다시 화면을 복귀
@@ -104,6 +105,7 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         
         //눌러진 버튼이미지의 tag값을 저장
         let selectedButton : Int = sender.tag as Int
+        
         
         //버튼 클릭시 이미지 변환까지
         switch selectedButton {
@@ -156,26 +158,54 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
         longitude = addLocationMapKitVC.longitude
         locationTextField.text = addLocationMapKitVC.autocompleteTextField.text
     }
-
+    
     // MARK: - Navigation Control
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         
-        if segue.identifier == "SaveInfomation" {
+        if identifier == "SaveInfomation" {
             
-            if !(Int(budgetTextField.text!) != nil) {
-                budgetTextField.text = "0"
+            if selectedCategory == "" {
+                let alertController = UIAlertController(title: "알림", message: "카테고리를 설정해주세요~", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                return false
+            }else if locationTextField.text == "" {
+                let alertController = UIAlertController(title: "알림", message: "이름을 지어주세요~", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                return false
+            } else if !(Int(budgetTextField.text!) != nil) {
+                let alertController = UIAlertController(title: "알림", message: "금액을 입력해주세요~", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                return false
+                
+            } else {
+                
+                if latitude == "" || longitude == "" {
+                    latitude = "-33.868"
+                    longitude = "151.2086"
+                }
+                
+                info = Information(
+                    pStampName: belongedStampName,
+                    pDateOfInformation: selectedDate,
+                    pCategory: selectedCategory,
+                    pLocationTitle: locationTextField.text!,
+                    pBudget: Int(budgetTextField.text!)!,
+                    pMemo: memoTextView.text,
+                    pLongitude: longitude,
+                    pLatitude : latitude)
+                
+                return true
             }
-            
-            info = Information(
-                pStampName: belongedStampName,
-                pDateOfInformation: selectedDate,
-                pCategory: selectedCategory,
-                pLocationTitle: locationTextField.text!,
-                pBudget: Int(budgetTextField.text!)!,
-                pMemo: memoTextView.text,
-                pLongitude: longitude,
-                pLatitude : latitude)
         }
+        
+        
+        return false
     }
     
     // MARK: - genaral function
