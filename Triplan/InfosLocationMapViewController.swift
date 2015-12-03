@@ -41,7 +41,17 @@ class InfosLocationMapViewController: UIViewController , GMSMapViewDelegate , CL
     }
     
     func setMapView() {
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(coordinates[0].latitude, longitude: coordinates[0].longitude, zoom: 11.0)
+        var camera = GMSCameraPosition()
+        if displayInfos.isEmpty {
+            self.stamp.infos[0].latitude = "-33.868"
+            self.stamp.infos[0].longitude = "151.2086"
+            camera = GMSCameraPosition.cameraWithLatitude(Double(self.stamp.infos[0].latitude)!, longitude: Double(self.stamp.infos[0].longitude)!, zoom: 11.0)
+        } else {
+            displayInfos[0].latitude = "-33.868"
+            displayInfos[0].longitude = "151.2086"
+            camera = GMSCameraPosition.cameraWithLatitude(Double(displayInfos[0].latitude)!, longitude: Double(displayInfos[0].longitude)!, zoom: 11.0)
+        }
+
         mapView.camera = camera
         
         for index in 0..<displayInfosCount {

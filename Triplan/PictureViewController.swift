@@ -11,7 +11,6 @@ import UIKit
 class PictureViewController: UIViewController ,UIScrollViewDelegate{
 
     @IBOutlet weak var imageScrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
     
     var pageImages : [UIImage] = []
     var pageViews : [UIImageView?] = []
@@ -26,9 +25,6 @@ class PictureViewController: UIViewController ,UIScrollViewDelegate{
 
         // Do any additional setup after loading the view.
         let pageCount = pageImages.count;
-        
-        pageControl.currentPage = 0;
-        pageControl.numberOfPages = pageCount;
         
         for _ in 0..<pageCount {
             pageViews.append(nil);
@@ -76,8 +72,6 @@ class PictureViewController: UIViewController ,UIScrollViewDelegate{
     func loadVisiblePages() {
         let pageWidth = imageScrollView.frame.size.width;
         let page = Int(floor((imageScrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)));
-        
-        pageControl.currentPage = page;
         
         let firstPage = page - 1;
         let lastPage = page + 1;
