@@ -262,13 +262,7 @@
                                     <color key="textColor" red="0.1529411765" green="0.18039215689999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="통계" id="5Gn-dK-zRy">
-                                        <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="q19-WJ-7IB">
-                                            <connections>
-                                                <segue destination="0SR-bG-NwR" kind="unwind" unwindAction="cancelToMainVC:" id="Kge-wc-tGJ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="통계" id="5Gn-dK-zRy"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="경비" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-JO-jQP">
@@ -502,7 +496,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqj-KR-h6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="0SR-bG-NwR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2031" y="-243"/>
         </scene>
@@ -943,7 +936,7 @@
                                     <navigationItem title="추가하기" id="ihW-XL-WaD">
                                         <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="2TS-5R-wdN">
                                             <connections>
-                                                <segue destination="FvC-zq-54H" kind="unwind" identifier="" unwindAction="cancelToTravelVC:" id="skL-aP-s0k"/>
+                                                <segue destination="FvC-zq-54H" kind="unwind" identifier="cancel" unwindAction="cancelToTravelVC:" id="skL-aP-s0k"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="확인" id="4mi-je-Iwa">
@@ -1018,7 +1011,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mq9-1p-21E" kind="modal" id="xC9-fS-4ak"/>
+                                    <segue destination="mq9-1p-21E" kind="modal" identifier="touchLocation" id="xC9-fS-4ak"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh5-Z4-xYr">
@@ -1252,7 +1245,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="navi_back.png" id="2AF-mF-J1q">
                                             <color key="tintColor" red="0.30588235294117649" green="0.73725490196078436" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="NFM-35-faC" kind="unwind" unwindAction="cancelToTravelVC:" id="gBb-RU-M4k"/>
+                                                <segue destination="NFM-35-faC" kind="unwind" identifier="cancel" unwindAction="cancelToTravelVC:" id="gBb-RU-M4k"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1593,12 +1586,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exL-Ir-Xbo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exL-Ir-Xbo">
                                 <rect key="frame" x="16" y="20" width="30" height="30"/>
                                 <animations/>
-                                <state key="normal" image="navi_back.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="navi_back.png"/>
                                 <connections>
                                     <segue destination="Agi-7h-TLQ" kind="unwind" unwindAction="cancelToAddInformationVC:" id="ycq-B2-OI5"/>
                                 </connections>
@@ -1608,7 +1599,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="save">
-                                    <color key="titleColor" red="0.30588235294117649" green="0.73725490196078436" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

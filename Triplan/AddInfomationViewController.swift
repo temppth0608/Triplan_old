@@ -202,8 +202,11 @@ class AddInfomationViewController: UIViewController , CLWeeklyCalendarViewDelega
                 
                 return true
             }
+        } else if identifier == "touchLocation" {
+            return true
+        } else if identifier == "cancel" {
+            return true
         }
-        
         
         return false
     }

@@ -50,10 +50,12 @@ class SlidePanelViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let alertController = UIAlertController(title: "알림", message: "추후 개발 예정입니다.", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "확인", style: .Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     
 //    override func preferredStatusBarStyle() -> UIStatusBarStyle {
 //        

@@ -209,6 +209,7 @@ class StatisticsViewController: UIViewController , GMSMapViewDelegate, CLLocatio
                 return true
             }
         }
+
         return false
     }
 }

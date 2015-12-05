@@ -42,7 +42,7 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
         myNavItem.title = information.stampName
         
         self.mapView.delegate = self
-        
+
         if !((information.latitude).toDouble() != nil) {
             coordinate = CLLocationCoordinate2D(
                 latitude: -33.868 ,
@@ -87,48 +87,108 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
     }
 
     // MARK: - CollectionView Delegate
-    
     // MARK: - General Function
+    
     func fetchPhotos () {
         images = []
-        totalImageCountNeeded = 10
+        totalImageCountNeeded = 50
+        
+        //let dateFormatter = NSDateFormatter()
+        //dateFormatter.dateFormat = "yyyyMMdd"
+        //let stringFromInfoDate = dateFormatter.stringFromDate(self.information.dateOfInformation)
+
         self.fetchPhotoAtIndexFromEnd(0)
+        //self.fetchPhotoAtIndexFromEnd(0, stringFromInfoDate)
     }
     
-    // Repeatedly call the following method while incrementing
-    // the index until all the photos are fetched
     func fetchPhotoAtIndexFromEnd(index:Int) {
         
         let imgManager = PHImageManager.defaultManager()
-        
-        // Note that if the request is not set to synchronous
-        // the requestImageForAsset will return both the image
-        // and thumbnail; by setting synchronous to true it
-        // will return just the thumbnail
+
         let requestOptions = PHImageRequestOptions()
         requestOptions.synchronous = true
-        
-        // Sort the images by creation date
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: true)]
         
         let fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
-            
-        // If the fetch result isn't empty,
-        // proceed with the image request
+        
         if fetchResult.count > 0 {
-        // Perform the image request
             imgManager.requestImageForAsset(fetchResult.objectAtIndex(fetchResult.count - 1 - index) as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
-            // Add the returned image to your array
                 self.images.append(image!)
                 if index + 1 < fetchResult.count && self.images.count < self.totalImageCountNeeded {
                     self.fetchPhotoAtIndexFromEnd(index + 1)
                 } else {
-                    // Else you have completed creating your array
                 }
             })
         }
     }
+    
+    /*
+    func fetchPhotoAtIndexFromEnd(index:Int, _ comparedDate: String) {
+
+        let imgManager = PHImageManager.defaultManager()
+            
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.synchronous = true
+        
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: true)]
+        
+        let fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            imgManager.requestImageDataForAsset(fetchResult.objectAtIndex(fetchResult.count - 1 - index) as! PHAsset, options:requestOptions, resultHandler: { (imageData, dataUTI ,orientation , info) in
+                    
+                let coreImage = CIImage(data: imageData!)
+                let appendedImage = UIImage(data: imageData!)
+                let imageDataDictionary = coreImage?.properties
+                var strDate = ""
+                
+                if let tmpDictionary = imageDataDictionary!["{TIFF}"] {
+                    if let dateTime = tmpDictionary["DateTime"] {
+                        if dateTime != nil {
+                            strDate = dateTime as! String
+                        } else {
+                            self.fetchPhotoAtIndexFromEnd(index + 1, comparedDate)
+                        }
+                    }
+                }
+                
+                if strDate == "" || strDate.characters.count != 19{
+                    
+                    self.fetchPhotoAtIndexFromEnd(index + 1, comparedDate)
+                    return
+                }
+                
+                let range = strDate.endIndex.advancedBy(-9)..<strDate.endIndex
+                strDate.removeRange(range)
+                
+                strDate = strDate.stringByReplacingOccurrencesOfString(":", withString: "")
+                
+                if comparedDate == strDate {
+                    if fetchResult.count > 0 {
+                        self.images.append(appendedImage!)
+                        if index + 1 < fetchResult.count {
+                            self.fetchPhotoAtIndexFromEnd(index + 1, comparedDate)
+                        } else {
+                            
+                        }
+                    }
+                } else {
+                    self.fetchPhotoAtIndexFromEnd(index + 1, comparedDate)
+                }
+                
+                if self.images.count == self.totalImageCountNeeded {
+                    return;
+                }
+            })
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.myCollectionView.reloadData()
+            })
+        })
+    }
+    */
     
     func setMapView() {
         
@@ -192,6 +252,8 @@ class DetailInformationViewController: UIViewController ,GMSMapViewDelegate, UIC
             for index in 0 ..< images.count {
                 pictureVC.pageImages.append(images[index])
             }
+        } else if segue.identifier == "cancel" {
+            
         }
     }
 }

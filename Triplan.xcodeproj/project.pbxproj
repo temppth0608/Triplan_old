@@ -1205,7 +1205,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Triplan",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier).com";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Triplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ParkTaeHyun/Desktop/Triplan/Triplan/Triplan-Bridging-Header.h";
@@ -1233,7 +1233,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Triplan",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier).com";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Triplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ParkTaeHyun/Desktop/Triplan/Triplan/Triplan-Bridging-Header.h";
